@@ -68,7 +68,7 @@ public class PathFinder : MonoBehaviour
                         node = node.Parent;
                         if(node == null || node.Parent == null)
                         {
-                            returnValue.Directions = SimplifyPath(returnValue.Directions);
+                            //returnValue.Directions = SimplifyPath(returnValue.Directions);
                             return returnValue;
                         }
                     }

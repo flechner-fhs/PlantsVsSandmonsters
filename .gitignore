@@ -1,4 +1,5 @@
-Temp/
-Logs/
-.vs/
-Library/
+Temp/*
+Logs/*
+.vs/*
+Library/*
+Library/Artifacts/*
