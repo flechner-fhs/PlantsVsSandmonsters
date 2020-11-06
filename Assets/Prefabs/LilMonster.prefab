@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1903372165836428163}
   - component: {fileID: 1903372165836428164}
   - component: {fileID: 1903372165836428162}
+  - component: {fileID: 696779260229029370}
+  - component: {fileID: 257104789776892284}
   m_Layer: 0
   m_Name: LilMonster
   m_TagString: Untagged
@@ -92,6 +94,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1903372165836428165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71341d00a05dd6c44bb1b3d8253c9935, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fa226115b689404f90c4fead474720b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 50
+  MovementSpeed: 5
+  Size: 1
+  collider: {fileID: 257104789776892284}
+  rigidbody: {fileID: 696779260229029370}
+--- !u!50 &696779260229029370
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903372165836428165}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &257104789776892284
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903372165836428165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50252527
