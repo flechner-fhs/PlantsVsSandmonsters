@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7057394062950652024}
   - component: {fileID: 7057394062950652025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 7057394062995393752}
   - component: {fileID: 7057394062995393755}
   - component: {fileID: 7057394062995393754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   MovementSpeed: 10
-  Size: 0.5
+  Size: 0.4
   collider: {fileID: 7057394062995393752}
   rigidbody: {fileID: 7057394062995393755}
 --- !u!1 &7057394063399911473
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7057394063399911474}
   - component: {fileID: 7057394063399911475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

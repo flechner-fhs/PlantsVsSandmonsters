@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\Entity.cs" />
+    <Compile Include="Assets\Script\PathFinder.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
