@@ -1,3 +1,4 @@
-Temp/
-Logs/
-.vs/
+Temp/*
+Logs/*
+.vs/*
+Library/*

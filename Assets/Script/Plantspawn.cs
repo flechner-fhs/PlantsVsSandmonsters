@@ -47,8 +47,9 @@ public class Plantspawn : MonoBehaviour
     {
         TargetFinding tf = new TargetFinding();
         Vector2 direction;
-        tf.findNextTarget(out direction, transform.position);
+        tf.findNextTarget(transform.position, out direction);
         GameObject projectilexy = GameObject.Instantiate(projectile);
+        projectilexy.GetComponent<Projectile>().Damage = Damage;
         projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
         waterReservoir--;
     }
