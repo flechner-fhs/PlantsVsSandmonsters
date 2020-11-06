@@ -3760,6 +3760,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5767290298709198250, guid: 11012e2e2b6b5d3439588ffd41084d3c,
         type: 3}
+    - target: {fileID: 4708360148563033594, guid: 3f18356305a6d154a8cd39e1a511e3db,
+        type: 3}
+      propertyPath: ShowMarkers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db,
         type: 3}
       propertyPath: m_Name
