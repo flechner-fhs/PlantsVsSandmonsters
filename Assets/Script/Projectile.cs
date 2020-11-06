@@ -5,30 +5,31 @@ using UnityEngine.UIElements;
 
 public class Projectile : MonoBehaviour
 {
-    public Rigidbody2D rigidbody;
     public float MovementSpeed;
+    public float Damage;
+    public Rigidbody2D rigidbody;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-      GameObject monster = GameObject.Find("LilMonster");
-        //transform.position = Vector2.MoveTowards(transform.position, monster.transform.position, 0.03f);
-        Vector2 direction = monster.transform.position - transform.position;
+        TargetFinding tf = new TargetFinding();
+        Vector2 direction; 
+        tf.findNextTarget(out direction, transform.position);
         direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
         rigidbody.MovePosition((Vector2)transform.position + direction);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
         Destroy(this.gameObject);
-    
+
     }
 }

@@ -60,6 +60,7 @@
      <Compile Include="Assets\Script\Plantspawn.cs" />
      <Compile Include="Assets\Script\Player.cs" />
      <Compile Include="Assets\Script\Projectile.cs" />
+     <Compile Include="Assets\Script\TargetFinding.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
