@@ -5554,9 +5554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0.7
+  m_YDamping: 0.7
+  m_ZDamping: 0.7
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -6300,6 +6300,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7057394062995393754, guid: a2e1ec43bc17b674e99166440b51bde9,
+        type: 3}
+      propertyPath: MovementSpeed
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
 --- !u!1001 &7775306649018228268
@@ -6312,6 +6317,10 @@ PrefabInstance:
     - target: {fileID: 50474609, guid: 448195f4e557e4641870033a2de29646, type: 3}
       propertyPath: m_Name
       value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 50474611, guid: 448195f4e557e4641870033a2de29646, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 462112633199076279, guid: 448195f4e557e4641870033a2de29646,
         type: 3}
@@ -6450,7 +6459,7 @@ PrefabInstance:
     - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
         type: 3}
       propertyPath: EnemyPrefabs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
         type: 3}
@@ -6478,6 +6487,18 @@ PrefabInstance:
       propertyPath: Interval
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87,
+        type: 3}
+    - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
+        type: 3}
+      propertyPath: EnemyPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87,
+        type: 3}
     - target: {fileID: 744207794268525863, guid: 80345ef660fa54e4a96124221aab5aa8,
         type: 3}
       propertyPath: m_LocalPosition.x
