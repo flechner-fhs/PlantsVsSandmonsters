@@ -12,6 +12,7 @@ public class PlantProjectile : Projectile
     {
         if (cd >= 0.5)
         {
+            MovementSpeed = 5;
             TargetFinding tf = new TargetFinding();
             if (tf.findTarget(out Vector2 direction, transform.position, 0, 10, "Enemy"))
             {
@@ -34,7 +35,7 @@ public class PlantProjectile : Projectile
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
         }
-        if(!collision.gameObject.GetComponent<Plant>())
+        if (!collision.gameObject.GetComponent<Plant>())
             Destroy(gameObject);
     }
 }

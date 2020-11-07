@@ -11,8 +11,11 @@ public class TargetFinding
     private List<GameObject> visibleCharacterList = new List<GameObject>();
 
     /**
-     * prio -- what target (0 is closest)(1 is next visible)(2 is next visible else closest)(3 is strongest visible else closest)
-     * 
+     * prio -- what target 
+     * (0 is closest)
+     * (1 is next visible)
+     * (2 is strongest visible)
+     * (3 is strongest(visible idc))
      */
 
     public bool findTarget(out Vector2 direction, Vector2 pos, int enemyPrio = 0, int range = 10, string tag = "Enemy")
@@ -27,18 +30,42 @@ public class TargetFinding
                     direction = (Vector2)characterInRangeList[0].transform.position - pos;
                     isTarget = true;
                     break;
+
                 case 1:
-                    direction = Vector2.zero;
-                    isTarget = false;
+                    updateVisibleList(pos, range);
+                    if (visibleCharacterList.Count > 0)
+                    {
+                        direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                        isTarget = true;
+                    }
+                    else
+                    {
+                        direction = Vector2.zero;
+                        isTarget = false;
+                    }
                     break;
+
                 case 2:
-                    direction = Vector2.zero;
-                    isTarget = false;
+                    updateVisibleList(pos, range);
+                    if (visibleCharacterList.Count > 0)
+                    {
+                        sortAfterStrongest(true);
+                        direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                        isTarget = true;
+                    }
+                    else
+                    {
+                        direction = Vector2.zero;
+                        isTarget = false;
+                    }
                     break;
+
                 case 3:
-                    direction = Vector2.zero;
-                    isTarget = false;
+                    sortAfterStrongest(false);
+                    direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                    isTarget = true;
                     break;
+
                 default:
                     direction = Vector2.zero;
                     isTarget = false;
@@ -60,23 +87,38 @@ public class TargetFinding
         characterInRangeList = monsters.Where(x => ((Vector3)pos - x.transform.position).magnitude < range).ToList().OrderBy(a => (a.transform.position - position).magnitude).ToList();
     }
 
-
-    public void findNextTarget(Vector3 pos, out Vector2 direction)
+    private void updateVisibleList(Vector2 pos, int range)
     {
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
-        if(monsters.Length > 0)
+        foreach (GameObject character in characterInRangeList)
         {
-            GameObject closest = monsters[0];
-            foreach (GameObject monster in monsters)
+            Debug.DrawRay(pos, ((Vector2)character.transform.position - pos));
+            if (Physics2D.Raycast(pos, ((Vector2)character.transform.position - pos)))
             {
-                if ((monster.transform.position - pos).magnitude < (closest.transform.position - pos).magnitude)
-                {
-                    closest = monster;
-                }
+                visibleCharacterList.Add(character);
             }
-            direction = closest.transform.position - pos;
-            return;
         }
-        direction = Vector2.zero;
+    }
+
+    private void sortAfterStrongest(bool visible)
+    {
+        if (visible)
+        {
+            visibleCharacterList.OrderBy(x => (getPrio(x)));
+        }
+        else
+        {
+            characterInRangeList.OrderBy(x => (getPrio(x)));
+        }
+    }
+
+    private int getPrio(GameObject obj)
+    {
+        float strength = 0;
+
+        strength += obj.GetComponent<Enemy>().Damage;
+        strength += obj.GetComponent<Enemy>().Health;
+        strength += 2 / obj.GetComponent<Enemy>().AttackSleep;
+        Debug.Log("PRIO STRENGTH: " + strength);
+        return (int)strength;
     }
 }
