@@ -19,6 +19,11 @@ public class LevelSelector : MonoBehaviour
     public void chooseButton(int levelNumber)
     {
         Debug.Log(levelNumber);
-        SceneManager.LoadScene(/**levelNumber**/1);
+        SceneManager.LoadScene(/**levelNumber**/2);
+    }
+
+    public void startButton()
+    {
+        SceneManager.LoadScene(2);
     }
 }

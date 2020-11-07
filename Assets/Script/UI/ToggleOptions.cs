@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ToggleOptions : MonoBehaviour
 {
-    public GameObject optionsObject;
-    public GameObject menuObject;
+    public GameObject settingsObject;
+    public GameObject pauseObject;
     public GameObject pixelateCamera;
 
-    // Start is called before the first frame update
     private Pixelate pixeldCamera;
+
     void Update()
     {
         if (Input.GetKeyDown("escape"))
@@ -24,15 +24,13 @@ public class ToggleOptions : MonoBehaviour
                 timeElapsed += Time.deltaTime;
                 pixeldCamera.pixelSizeX = (int) (timeElapsed * 9);
             }
-            
-
-            menuObject.SetActive(true);         
+            pauseObject.SetActive(true);         
         }
     }
 
     public void resumeToGame()
     {
-        menuObject.SetActive(false);
+        pauseObject.SetActive(false);
         Time.timeScale = 1;
         pixeldCamera = pixelateCamera.GetComponent<Pixelate>();
         pixeldCamera.pixelSizeX = 0;
@@ -40,17 +38,17 @@ public class ToggleOptions : MonoBehaviour
 
     public void goToSettings()
     {
-        menuObject.SetActive(false);
-        optionsObject.SetActive(true);
+        pauseObject.SetActive(false);
+        settingsObject.SetActive(true);
     }
 
     public void leaveSettings()
     {
-        optionsObject.SetActive(false);
-        menuObject.SetActive(true);
+        settingsObject.SetActive(false);
+        pauseObject.SetActive(true);
     }
 
-    public void goToMainscreenn()
+    public void goToMainscreen()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/JonasTestScene.unity.meta
+guid: 1a6afe3ea81c65c4bbdcf41c4b1fba38
+=======
 guid: a2ab3afead68eea419b6e05480b37b88
 folderAsset: yes
+>>>>>>> d0718fbc2651e48bbea82d6f9faa68b3d65eeb3c:Assets/Prefabs/Entities/Plants.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
