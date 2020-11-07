@@ -12,6 +12,11 @@ public abstract class Enemy : Entity
     [Header("Enemy Stats")]
 
     public float AttackSleep = .5f;
+    [HideInInspector]
+    public float Sleep = 0;
+
+    public bool DoesSleep { get => Sleep > 0; }
+
 
     private void Start()
     {
@@ -24,16 +29,32 @@ public abstract class Enemy : Entity
         other.TakeDamage(Damage);
 
         other.rigidbody.AddForce((other.transform.position - transform.position).normalized * Knockback);
-        Sleep = AttackSleep;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
-        Entity other = collision.gameObject.GetComponent<Entity>();
-        if (other && other.Team != Team)
+        if (!DoesSleep)
         {
-            Attack(other);
+            Entity other = collision.gameObject.GetComponent<Entity>();
+            if (other && other.Team != Team)
+            {
+                Attack(other);
+                Sleep = AttackSleep;
+            }
         }
+    }
+
+    public new void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        if (DoesSleep)
+            Sleep -= Time.fixedDeltaTime;
+    }
+
+    public override void Die()
+    {
+        Destroy(gameObject);
     }
 
 }

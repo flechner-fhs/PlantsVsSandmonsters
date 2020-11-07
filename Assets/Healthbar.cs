@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterScale : MonoBehaviour
+public class Healthbar : MonoBehaviour
 {
     public Player Player;
 
@@ -22,6 +22,6 @@ public class WaterScale : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scale.offsetMax = new Vector3(0, InitSize * Player.WaterSupply / 100);
+        Scale.offsetMax = new Vector3(0, InitSize * Player.Health / Player.MaxHealth);
     }
 }
