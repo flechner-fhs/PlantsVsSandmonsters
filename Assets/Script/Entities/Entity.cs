@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D), typeof(Rigidbody2D))]
 public abstract class Entity : MonoBehaviour
 {
+    [Header("Basic Stats")]
     public string UnitName = "Entity";
 
     public float Health = 20;

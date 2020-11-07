@@ -37,7 +37,31 @@ public class PathFinder : MonoBehaviour
 
         List<Node> newNodes = new List<Node>();
         List<Node> checkedNodes = new List<Node>();
-        newNodes.Add(new Node(myPos, 0, null));
+
+        //Set Start Position
+        if(Obstacles.GetTile(myPos) != null)
+        {
+            Vector3 myPosActual = me.transform.position;
+            Vector3 tilePosActual = Obstacles.CellToWorld(myPos) + new Vector3(.5f, .5f, 0);
+            Vector3 dir = (myPosActual - tilePosActual).normalized;
+
+            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            {
+                newNodes.Add(new Node(myPos + Vector3Int.right * (int)Mathf.Sign(dir.x), 0, null));
+                if (Obstacles.GetTile(newNodes[0].Position) != null)
+                    newNodes[0] = new Node(myPos + Vector3Int.up * (int)Mathf.Sign(dir.y), 0, null);
+            }
+            else
+            {
+                newNodes.Add(new Node(myPos + Vector3Int.up * (int)Mathf.Sign(dir.y), 0, null));
+                if (Obstacles.GetTile(newNodes[0].Position) != null)
+                    newNodes[0] = new Node(myPos + Vector3Int.right * (int)Mathf.Sign(dir.x), 0, null);
+            }
+        }
+        else
+        {
+            newNodes.Add(new Node(myPos, 0, null));
+        }
 
         int i = 0;
         int max = 1000;

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class WalkingEnemy : Enemy
 {
+    [Header("Walking Path")]
+
     public WalkingPath Path;
     [HideInInspector]
     public int Progress = 0;
 
-    public float PointTolerance = .02f;
+    public float PathTolerance = .02f;
 
     public override void Move()
     {
@@ -18,7 +20,7 @@ public class WalkingEnemy : Enemy
         Waypoint nextPoint = Path.waypoints[Progress];
         Vector3 direction = nextPoint.Position - transform.position;
 
-        if (direction.sqrMagnitude < PointTolerance)
+        if (direction.sqrMagnitude < PathTolerance)
         {
             Progress++;
             nextPoint = Path.waypoints[Progress];

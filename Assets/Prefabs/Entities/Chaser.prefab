@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3787623320757020318}
   - component: {fileID: 3787623320757020319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3787623321157806708}
   - component: {fileID: 3787623321157806711}
   - component: {fileID: 7110650541013184423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chaser
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   Core: {fileID: 0}
   AttackSleep: 0.5
-  Marker: {fileID: 0}
+  Marker: {fileID: 7483028070520106151, guid: 11012e2e2b6b5d3439588ffd41084d3c, type: 3}
   ShowMarkers: 0
 --- !u!1 &3787623321253576411
 GameObject:
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3787623321253576404}
   - component: {fileID: 3787623321253576405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
