@@ -6,8 +6,8 @@ public class Plantspawn : MonoBehaviour
 {
     public float ShootCooldown;
     public float Size;
-    public float Damage;
-    public float Health;
+    public int Damage;
+    public int Health;
 
     public GameObject projectile;
     public int waterReservoir;
@@ -49,7 +49,7 @@ public class Plantspawn : MonoBehaviour
         Vector2 direction;
         tf.findNextTarget(transform.position, out direction);
         GameObject projectilexy = GameObject.Instantiate(projectile);
-        projectilexy.GetComponent<Projectile>().Damage = Damage;
+        projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
         projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
         waterReservoir--;
     }
