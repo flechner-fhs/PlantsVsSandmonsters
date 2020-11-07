@@ -63,10 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Entities\ChasingEnemy.cs" />
     <Compile Include="Assets\Script\Entities\Core.cs" />
     <Compile Include="Assets\Script\Entities\Enemy.cs" />
     <Compile Include="Assets\Script\Entities\Entity.cs" />
     <Compile Include="Assets\Script\Entities\Player.cs" />
+    <Compile Include="Assets\Script\Entities\WalkingEnemy.cs" />
     <Compile Include="Assets\Script\Helper\PathFinder.cs" />
     <Compile Include="Assets\Script\Plantspawn.cs" />
     <Compile Include="Assets\Script\Projectiles\PlantProjectile.cs" />
@@ -75,10 +77,10 @@
     <Compile Include="Assets\Script\SceneHandler.cs" />
     <Compile Include="Assets\Script\TargetFinding.cs" />
     <Compile Include="Assets\Script\ToggleMusik.cs" />
+    <Compile Include="Assets\Script\Watergun.cs" />
     <Compile Include="Assets\Script\World\MonsterSpawner.cs" />
     <Compile Include="Assets\Script\World\WalkingPath.cs" />
     <Compile Include="Assets\Script\World\Waypoint.cs" />
-    <Compile Include="Assets\Watergun.cs" />
     <None Include="Assets\Fonts\README.txt" />
     <None Include="Assets\Fonts\OFL.txt" />
     <Reference Include="UnityEngine">

@@ -41,7 +41,9 @@ public class MonsterSpawner : MonoBehaviour
         if(Timer > Interval && SpawnQueue.Count > 0)
         {
             GameObject enemy = Instantiate(SpawnQueue[0].Item1, SpawnQueue[0].Item2.GetStartPosition(), Quaternion.identity);
-            enemy.GetComponent<Enemy>().Path = SpawnQueue[0].Item2;
+            WalkingEnemy wEnemy = enemy.GetComponent<WalkingEnemy>();
+            if(wEnemy)
+                wEnemy.Path = SpawnQueue[0].Item2;
             SpawnQueue.RemoveAt(0);
             Timer -= Interval;
         }

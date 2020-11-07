@@ -18,10 +18,23 @@ public abstract class Entity : MonoBehaviour
     public float MovementSpeed = 10;
     public float Size = 0.4f;
 
+    [HideInInspector]
     public CircleCollider2D collider;
+    [HideInInspector]
     public Rigidbody2D rigidbody;
 
     public bool DoesSleep { get => Sleep > 0;  }
+
+    private void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<CircleCollider2D>();
+    }
+
+    void Start()
+    {
+        collider.radius = Size;
+    }
 
     public void TakeDamage(float damage)
     {
@@ -29,11 +42,6 @@ public abstract class Entity : MonoBehaviour
 
         if (Health <= 0)
             Destroy(gameObject);
-    }
-
-    void Start()
-    {
-        collider.radius = Size;
     }
 
     private void FixedUpdate()
