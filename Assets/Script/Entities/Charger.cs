@@ -25,7 +25,8 @@ public class Charger : WalkingEnemy
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Entity>().Team != Team)
+        Entity entity = collision.gameObject.GetComponent<Entity>();
+        if (entity && entity.Team != Team)
         {
             TakeDamage(Health);
         }

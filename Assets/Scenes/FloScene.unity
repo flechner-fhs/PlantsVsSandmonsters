@@ -7592,6 +7592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
         type: 3}
+      propertyPath: EnemyProbability.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
+        type: 3}
       propertyPath: EnemyPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87,
@@ -7637,6 +7642,21 @@ PrefabInstance:
         type: 3}
       propertyPath: EndlessMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
+        type: 3}
+      propertyPath: EnemyProbability.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
+        type: 3}
+      propertyPath: EnemyProbability.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -3895934258554573126, guid: 80345ef660fa54e4a96124221aab5aa8,
+        type: 3}
+      propertyPath: EnemyProbability.Array.data[2]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 744207794268525863, guid: 80345ef660fa54e4a96124221aab5aa8,
         type: 3}
