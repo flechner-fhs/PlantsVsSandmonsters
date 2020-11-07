@@ -98,6 +98,8 @@ MonoBehaviour:
   Core: {fileID: 0}
   AttackSleep: 0.5
   Sleep: 0
+  Drop: {fileID: 294658302409400935, guid: 1af8978cf8974d44eb41197c3f79eeee, type: 3}
+  DropChance: 0.25
   Path: {fileID: 0}
   Progress: 0
   PathTolerance: 0.02

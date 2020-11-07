@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294658301627754075}
   - component: {fileID: 294658301627754074}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 294658302409400935}
   - component: {fileID: 294658302409400933}
   - component: {fileID: 294658302409400938}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EarthDrop
   m_TagString: Drop
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294658302544927681}
   - component: {fileID: 294658302544927680}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

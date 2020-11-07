@@ -179,5 +179,7 @@ MonoBehaviour:
   Core: {fileID: 0}
   AttackSleep: 0.5
   Sleep: 0
+  Drop: {fileID: 294658302409400935, guid: 1af8978cf8974d44eb41197c3f79eeee, type: 3}
+  DropChance: 0.1
   Marker: {fileID: 7483028070520106151, guid: 11012e2e2b6b5d3439588ffd41084d3c, type: 3}
   ShowMarkers: 0
