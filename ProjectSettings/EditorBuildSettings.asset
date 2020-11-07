@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FloScene.unity
     guid: ccc76966951b18248b7e628b50289076
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JonasMainePause.unity
     guid: 104db3ad015ed334a8dd74e5dec7a64f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OptionsScene.unity
     guid: cc035fa6c4a258846b9e59d3db349bfe
   m_configObjects: {}
