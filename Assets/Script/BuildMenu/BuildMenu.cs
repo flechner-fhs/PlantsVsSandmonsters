@@ -24,7 +24,7 @@ public class BuildMenu : MonoBehaviour
             GameObject BuildOptionObj = Instantiate(BuildOptionPrefab, transform);
             BuildOption BuildOption = BuildOptionObj.GetComponent<BuildOption>();
             BuildOption.Plant = unlockedPlants[i];
-            BuildOption.SetRotation(Mathf.Min(i * 360 / unlockedPlants.Count, 60));
+            BuildOption.SetRotation(-i * Mathf.Min(360 / unlockedPlants.Count, 60));
             BuildOption.GetComponentInChildren<BuildSelector>().OnClick = OnSelected;
             BuildOption.Setup();
         }
