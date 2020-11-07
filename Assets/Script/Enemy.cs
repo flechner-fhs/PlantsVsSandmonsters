@@ -65,7 +65,7 @@ public class Enemy : Entity
         {
             Path = new PathFinder.Path();
         }
-        else if (collision.gameObject.tag == "Obstacle" && Path.Target == null && Physics2D.Raycast(transform.position, Target.transform.position - transform.position, 1, 1024 + 256))
+        else if (collision.gameObject.tag == "Obstacle" && Physics2D.Raycast(transform.position, Target.transform.position - transform.position, 1, 1024 + 256))
         {
             Path = PathFinder.Instance.GetPathTo(gameObject, Target);
             UpdateMarkers();
