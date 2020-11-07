@@ -3741,7 +3741,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 1335
+      m_Bits: 3383
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4775,8 +4775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff1aa50fdf17f64a9e39e032516f1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlantHeal: 0.1
-  Damage: 0.1
+  PlantHeal: 0.2
+  Damage: 0.5
 --- !u!1 &7057394062950652023
 GameObject:
   m_ObjectHideFlags: 0

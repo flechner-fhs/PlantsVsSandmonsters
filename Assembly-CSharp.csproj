@@ -82,7 +82,6 @@
     <Compile Include="Assets\Script\Helper\AnimationController.cs" />
     <Compile Include="Assets\Script\Helper\KeyboardInputDetector.cs" />
     <Compile Include="Assets\Script\Helper\PathFinder.cs" />
-    <Compile Include="Assets\Script\Helper\SceneHandler.cs" />
     <Compile Include="Assets\Script\Helper\TargetFinding.cs" />
     <Compile Include="Assets\Script\Projectiles\PlantProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\Projectile.cs" />
