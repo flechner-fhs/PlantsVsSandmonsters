@@ -31,7 +31,7 @@ public class MonsterSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnWave(5);
+        SpawnWave(10);
     }
 
     private void Update()

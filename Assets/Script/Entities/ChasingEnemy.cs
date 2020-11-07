@@ -5,8 +5,10 @@ using System.Linq;
 
 public class ChasingEnemy : Enemy
 {
-    PathFinder.Path Path;
-    Entity Target;
+    private PathFinder.Path Path;
+    private Entity Target;
+
+    [Header("Visualise Chase Path")]
 
     public GameObject Marker;
     public bool ShowMarkers = false;
@@ -31,6 +33,8 @@ public class ChasingEnemy : Enemy
                 Path = PathFinder.Instance.GetPathTo(gameObject, Target.gameObject);
             UpdateMarkers();
 
+            if (Path.Directions == null)
+                return;
             Vector3 nextTarget = Path.Directions[0];
             Vector3 direction = nextTarget - transform.position;
 
@@ -38,12 +42,11 @@ public class ChasingEnemy : Enemy
             {
                 Path.Directions.Remove(nextTarget);
 
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Target.transform.position - transform.position, (Target.transform.position - transform.position).magnitude, 1024 + 256);
-                if (!hit || !hit.collider || hit.collider.tag != "Obstacle")
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Target.transform.position - transform.position, Mathf.Infinity, 512 + 1);
+                if (hit && hit.collider && hit.collider.tag == "Player")
                 {
-                    Debug.Log("Delete Path");
-                    Debug.Log(hit.collider);
                     Path = new PathFinder.Path();
+                    UpdateMarkers();
                 }
             }
 
@@ -60,8 +63,9 @@ public class ChasingEnemy : Enemy
         if (other && other.gameObject == Target)
         {
             Path = new PathFinder.Path();
+            UpdateMarkers();
         }
-        else if (collision.gameObject.tag == "Obstacle" && Physics2D.Raycast(transform.position, Target.transform.position - transform.position, 1, 1024 + 256))
+        else if (collision.gameObject.tag == "Obstacle" && Physics2D.Raycast(transform.position, Target.transform.position - transform.position, Mathf.Infinity, 512 + 1).collider.gameObject.tag != "Player")
         {
             Path = PathFinder.Instance.GetPathTo(gameObject, Target.gameObject);
             UpdateMarkers();

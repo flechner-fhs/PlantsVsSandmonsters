@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{67433315-7560-DCB6-4ECE-28DB06B1238D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -63,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimationController.cs" />
     <Compile Include="Assets\Script\BackgroundMusicScript.cs" />
     <Compile Include="Assets\Script\Entities\ChasingEnemy.cs" />
     <Compile Include="Assets\Script\Entities\Core.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Assets\Script\SceneHandler.cs" />
     <Compile Include="Assets\Script\TargetFinding.cs" />
     <Compile Include="Assets\Script\ToggleMusik.cs" />
+    <Compile Include="Assets\Script\UI\WaterScale.cs" />
     <Compile Include="Assets\Script\Watergun.cs" />
     <Compile Include="Assets\Script\World\MonsterSpawner.cs" />
     <Compile Include="Assets\Script\World\WalkingPath.cs" />
@@ -653,7 +656,8 @@
       <HintPath>C:/Users/florian/Desktop/GameJam/PlantsVsSandmonsters/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

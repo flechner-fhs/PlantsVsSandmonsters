@@ -4739,7 +4739,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4911,12 +4911,14 @@ MonoBehaviour:
   Knockback: 5
   Sleep: 0
   Team: 0
-  MovementSpeed: 10
+  MovementSpeed: 7
   Size: 0.4
   collider: {fileID: 7057394062995393752}
   rigidbody: {fileID: 7057394062995393755}
+  AnimationController: {fileID: 1154964119}
   WaterSupply: 100
-  ShootCostPerSecond: 0.1
+  ShootCostPerSecond: 10
+  ShootSlow: 0.5
   AngleAdjustment: -5
   WaterProjectile: {fileID: 5036796434819094361, guid: 31ff4e175cabb47468d50c9c6f61096d,
     type: 3}
@@ -4931,6 +4933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7057394063399911474}
   - component: {fileID: 7057394063399911475}
+  - component: {fileID: 1154964119}
   m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
@@ -5003,3 +5006,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1154964119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057394063399911473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b3ff558d73a4c409796686f0fc793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdleUp:
+  - {fileID: 8582945375850329407, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  IdleDown:
+  - {fileID: 1398936500759614037, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  IdleLeft:
+  - {fileID: -1414084095359316237, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  IdleRight:
+  - {fileID: 9135197895242554102, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  MoveUp:
+  - {fileID: 6957868187312738569, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 8582945375850329407, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 7978115625423758751, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 8582945375850329407, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  MoveDown:
+  - {fileID: 2387998329614426519, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 1398936500759614037, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 8364634281159674166, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 1398936500759614037, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  MoveLeft:
+  - {fileID: -7611426408432848315, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: -1414084095359316237, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  MoveRight:
+  - {fileID: 4885963110024258471, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 9135197895242554102, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  MaxFrames: 4
+  PlaybackSpeed: 0.1
+  Sprite: {fileID: 0}

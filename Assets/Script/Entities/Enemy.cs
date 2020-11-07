@@ -9,6 +9,8 @@ public abstract class Enemy : Entity
     [HideInInspector]
     public Core Core;
 
+    [Header("Enemy Stats")]
+
     public float AttackSleep = .5f;
 
     private void Start()
