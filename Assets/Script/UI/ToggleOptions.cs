@@ -7,6 +7,7 @@ public class ToggleOptions : MonoBehaviour
 {
     public GameObject optionsObject;
     public GameObject menuObject;
+
     // Start is called before the first frame update
 
     void Update()
