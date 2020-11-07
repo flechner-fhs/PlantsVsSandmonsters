@@ -69,6 +69,7 @@
      <Compile Include="Assets\Script\Projectiles\Projectile.cs" />
      <Compile Include="Assets\Script\Projectiles\WaterProjectile.cs" />
      <Compile Include="Assets\Script\SceneHandler.cs" />
+     <Compile Include="Assets\Script\SetBackgroundVolume.cs" />
      <Compile Include="Assets\Script\TargetFinding.cs" />
      <Compile Include="Assets\Script\Watergun.cs" />
      <Compile Include="Assets\Script\World\MonsterSpawner.cs" />
