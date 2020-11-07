@@ -13,6 +13,8 @@ public class MonsterSpawner : MonoBehaviour
 
     public List<(GameObject, WalkingPath)> SpawnQueue;
 
+    public bool EndlessMode = false;
+
     public void SpawnWave(int size)
     {
         for (int i = 0; i < size; i++)
@@ -46,6 +48,15 @@ public class MonsterSpawner : MonoBehaviour
                 wEnemy.Path = SpawnQueue[0].Item2;
             SpawnQueue.RemoveAt(0);
             Timer -= Interval;
+
+            if (EndlessMode && SpawnQueue.Count == 0)
+                StartCoroutine(AddWaveIn(5));
         }
+    }
+
+    IEnumerator AddWaveIn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SpawnWave(10);
     }
 }
