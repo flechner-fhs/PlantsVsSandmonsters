@@ -2,42 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plantspawn : MonoBehaviour
+public class Plant : Entity
 {
     public float ShootCooldown;
-    public float Size;
-    public int Damage;
-    public int Health;
+
+    public Sprite Sprite;
+    public float WaterCost = 10;
 
     public GameObject projectile;
-    public int waterReservoir;
+    public float WaterReservoir;
     float cd = 0;
 
-    void Start()
-    {
+    public Vector3 SpawnOffset;
 
+    public new void Start()
+    {
+        base.Start();
+        transform.position += SpawnOffset;
     }
 
-    void Update()
+    public override void Move()
     {
-        cd += Time.deltaTime;
+        cd += Time.fixedDeltaTime;
 
         if (cd >= ShootCooldown)
         {
-            if (waterReservoir > 0)
+            if (WaterReservoir > 0)
             {
                 Shoot();
             }
             else
             {
-                Health--;
+                TakeDamage(1);
             }
             cd = 0;
-        }
-
-        if (Health <= 0)
-        {
-            Destroy(this.gameObject);
         }
     }
 
@@ -49,8 +47,13 @@ public class Plantspawn : MonoBehaviour
             GameObject projectilexy = GameObject.Instantiate(projectile);
             projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
             projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
-            waterReservoir--;
+            WaterReservoir--;
         }
+    }
 
+
+    public override void Die()
+    {
+        Destroy(gameObject);
     }
 }

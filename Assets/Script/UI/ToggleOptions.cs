@@ -7,14 +7,26 @@ public class ToggleOptions : MonoBehaviour
 {
     public GameObject optionsObject;
     public GameObject menuObject;
-    // Start is called before the first frame update
+    public GameObject pixelateCamera;
 
+    // Start is called before the first frame update
+    private Pixelate pixeldCamera;
     void Update()
     {
         if (Input.GetKeyDown("escape"))
         {
+            pixeldCamera = pixelateCamera.GetComponent<Pixelate>();
             Time.timeScale = 0;
-            menuObject.SetActive(true);
+
+            float timeElapsed = 0;
+            while (timeElapsed < 2)
+            {
+                timeElapsed += Time.deltaTime;
+                pixeldCamera.pixelSizeX = (int) (timeElapsed * 9);
+            }
+            
+
+            menuObject.SetActive(true);         
         }
     }
 
@@ -22,6 +34,8 @@ public class ToggleOptions : MonoBehaviour
     {
         menuObject.SetActive(false);
         Time.timeScale = 1;
+        pixeldCamera = pixelateCamera.GetComponent<Pixelate>();
+        pixeldCamera.pixelSizeX = 0;
     }
 
     public void goToSettings()

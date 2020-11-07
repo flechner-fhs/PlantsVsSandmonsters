@@ -30,13 +30,11 @@ public class PlantProjectile : Projectile
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Plant")
+        if (collision.gameObject.tag == "Enemy")
         {
-            if (collision.gameObject.tag == "Enemy")
-            {
-                collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
-            }
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
         }
+        if(!collision.gameObject.GetComponent<Plant>())
+            Destroy(gameObject);
     }
 }

@@ -4775,8 +4775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff1aa50fdf17f64a9e39e032516f1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlantHeal: 1
-  Damage: 1
+  PlantHeal: 0.1
+  Damage: 0.1
 --- !u!1 &7057394062950652023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,8 +4801,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7057394062950652023}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28, y: -0.6954553, z: 0.953125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7057394062995393753}
@@ -4906,6 +4906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitName: Entity
+  MaxHealth: 20
   Health: 10
   Damage: 1
   Knockback: 500
@@ -4915,6 +4916,11 @@ MonoBehaviour:
   collider: {fileID: 7057394062995393752}
   rigidbody: {fileID: 7057394062995393755}
   AnimationController: {fileID: 1154964119}
+  BuildMenu: {fileID: 0}
+  Obstacles: {fileID: 0}
+  FlowerEarth: {fileID: 0}
+  EarthTile: {fileID: 11400000, guid: 888fadfaff6e5904c80deb6c1977db94, type: 2}
+  Earth: 5
   WaterSupply: 100
   ShootCostPerSecond: 10
   ShootSlow: 0.5

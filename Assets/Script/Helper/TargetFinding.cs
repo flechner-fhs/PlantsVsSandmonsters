@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
-public class TargetFinding : MonoBehaviour
+public class TargetFinding
 {
     private List<GameObject> characterInRangeList = new List<GameObject>();
     private List<GameObject> visibleCharacterList = new List<GameObject>();
@@ -64,14 +64,19 @@ public class TargetFinding : MonoBehaviour
     public void findNextTarget(Vector3 pos, out Vector2 direction)
     {
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = monsters[0];
-        foreach (GameObject monster in monsters)
+        if(monsters.Length > 0)
         {
-            if ((monster.transform.position - pos).magnitude < (closest.transform.position - pos).magnitude)
+            GameObject closest = monsters[0];
+            foreach (GameObject monster in monsters)
             {
-                closest = monster;
+                if ((monster.transform.position - pos).magnitude < (closest.transform.position - pos).magnitude)
+                {
+                    closest = monster;
+                }
             }
+            direction = closest.transform.position - pos;
+            return;
         }
-        direction = closest.transform.position - pos;
+        direction = Vector2.zero;
     }
 }

@@ -23,16 +23,16 @@ public abstract class Entity : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rigidbody;
 
-    private void Awake()
+    public void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<CircleCollider2D>();
-        Health = MaxHealth;
     }
 
-    void Start()
+    public void Start()
     {
         collider.radius = Size;
+        Health = MaxHealth;
     }
 
     public void TakeDamage(float damage)

@@ -18,8 +18,9 @@ public abstract class Enemy : Entity
     public bool DoesSleep { get => Sleep > 0; }
 
 
-    private void Start()
+    public new void Start()
     {
+        base.Start();
         Player = FindObjectOfType<Player>();
         Core = FindObjectOfType <Core> ();
     }
