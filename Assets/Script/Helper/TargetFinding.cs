@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetFinding : MonoBehaviour
+public class TargetFinding
 {
     public void findNextTarget(Vector3 pos, out Vector2 direction)
     {
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = monsters[0];
-        foreach (GameObject monster in monsters)
+        if(monsters.Length > 0)
         {
-            if ((monster.transform.position - pos).magnitude < (closest.transform.position - pos).magnitude)
+            GameObject closest = monsters[0];
+            foreach (GameObject monster in monsters)
             {
-                closest = monster;
+                if ((monster.transform.position - pos).magnitude < (closest.transform.position - pos).magnitude)
+                {
+                    closest = monster;
+                }
             }
+            direction = closest.transform.position - pos;
+            return;
         }
-        direction = closest.transform.position - pos;
+        direction = Vector2.zero;
     }
 }

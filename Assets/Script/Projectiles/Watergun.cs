@@ -27,7 +27,7 @@ public class Watergun : MonoBehaviour
                     other.GetComponent<Entity>().TakeDamage(Damage);
                     break;
                 case "Plant":
-                    other.GetComponent<Entity>().Health += PlantHeal;
+                    other.GetComponent<Entity>().Heal(PlantHeal);
                     break;
             }
         }

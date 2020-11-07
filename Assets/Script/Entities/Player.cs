@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class Player : Entity
 {
     [Header("Animation")]
     public AnimationController AnimationController;
+
+    [Header("Crafting")]
+    public BuildMenu BuildMenu;
+    public Tilemap Obstacles;
+    public Tilemap FlowerEarth;
+    public Tile EarthTile;
+    public int Earth = 0;
 
     [Header("Water Gun")]
     public float WaterSupply = 100;
@@ -45,6 +53,7 @@ public class Player : Entity
 
     private void Update()
     {
+        //Shoot Water
         if (Input.GetMouseButton(0) && WaterSupply > 0)
         {
             //Shoot
@@ -56,14 +65,34 @@ public class Player : Entity
             Watergun.gameObject.transform.rotation = Quaternion.Euler(Vector3.forward * angle);
             AnimationController.WalkDirection(direction);
 
-            if(!Watergun.IsActive())
+            if (!Watergun.IsActive())
                 Watergun.Activate();
 
             WaterSupply -= ShootCostPerSecond * Time.deltaTime;
         }
+        //Stop Water
         if (Input.GetMouseButtonUp(0) || WaterSupply <= 0)
             Watergun.Deactivate();
-    
+        //Place Earth
+        if (Input.GetMouseButton(1) && Earth > 0)
+        {
+            Vector3Int pos = Obstacles.WorldToCell(transform.position);
+            if (Obstacles.GetTile(pos) == null && FlowerEarth.GetTile(pos) == null)
+            {
+                FlowerEarth.SetTile(pos, EarthTile);
+                Earth--;
+                FlowerEarth.RefreshAllTiles();
+            }
+        }
+        //Open Build Menu
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3Int pos = FlowerEarth.WorldToCell(transform.position);
+            if (Obstacles.GetTile(pos) == null && FlowerEarth.GetTile(pos) != null)
+            {
+                BuildMenu.Activate();
+            }
+        }
     }
 
     public bool IsShooting() => Input.GetMouseButton(0);

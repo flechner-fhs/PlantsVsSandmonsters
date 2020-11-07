@@ -14,6 +14,8 @@ public class PlantProjectile : Projectile
         tf.findNextTarget(transform.position, out direction);
         direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
         Rigidbody.MovePosition((Vector2)transform.position + direction);
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,7 +25,8 @@ public class PlantProjectile : Projectile
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
         }
-        Destroy(this.gameObject);
+        if(!collision.gameObject.GetComponent<Plant>())
+            Destroy(gameObject);
 
     }
 }

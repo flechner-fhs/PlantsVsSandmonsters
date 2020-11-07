@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064731336121108471}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.36, y: -0.37, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2547559984740020556, guid: 733ba8a54b27ad142a7f921982717df0,
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 2216268681409575994, guid: a9cdac78de40c5245b56616867f9ab4a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,13 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShootCooldown: 1
-  Size: 1
-  Damage: 5
-  Health: 100
+  UnitName: Purple Boy
+  MaxHealth: 20
+  Health: 20
+  Damage: 2
+  Knockback: 300
+  Team: 0
+  MovementSpeed: 0
+  Size: 0.25
+  collider: {fileID: 0}
+  rigidbody: {fileID: 0}
+  ShootCooldown: 0.5
+  Sprite: {fileID: 2216268681409575994, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
+  WaterCost: 10
   projectile: {fileID: 1241811290087824246, guid: 9bc0e0b7c337b564a875ef91ee73c674,
     type: 3}
   waterReservoir: 50
+  SpawnOffset: {x: 0, y: 0.19, z: 0}
 --- !u!58 &-7058759952769659955
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -119,7 +129,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.50252527
+  m_Radius: 0.25
 --- !u!50 &-146541338494381385
 Rigidbody2D:
   serializedVersion: 4
@@ -140,4 +150,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
