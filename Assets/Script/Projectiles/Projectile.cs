@@ -5,7 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
-    public float MovementSpeed;
+    [HideInInspector]
+    public float MovementSpeed = 5;
+    [HideInInspector]
     public float Damage;
     [HideInInspector]
     public Rigidbody2D Rigidbody;

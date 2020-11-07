@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9064731336121108471
+--- !u!1 &3433418733136233912
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9064731336121108465}
-  - component: {fileID: 9064731336121108470}
-  - component: {fileID: 9064731336121108464}
-  - component: {fileID: -7058759952769659955}
-  - component: {fileID: -146541338494381385}
+  - component: {fileID: 7499406000326622673}
+  - component: {fileID: 1432821244290501781}
+  - component: {fileID: 864560061492951881}
+  - component: {fileID: 8077408794096216429}
+  - component: {fileID: -5875232286747528248}
   m_Layer: 0
-  m_Name: Plant
-  m_TagString: Plant
+  m_Name: Bumarang
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9064731336121108465
+--- !u!4 &7499406000326622673
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064731336121108471}
+  m_GameObject: {fileID: 3433418733136233912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.36, y: -0.37, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9064731336121108470
+--- !u!212 &1432821244290501781
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064731336121108471}
+  m_GameObject: {fileID: 3433418733136233912}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,54 +73,78 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 2216268681409575994, guid: a9cdac78de40c5245b56616867f9ab4a,
+  m_Sprite: {fileID: -1624672663843960911, guid: 399d6d1cf76ee45459433a5c8b9aadde,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.0037879, y: 1.0050505}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9064731336121108464
+--- !u!114 &864560061492951881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064731336121108471}
+  m_GameObject: {fileID: 3433418733136233912}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitName: Purple Boy
-  MaxHealth: 10
+  UnitName: Entity
+  MaxHealth: 20
   Health: 20
-  Damage: 2
-  Knockback: 300
+  Damage: 1
+  Knockback: 500
   Team: 0
-  MovementSpeed: 0
-  Size: 0.25
+  MovementSpeed: 10
+  Size: 0.4
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
-  ShootCooldown: 0.3
-  Sprite: {fileID: 2216268681409575994, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
+  ShootCooldown: 0.5
   WaterCost: 10
-  projectile: {fileID: 1241811290087824246, guid: 9bc0e0b7c337b564a875ef91ee73c674,
+  ProjectileCost: 0.4
+  WaterReservoir: 30
+  Target: 1
+  AttRange: 4
+  Sprite: {fileID: -1624672663843960911, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
+  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
     type: 3}
-  WaterReservoir: 100
-  SpawnOffset: {x: 0, y: 0.19, z: 0}
---- !u!58 &-7058759952769659955
+  SpawnOffset: {x: 0, y: 0, z: 0}
+--- !u!50 &8077408794096216429
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433418733136233912}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &-5875232286747528248
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064731336121108471}
+  m_GameObject: {fileID: 3433418733136233912}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -129,25 +153,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
---- !u!50 &-146541338494381385
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064731336121108471}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Radius: 0.5
