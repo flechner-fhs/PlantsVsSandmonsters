@@ -8,6 +8,7 @@ public class ToggleOptions : MonoBehaviour
     public GameObject settingsObject;
     public GameObject pauseObject;
     public GameObject pixelateCamera;
+    public GameObject lifebars;
 
     private Pixelate pixeldCamera;
 
@@ -15,6 +16,7 @@ public class ToggleOptions : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
+            lifebars.SetActive(false);
             pixeldCamera = pixelateCamera.GetComponent<Pixelate>();
             Time.timeScale = 0;
 
@@ -34,6 +36,7 @@ public class ToggleOptions : MonoBehaviour
         Time.timeScale = 1;
         pixeldCamera = pixelateCamera.GetComponent<Pixelate>();
         pixeldCamera.pixelSizeX = 0;
+        lifebars.SetActive(true);
     }
 
     public void goToSettings()
