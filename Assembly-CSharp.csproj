@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CoreHealthbar.cs" />
     <Compile Include="Assets\Script\Audio\BackgroundMusicScript.cs" />
     <Compile Include="Assets\Script\Audio\SetBackgroundVolume.cs" />
     <Compile Include="Assets\Script\Entities\ChasingEnemy.cs" />
