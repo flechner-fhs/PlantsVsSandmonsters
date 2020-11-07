@@ -17,6 +17,9 @@ public abstract class Enemy : Entity
     [HideInInspector]
     public float Sleep = 0;
 
+    public Drop Drop;
+    public float DropChance = 0.1f;
+
     public bool DoesSleep { get => Sleep > 0; }
 
     public new void Awake()
@@ -63,6 +66,9 @@ public abstract class Enemy : Entity
 
     public override void Die()
     {
+        if (Drop && Random.Range(0f, 1f) < DropChance)
+            Instantiate(Drop, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 
