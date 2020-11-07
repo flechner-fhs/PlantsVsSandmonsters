@@ -5,25 +5,38 @@ using UnityEngine.UIElements;
 
 public class PlantProjectile : Projectile
 {
+    float cd = 0.5f;
+    Vector2 oldDirection = Vector2.zero;
 
-    // Update is called once per frame
     void Update()
     {
-        TargetFinding tf = new TargetFinding();
-        Vector2 direction;
-        tf.findNextTarget(transform.position, out direction);
-        direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
-        Rigidbody.MovePosition((Vector2)transform.position + direction);
+        if (cd >= 0.5)
+        {
+            TargetFinding tf = new TargetFinding();
+            if (tf.findTarget(out Vector2 direction, transform.position, 0, 10, "Enemy"))
+            {
+                direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
+                oldDirection = direction;
+            }
+
+            cd = 0;
+        }
+        else
+        {
+            cd += Time.fixedDeltaTime;
+        }
+        Rigidbody.MovePosition((Vector2)transform.position + oldDirection);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag != "Plant")
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
+            }
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
-
     }
 }

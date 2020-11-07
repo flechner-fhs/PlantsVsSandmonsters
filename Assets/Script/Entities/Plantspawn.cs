@@ -11,15 +11,13 @@ public class Plantspawn : MonoBehaviour
 
     public GameObject projectile;
     public int waterReservoir;
-    float cd;
+    float cd = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         cd += Time.deltaTime;
@@ -46,11 +44,13 @@ public class Plantspawn : MonoBehaviour
     private void Shoot()
     {
         TargetFinding tf = new TargetFinding();
-        Vector2 direction;
-        tf.findNextTarget(transform.position, out direction);
-        GameObject projectilexy = GameObject.Instantiate(projectile);
-        projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
-        projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
-        waterReservoir--;
+        if (tf.findTarget(out Vector2 direction, transform.position, 0, 10, "Enemy"))
+        {
+            GameObject projectilexy = GameObject.Instantiate(projectile);
+            projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
+            projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
+            waterReservoir--;
+        }
+
     }
 }

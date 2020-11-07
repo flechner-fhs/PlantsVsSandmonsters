@@ -6038,6 +6038,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6664843525526794133, guid: f6ffb3a4989672c499d8b660087e211b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6664843525526794135, guid: f6ffb3a4989672c499d8b660087e211b,
         type: 3}
       propertyPath: m_Name
