@@ -11,8 +11,6 @@ public class BuildOption : MonoBehaviour
 
     public void Setup()
     {
-        Debug.Log("Setup");
-        Debug.Log(Plant.name);
         BuildSelector selector = GetComponentInChildren<BuildSelector>();
         selector.Plant = Plant;
         selector.GetComponent<SpriteRenderer>().sprite = Plant.GetComponent<Plant>().Sprite;
