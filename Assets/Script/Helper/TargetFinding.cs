@@ -62,8 +62,16 @@ public class TargetFinding
 
                 case 3:
                     sortAfterStrongest(false);
-                    direction = (Vector2)visibleCharacterList[0].transform.position - pos;
-                    isTarget = true;
+                    if (visibleCharacterList.Count > 0)
+                    {
+                        direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                        isTarget = true;
+                    }
+                    else
+                    {
+                        direction = Vector2.zero;
+                        isTarget = false;
+                    }
                     break;
 
                 default:

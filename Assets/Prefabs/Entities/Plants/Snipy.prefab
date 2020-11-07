@@ -116,7 +116,8 @@ MonoBehaviour:
   Sprite: {fileID: 2125229475114858618, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
   ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
     type: 3}
-  SpawnOffset: {x: 0, y: 0, z: 0}
+  SpawnOffset: {x: -0.046, y: 0.441, z: 0}
+  MenuOffset: {x: 0.097, y: 0.892, z: 0}
 --- !u!50 &1259817383457911112
 Rigidbody2D:
   serializedVersion: 4
