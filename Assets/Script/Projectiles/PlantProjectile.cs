@@ -21,7 +21,7 @@ public class PlantProjectile : Projectile
 
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().Health -= Damage;
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
         }
         Destroy(this.gameObject);
 
