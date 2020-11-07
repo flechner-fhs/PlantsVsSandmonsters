@@ -10,7 +10,7 @@ public class LevelSelector : MonoBehaviour
     public GameObject levelButtons;
     private GameObject nextLevel;
 
-    public void SelectLeves()
+    public void SelectLevels()
     {
         startingButtons.SetActive(false);
         levelButtons.SetActive(true);
