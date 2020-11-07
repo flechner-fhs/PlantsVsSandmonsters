@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9064731336121108465}
   - component: {fileID: 9064731336121108470}
-  - component: {fileID: 9064731336121108464}
   - component: {fileID: -7058759952769659955}
   - component: {fileID: -146541338494381385}
+  - component: {fileID: -6974371984835947878}
   m_Layer: 0
-  m_Name: Plant
+  m_Name: Attacus
   m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064731336121108471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.36, y: -0.37, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,35 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9064731336121108464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064731336121108471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnitName: Purple Boy
-  MaxHealth: 10
-  Health: 20
-  Damage: 2
-  Knockback: 300
-  Team: 0
-  MovementSpeed: 0
-  Size: 0.25
-  collider: {fileID: 0}
-  rigidbody: {fileID: 0}
-  ShootCooldown: 0.3
-  Sprite: {fileID: 2216268681409575994, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
-  WaterCost: 10
-  projectile: {fileID: 1241811290087824246, guid: 9bc0e0b7c337b564a875ef91ee73c674,
-    type: 3}
-  WaterReservoir: 100
-  SpawnOffset: {x: 0, y: 0.19, z: 0}
 --- !u!58 &-7058759952769659955
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +122,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6974371984835947878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9064731336121108471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitName: Entity
+  MaxHealth: 20
+  Health: 20
+  Damage: 2
+  Knockback: 500
+  Team: 0
+  MovementSpeed: 10
+  Size: 0.4
+  collider: {fileID: 0}
+  rigidbody: {fileID: 0}
+  ShootCooldown: 1
+  WaterCost: 10
+  ProjectileCost: 2
+  WaterReservoir: 30
+  Target: 1
+  AttRange: 5
+  Sprite: {fileID: -291889198579376318, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
+  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
+    type: 3}
+  SpawnOffset: {x: 0, y: 0.13, z: 0}
+  MenuOffset: {x: 0.04, y: 0.82, z: 0}

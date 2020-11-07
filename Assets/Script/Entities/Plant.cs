@@ -1,19 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Plant : Entity
 {
     public float ShootCooldown;
-
-    public Sprite Sprite;
     public float WaterCost = 10;
-
-    public GameObject projectile;
+    public float ProjectileCost;
     public float WaterReservoir;
+    //
+    public int Target = 1;
+    public int AttRange;
+    public Sprite Sprite;
+    public GameObject ThisPlantProjectile;
     float cd = 0;
 
     public Vector3 SpawnOffset;
+    public Vector3 MenuOffset;
 
     public new void Start()
     {
@@ -27,13 +31,17 @@ public class Plant : Entity
 
         if (cd >= ShootCooldown)
         {
-            if (WaterReservoir > 0)
+            if (WaterReservoir > ProjectileCost)
             {
                 Shoot();
             }
+            else if (WaterReservoir > 0)
+            {
+                WaterReservoir--;
+            }
             else
             {
-                TakeDamage(1);
+                TakeDamage(ProjectileCost);
             }
             cd = 0;
         }
@@ -42,15 +50,14 @@ public class Plant : Entity
     private void Shoot()
     {
         TargetFinding tf = new TargetFinding();
-        if (tf.findTarget(out Vector2 direction, transform.position, 0, 10, "Enemy"))
+        if (tf.findTarget(out Vector2 direction, transform.position, Target, AttRange, "Enemy"))
         {
-            GameObject projectilexy = GameObject.Instantiate(projectile);
-            projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
-            projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
-            WaterReservoir--;
+            GameObject thisProjectile = Instantiate(ThisPlantProjectile);
+            thisProjectile.GetComponent<Projectile>().Damage = Damage;
+            thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * Size);
+            WaterReservoir -= ProjectileCost;
         }
     }
-
 
     public override void Die()
     {

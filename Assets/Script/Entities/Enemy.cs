@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Enemy : Entity
 {
+    public static List<Enemy> Enemies = new List<Enemy>();
+
     [HideInInspector]
     public Player Player;
     [HideInInspector]
@@ -17,6 +19,12 @@ public abstract class Enemy : Entity
 
     public bool DoesSleep { get => Sleep > 0; }
 
+    public new void Awake()
+    {
+        base.Awake();
+
+        Enemies.Add(this);
+    }
 
     public new void Start()
     {
@@ -56,6 +64,11 @@ public abstract class Enemy : Entity
     public override void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Enemies.Remove(this);
     }
 
 }
