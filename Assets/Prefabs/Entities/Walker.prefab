@@ -87,9 +87,8 @@ MonoBehaviour:
   UnitName: Entity
   Health: 20
   Damage: 1
-  Knockback: 5
-  Sleep: 0
-  Team: 0
+  Knockback: 2000
+  Team: 1
   MovementSpeed: 3
   Size: 0.3
   collider: {fileID: 7611472369936798059}
@@ -97,9 +96,10 @@ MonoBehaviour:
   Player: {fileID: 0}
   Core: {fileID: 0}
   AttackSleep: 0.5
+  Sleep: 0
   Path: {fileID: 0}
   Progress: 0
-  PointTolerance: 0.02
+  PathTolerance: 0.02
 --- !u!1 &7611472369959159236
 GameObject:
   m_ObjectHideFlags: 0

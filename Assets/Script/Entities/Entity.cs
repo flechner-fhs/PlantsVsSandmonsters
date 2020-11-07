@@ -8,11 +8,10 @@ public abstract class Entity : MonoBehaviour
     [Header("Basic Stats")]
     public string UnitName = "Entity";
 
+    public float MaxHealth = 20;
     public float Health = 20;
     public float Damage = 1;
-    public float Knockback = 5;
-    [HideInInspector]
-    public float Sleep = 0;
+    public float Knockback = 500;
 
     public int Team = 0;
 
@@ -24,12 +23,11 @@ public abstract class Entity : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rigidbody;
 
-    public bool DoesSleep { get => Sleep > 0;  }
-
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<CircleCollider2D>();
+        Health = MaxHealth;
     }
 
     void Start()
@@ -42,17 +40,20 @@ public abstract class Entity : MonoBehaviour
         Health -= damage;
 
         if (Health <= 0)
-            Destroy(gameObject);
+            Die();
     }
 
-    private void FixedUpdate()
+    public void Heal(float healing)
     {
-        if (!DoesSleep)
-            Move();
-        else
-            Sleep -= Time.fixedDeltaTime;
+        Health = Mathf.Min(MaxHealth, Health + healing);
+    }
+
+    public void FixedUpdate()
+    {
+        Move();
     }
 
     abstract public void Move();
+    abstract public void Die();
 
 }

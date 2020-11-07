@@ -57,8 +57,10 @@ public class ChasingEnemy : Enemy
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private new void OnCollisionStay2D(Collision2D collision)
     {
+        base.OnCollisionStay2D(collision);
+
         Entity other = collision.gameObject.GetComponent<Entity>();
         if (other && other.gameObject == Target)
         {
