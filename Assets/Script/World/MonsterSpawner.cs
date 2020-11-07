@@ -11,11 +11,12 @@ public class MonsterSpawner : MonoBehaviour
 
     public List<WalkingPath> WalkingPaths;
 
-    public float Interval = 1;
+    public float Interval = 0.1f;
     private float Timer = 0;
 
     public List<(GameObject, WalkingPath)> SpawnQueue;
 
+    public bool TestMode = false;
     public bool EndlessMode = false;
 
     public void SpawnWave(int size)
@@ -41,6 +42,15 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
+    public void SpawnWave(List<GameObject> enemies)
+    {
+        enemies.ForEach(x =>
+        {
+            WalkingPath path = WalkingPaths[Random.Range(0, WalkingPaths.Count)];
+            SpawnQueue.Add((x, path));
+        });
+    }
+
     private void Awake()
     {
         GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
@@ -53,7 +63,8 @@ public class MonsterSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnWave(10);
+        if(TestMode)
+            SpawnWave(10);
     }
 
     private void Update()
@@ -67,7 +78,7 @@ public class MonsterSpawner : MonoBehaviour
             if(wEnemy)
                 wEnemy.Path = SpawnQueue[0].Item2;
             SpawnQueue.RemoveAt(0);
-            Timer -= Interval;
+            Timer = 0;
 
             if (EndlessMode && SpawnQueue.Count == 0)
                 StartCoroutine(AddWaveIn(5));

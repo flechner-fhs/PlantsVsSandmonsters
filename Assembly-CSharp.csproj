@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DirtCounter.cs" />
+    <Compile Include="Assets\LevelManager.cs" />
+    <Compile Include="Assets\MonsterWave.cs" />
     <Compile Include="Assets\Pixelate\Pixelate.cs" />
     <Compile Include="Assets\Script\Audio\BackgroundMusicScript.cs" />
     <Compile Include="Assets\Script\Audio\SetBackgroundVolume.cs" />
