@@ -100,7 +100,7 @@ MonoBehaviour:
   Path: {fileID: 0}
   Progress: 0
   PathTolerance: 0.02
-  Range: 1
+  Range: 2
 --- !u!1 &3127543569805794342
 GameObject:
   m_ObjectHideFlags: 0
