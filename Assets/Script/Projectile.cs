@@ -20,8 +20,8 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         TargetFinding tf = new TargetFinding();
-        Vector2 direction; 
-        tf.findNextTarget(out direction, transform.position);
+        Vector2 direction;
+        tf.findNextTarget(transform.position, out direction);
         direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
         rigidbody.MovePosition((Vector2)transform.position + direction);
     }
@@ -29,6 +29,10 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().Health -= (int)Damage;
+        }
         Destroy(this.gameObject);
 
     }
