@@ -13438,11 +13438,11 @@ RectTransform:
   m_Father: {fileID: 1647592366}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 423, y: -216}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1918849474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14367,31 +14367,31 @@ PrefabInstance:
         type: 3}
       propertyPath: unlockedPlants.Array.data[1]
       value: 
-      objectReference: {fileID: 9064731336121108471, guid: f6215615b657bf54ab77e599512e6f7f,
+      objectReference: {fileID: 9108640058339567271, guid: 80d3650a9836fa34fbe605cce07ef1e6,
         type: 3}
     - target: {fileID: 3011141019711287901, guid: 75e021680c7f31a4c8e72a0e8aaa73ba,
         type: 3}
       propertyPath: unlockedPlants.Array.data[2]
       value: 
-      objectReference: {fileID: 9064731336121108471, guid: f6215615b657bf54ab77e599512e6f7f,
+      objectReference: {fileID: 3433418733136233912, guid: d3553a94c92e004489ea709cc78f9737,
         type: 3}
     - target: {fileID: 3011141019711287901, guid: 75e021680c7f31a4c8e72a0e8aaa73ba,
         type: 3}
       propertyPath: unlockedPlants.Array.data[3]
       value: 
-      objectReference: {fileID: 9064731336121108471, guid: f6215615b657bf54ab77e599512e6f7f,
+      objectReference: {fileID: 8327744619649515149, guid: a7ae4b1ca742a5c468b449cb65efead0,
         type: 3}
     - target: {fileID: 3011141019711287901, guid: 75e021680c7f31a4c8e72a0e8aaa73ba,
         type: 3}
       propertyPath: unlockedPlants.Array.data[4]
       value: 
-      objectReference: {fileID: 9064731336121108471, guid: f6215615b657bf54ab77e599512e6f7f,
+      objectReference: {fileID: 1596134950924300615, guid: 3e816350af029e34e9c74dcd8b8bea48,
         type: 3}
     - target: {fileID: 3011141019711287901, guid: 75e021680c7f31a4c8e72a0e8aaa73ba,
         type: 3}
       propertyPath: unlockedPlants.Array.data[5]
       value: 
-      objectReference: {fileID: 9064731336121108471, guid: f6215615b657bf54ab77e599512e6f7f,
+      objectReference: {fileID: 2490907944781874427, guid: c2a242923ddb44b4799e2f1b59e00d9f,
         type: 3}
     - target: {fileID: 3011141019711287901, guid: 75e021680c7f31a4c8e72a0e8aaa73ba,
         type: 3}

@@ -14,6 +14,7 @@ public class BuildOption : MonoBehaviour
         BuildSelector selector = GetComponentInChildren<BuildSelector>();
         selector.Plant = Plant;
         selector.GetComponent<SpriteRenderer>().sprite = Plant.GetComponent<Plant>().Sprite;
+        selector.transform.localPosition = Plant.GetComponent<Plant>().MenuOffset;
     }
 
     public void SetRotation(float angle)

@@ -153,4 +153,5 @@ MonoBehaviour:
   Sprite: {fileID: -8938968365321167671, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
   ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
     type: 3}
-  SpawnOffset: {x: 0, y: 0, z: 0}
+  SpawnOffset: {x: -0.022, y: 0.387, z: 0}
+  MenuOffset: {x: 0.049, y: 0.726, z: 0}

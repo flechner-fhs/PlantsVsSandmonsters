@@ -17,6 +17,7 @@ public class Plant : Entity
     float cd = 0;
 
     public Vector3 SpawnOffset;
+    public Vector3 MenuOffset;
 
     public new void Start()
     {
