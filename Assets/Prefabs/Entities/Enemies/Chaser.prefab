@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3787623320757020318}
   - component: {fileID: 3787623320757020319}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3787623321157806708}
   - component: {fileID: 3787623321157806711}
   - component: {fileID: 7110650541013184423}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Chaser
   m_TagString: Enemy
   m_Icon: {fileID: 0}

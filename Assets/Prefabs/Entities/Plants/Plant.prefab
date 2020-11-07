@@ -107,12 +107,12 @@ MonoBehaviour:
   Size: 0.25
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
-  ShootCooldown: 0.5
+  ShootCooldown: 0.3
   Sprite: {fileID: 2216268681409575994, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
   WaterCost: 10
   projectile: {fileID: 1241811290087824246, guid: 9bc0e0b7c337b564a875ef91ee73c674,
     type: 3}
-  waterReservoir: 50
+  WaterReservoir: 100
   SpawnOffset: {x: 0, y: 0.19, z: 0}
 --- !u!58 &-7058759952769659955
 CircleCollider2D:

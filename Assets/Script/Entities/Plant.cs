@@ -42,11 +42,13 @@ public class Plant : Entity
     private void Shoot()
     {
         TargetFinding tf = new TargetFinding();
-        tf.findNextTarget(transform.position, out Vector2 direction);
-        GameObject projectilexy = GameObject.Instantiate(projectile);
-        projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
-        projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
-        WaterReservoir--;
+        if (tf.findTarget(out Vector2 direction, transform.position, 0, 10, "Enemy"))
+        {
+            GameObject projectilexy = GameObject.Instantiate(projectile);
+            projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
+            projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
+            WaterReservoir--;
+        }
     }
 
 
