@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitName: Purple Boy
-  MaxHealth: 20
+  MaxHealth: 10
   Health: 20
   Damage: 2
   Knockback: 300

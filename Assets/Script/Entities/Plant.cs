@@ -10,7 +10,7 @@ public class Plant : Entity
     public float WaterCost = 10;
 
     public GameObject projectile;
-    public int waterReservoir;
+    public float WaterReservoir;
     float cd = 0;
 
     public Vector3 SpawnOffset;
@@ -27,7 +27,7 @@ public class Plant : Entity
 
         if (cd >= ShootCooldown)
         {
-            if (waterReservoir > 0)
+            if (WaterReservoir > 0)
             {
                 Shoot();
             }
@@ -46,7 +46,7 @@ public class Plant : Entity
         GameObject projectilexy = GameObject.Instantiate(projectile);
         projectilexy.GetComponent<PlantProjectile>().Damage = Damage;
         projectilexy.transform.position = transform.position + (Vector3)(direction.normalized * Size);
-        waterReservoir--;
+        WaterReservoir--;
     }
 
 
