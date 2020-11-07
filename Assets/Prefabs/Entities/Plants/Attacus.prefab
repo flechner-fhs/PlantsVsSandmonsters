@@ -140,7 +140,7 @@ MonoBehaviour:
   Damage: 2
   Knockback: 500
   Team: 0
-  MovementSpeed: 10
+  MovementSpeed: 1
   Size: 0.4
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
