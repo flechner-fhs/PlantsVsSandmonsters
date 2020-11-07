@@ -169,7 +169,7 @@ MonoBehaviour:
   MaxHealth: 20
   Health: 20
   Damage: 1
-  Knockback: 2000
+  Knockback: 800
   Team: 1
   MovementSpeed: 5
   Size: 0.2

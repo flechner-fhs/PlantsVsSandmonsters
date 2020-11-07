@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3127543568331788495}
   - component: {fileID: 3127543568331788492}
   - component: {fileID: 4811574505492300194}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Charger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   Path: {fileID: 0}
   Progress: 0
   PathTolerance: 0.02
-  Range: 1
+  Range: 2
 --- !u!1 &3127543569805794342
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3127543569805794341}
   - component: {fileID: 3127543569805794340}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

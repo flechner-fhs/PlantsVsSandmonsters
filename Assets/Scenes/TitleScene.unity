@@ -1897,7 +1897,6 @@ GameObject:
   - component: {fileID: 1375737740}
   - component: {fileID: 1375737739}
   - component: {fileID: 1375737738}
-  - component: {fileID: 1375737737}
   - component: {fileID: 1375737736}
   m_Layer: 5
   m_Name: LevelSelection
@@ -1945,18 +1944,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1375737737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375737734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab31c1dc3f34edc43a574091684810e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1375737738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2340,7 +2327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: d69323a18a385cd43a172f412b6e33c4, type: 2}
-  slider: {fileID: 4965954788642668036, guid: aecce869e37750b45a9d01c463cd0a47, type: 3}
+  slider: {fileID: 7710454208232727436, guid: f8ce7f0c18676aa46b6f08d5eb4098dd, type: 3}
 --- !u!1 &1630255168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,7 +3316,6 @@ GameObject:
   - component: {fileID: 2015247109}
   - component: {fileID: 2015247108}
   - component: {fileID: 2015247107}
-  - component: {fileID: 2015247110}
   - component: {fileID: 2015247111}
   m_Layer: 5
   m_Name: StartButton
@@ -3401,8 +3387,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015247110}
-        m_MethodName: GotoGameScene
+      - m_Target: {fileID: 868503454}
+        m_MethodName: startButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3449,18 +3435,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015247105}
   m_CullTransparentMesh: 0
---- !u!114 &2015247110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015247105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab31c1dc3f34edc43a574091684810e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2015247111
 Animator:
   serializedVersion: 3

@@ -43,6 +43,8 @@ public class MonsterSpawner : MonoBehaviour
 
     private void Awake()
     {
+        GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
+
         SpawnQueue = new List<(GameObject, WalkingPath)>();
 
         while (EnemyProbability.Count < EnemyPrefabs.Count)
