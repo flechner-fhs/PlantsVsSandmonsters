@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
@@ -34,6 +35,12 @@ public class Player : Entity
             movement *= ShootSlow;
 
         rigidbody.MovePosition(transform.position + movement * Time.fixedDeltaTime * MovementSpeed);
+    }
+
+    public override void Die()
+    {
+        Debug.Log("You died!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Update()

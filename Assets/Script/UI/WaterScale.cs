@@ -9,7 +9,6 @@ public class WaterScale : MonoBehaviour
     public RectTransform Scale;
 
     private float InitSize;
-    private float MaxSize;
 
     // Start is called before the first frame update
     void Start()
