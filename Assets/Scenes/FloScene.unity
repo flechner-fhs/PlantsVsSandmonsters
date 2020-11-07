@@ -7282,14 +7282,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 949594321, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
-      propertyPath: PlantHeal
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 949594321, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
-      propertyPath: Damage
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7057394062995393751, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
       propertyPath: m_Name

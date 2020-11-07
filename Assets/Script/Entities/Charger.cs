@@ -36,7 +36,7 @@ public class Charger : WalkingEnemy
         base.Die();
         FindObjectsOfType<Entity>()
             .Where(x => x.Team != Team)
-            .Where(x => (transform.position - x.transform.position).magnitude < Range)
+            .Where(x => (x.transform.position - transform.position).magnitude < Range)
             .ToList()
             .ForEach(x => x.TakeDamage(Damage));
     }
