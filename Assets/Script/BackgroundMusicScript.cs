@@ -1,19 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BackgroundMusicScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-      /**  GameObject backgroundMusicPlayer = GameObject.Find("MusicContainer");
-        AudioSource[] backgroundMusic = GetComponents<AudioSource>();
-        Debug.Log(backgroundMusic[0].playOnAwake);
-        backgroundMusic[0].playOnAwake = false;
-
-        DontDestroyOnLoad(backgroundMusicPlayer); **/
-    }
 
     private static BackgroundMusicScript _instance;
 
