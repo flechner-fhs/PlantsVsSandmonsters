@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
     public List<GameObject> EnemyPrefabs;
+
+    public List<float> EnemyProbability;
 
     public List<WalkingPath> WalkingPaths;
 
@@ -17,18 +20,33 @@ public class MonsterSpawner : MonoBehaviour
 
     public void SpawnWave(int size)
     {
+        float chanceTotal = EnemyProbability.Sum();
         for (int i = 0; i < size; i++)
         {
-            GameObject slot = EnemyPrefabs[Random.Range(0, EnemyPrefabs.Count)];
-            WalkingPath path = WalkingPaths[Random.Range(0, WalkingPaths.Count)];
+            float draw = Random.Range(0, chanceTotal);
+            float val = 0;
 
-            SpawnQueue.Add((slot, path));
+            for(int j = 0; j < EnemyPrefabs.Count; j++)
+            {
+                if (draw >= val && draw <= val + EnemyProbability[j])
+                {
+                    GameObject slot = EnemyPrefabs[j];
+                    WalkingPath path = WalkingPaths[Random.Range(0, WalkingPaths.Count)];
+
+                    SpawnQueue.Add((slot, path));
+                    break;
+                }
+                val += EnemyProbability[j];
+            }
         }
     }
 
     private void Awake()
     {
         SpawnQueue = new List<(GameObject, WalkingPath)>();
+
+        while (EnemyProbability.Count < EnemyPrefabs.Count)
+            EnemyProbability.Add(1);
     }
 
     private void Start()
