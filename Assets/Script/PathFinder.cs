@@ -68,7 +68,7 @@ public class PathFinder : MonoBehaviour
                         node = node.Parent;
                         if(node == null || node.Parent == null)
                         {
-                            //returnValue.Directions = SimplifyPath(returnValue.Directions);
+                            returnValue.Directions = SimplifyPath(returnValue.Directions);
                             return returnValue;
                         }
                     }
@@ -94,19 +94,25 @@ public class PathFinder : MonoBehaviour
         bool isX = false;
         bool checking = false;
         Vector3 startNode = list[0];
+        Vector3 lastNode = list[0];
         list.RemoveAt(0);
 
         while (list.Count > 0)
         {
+            //New Direction
             if(!checking)
             {
+                //Where is the new Direction
                 isX = startNode.x == list[0].x;
                 checking = true;
 
-                if((startNode.x == list[1].x && isX) || (startNode.y == list[1].y && !isX))
+                //If there is at least one more node that is in the same direction follow
+                if(list.Count >= 2 && ((startNode.x == list[1].x && isX) || (startNode.y == list[1].y && !isX)))
                 {
+                    lastNode = list[0];
                     list.RemoveAt(0);
                 }
+                //Otherwise, just add it and start a new direction
                 else
                 {
                     newList.Add(startNode);
@@ -117,20 +123,25 @@ public class PathFinder : MonoBehaviour
             }
             else
             {
+                //If the node doesn't break the direction delete it
                 if ((startNode.x == list[0].x && isX) || (startNode.y == list[0].y && !isX))
                 {
+                    lastNode = list[0];
                     list.RemoveAt(0);
                 }
+                //If it does, add the start node to path and start counting from new node
                 else
                 {
                     newList.Add(startNode);
-                    startNode = list[0];
+                    startNode = lastNode;
+                    lastNode = list[0];
                     list.RemoveAt(0);
                     checking = false;
                 }
             }
         }
         newList.Add(startNode);
+        //newList.RemoveAt(0);
         return newList;
     }
 
