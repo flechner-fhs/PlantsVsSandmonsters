@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class SetBackgroundVolume : MonoBehaviour
