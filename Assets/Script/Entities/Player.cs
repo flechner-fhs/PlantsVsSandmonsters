@@ -19,6 +19,7 @@ public class Player : Entity
     public int Earth = 0;
 
     [Header("Water Gun")]
+    public float WaterSupplyMax = 100;
     public float WaterSupply = 100;
     public float ShootCostPerSecond = 10f;
 
@@ -29,6 +30,7 @@ public class Player : Entity
     public GameObject WaterProjectile;
     public Watergun Watergun;
 
+    public bool UnlimitedWater = false;
     private bool GunMenuLock = false;
 
 
@@ -72,7 +74,7 @@ public class Player : Entity
         if (BuildMenu.gameObject.activeSelf)
             GunMenuLock = true;
         //Shoot Water
-        if (Input.GetMouseButton(0) && WaterSupply > 0 && !GunMenuLock)
+        if (Input.GetMouseButton(0) && (UnlimitedWater || WaterSupply > 0) && !GunMenuLock)
         {
             //Shoot
             Vector3 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -86,7 +88,8 @@ public class Player : Entity
             if (!Watergun.IsActive())
                 Watergun.Activate();
 
-            WaterSupply -= ShootCostPerSecond * Time.deltaTime;
+            if(!UnlimitedWater)
+                WaterSupply -= ShootCostPerSecond * Time.deltaTime;
         }
         //Stop Water
         if (Input.GetMouseButtonUp(0) || WaterSupply <= 0)
@@ -114,6 +117,11 @@ public class Player : Entity
                 BuildMenu.Activate();
             }
         }
+    }
+
+    public void AddWaterToSupply(float amount)
+    {
+        WaterSupply = Mathf.Min(WaterSupply + amount, WaterSupplyMax);
     }
 
     public bool IsShooting() => Input.GetMouseButton(0);
