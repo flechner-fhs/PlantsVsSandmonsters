@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public List<MonsterWave> Waves;
+    private List<MonsterWave> Waves;
 
     public enum Stage { Rain, Prepare, Wave }
     public Stage WaveStage = Stage.Rain;
@@ -29,8 +29,7 @@ public class LevelManager : MonoBehaviour
         StopAllCoroutines();
         RainOverlay.GetComponent<Fader>().MakeTransparent();
 
-        if (Waves.Count == 0)
-            Waves = GetComponents<MonsterWave>().ToList();
+        Waves = GetComponentsInChildren<MonsterWave>().ToList();
 
         Waves.Sort((a, b) => a.Index - b.Index);
 
