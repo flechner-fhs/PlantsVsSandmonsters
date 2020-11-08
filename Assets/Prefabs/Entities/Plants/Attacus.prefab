@@ -137,22 +137,24 @@ MonoBehaviour:
   UnitName: Entity
   MaxHealth: 20
   Health: 20
-  Damage: 2
+  Damage: 4
   Knockback: 500
   Team: 0
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   IsDead: 0
-  ShootCooldown: 1
+  FacingLeft: 0
+  ShootCooldown: 0.8
   WaterCost: 10
   ProjectileCost: 2
-  WaterReservoir: 30
+  WaterReservoir: 80
   Target: 1
   ProjectileSpeed: 5
-  AttRange: 5
+  AttRange: 6
   Sprite: {fileID: -291889198579376318, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
   ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
     type: 3}
+  isShoot: 1
   SpawnOffset: {x: 0, y: 0.13, z: 0}
   MenuOffset: {x: 0.04, y: 0.82, z: 0}

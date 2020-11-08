@@ -28,7 +28,7 @@ TagManager:
   - Drop
   - DryDrop
   - Plant
-  - 
+  - PlantProjectile
   - 
   - 
   - 
@@ -48,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Explosion
+    uniqueID: 3043721055
     locked: 0
