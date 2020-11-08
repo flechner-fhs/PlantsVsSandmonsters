@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3127543568331788480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 0.6954553, z: -0.953125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3127543569805794341}
@@ -94,6 +94,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   IsDead: 0
+  FacingLeft: 0
   Player: {fileID: 0}
   Core: {fileID: 0}
   AttackSleep: 0.5
