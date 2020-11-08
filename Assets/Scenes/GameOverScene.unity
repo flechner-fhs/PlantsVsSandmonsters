@@ -569,6 +569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 189476923}
   text: {fileID: 772844905}
+  backgroundMusicDestroyer: {fileID: 8311464738325096054, guid: 3005a414708a3884d998467d89d9d59d,
+    type: 3}
 --- !u!1 &1624103889
 GameObject:
   m_ObjectHideFlags: 0

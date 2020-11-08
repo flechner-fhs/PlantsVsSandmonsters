@@ -4,14 +4,16 @@ using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 
-public class MoveText : MonoBehaviour
+public class DeathScreen : MonoBehaviour
 {
     public GameObject animation;
     public GameObject text;
+    public GameObject backgroundMusic;
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioSource backgroundAudio = backgroundMusic.GetComponent<AudioSource>();
+        backgroundAudio.volume = 0;
     }
 
     // Update is called once per frame

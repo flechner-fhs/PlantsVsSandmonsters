@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class Player : Entity
 {
@@ -26,6 +27,7 @@ public class Player : Entity
 
     public GameObject WaterProjectile;
     public Watergun Watergun;
+
 
 
     public override void Move()

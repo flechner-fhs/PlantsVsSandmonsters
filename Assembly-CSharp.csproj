@@ -55,12 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Death.cs" />
-     <Compile Include="Assets\DeathScript.cs" />
-     <Compile Include="Assets\DirtCounter.cs" />
-     <Compile Include="Assets\LevelManager.cs" />
-     <Compile Include="Assets\MonsterWave.cs" />
-     <Compile Include="Assets\MoveText.cs" />
      <Compile Include="Assets\Pixelate\Pixelate.cs" />
      <Compile Include="Assets\Script\Audio\BackgroundMusicScript.cs" />
      <Compile Include="Assets\Script\Audio\SetBackgroundVolume.cs" />
@@ -86,11 +80,15 @@
      <Compile Include="Assets\Script\Projectiles\WaterProjectile.cs" />
      <Compile Include="Assets\Script\Projectiles\Watergun.cs" />
      <Compile Include="Assets\Script\UI\CoreHealthbar.cs" />
+     <Compile Include="Assets\Script\UI\DeathScreen.cs" />
+     <Compile Include="Assets\Script\UI\DirtCounter.cs" />
      <Compile Include="Assets\Script\UI\Healthbar.cs" />
      <Compile Include="Assets\Script\UI\LevelSelector.cs" />
      <Compile Include="Assets\Script\UI\ToggleOptions.cs" />
      <Compile Include="Assets\Script\UI\WaterScale.cs" />
+     <Compile Include="Assets\Script\World\LevelManager.cs" />
      <Compile Include="Assets\Script\World\MonsterSpawner.cs" />
+     <Compile Include="Assets\Script\World\MonsterWave.cs" />
      <Compile Include="Assets\Script\World\WalkingPath.cs" />
      <Compile Include="Assets\Script\World\Waypoint.cs" />
      <None Include="Assets\Pixelate\Pixelate.shader" />
