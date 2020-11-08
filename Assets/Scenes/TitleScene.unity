@@ -1659,7 +1659,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingButtons: {fileID: 1659243453}
   levelButtons: {fileID: 2014161078}
-  audio: {fileID: 1325034059}
+  audioMixer: {fileID: 24100000, guid: d69323a18a385cd43a172f412b6e33c4, type: 2}
+  exposedParameter: BackgroundMusicVolume
+  pixelCamera: {fileID: 2025175362}
   Scenes:
   - Level 1
   - Level 2
@@ -1856,7 +1858,7 @@ GameObject:
   - component: {fileID: 1325034058}
   - component: {fileID: 1325034059}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: TitleMusicSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2101,7 +2103,7 @@ Animator:
   m_GameObject: {fileID: 1375737734}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ff0632fea6d16f4c938e0b143f38524, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31f337f8ee4d6fd4580546b4d958211b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2735,6 +2737,7 @@ GameObject:
   - component: {fileID: 1659243456}
   - component: {fileID: 1659243455}
   - component: {fileID: 1659243458}
+  - component: {fileID: 1659243459}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -2848,6 +2851,25 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!95 &1659243459
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659243453}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb21aa611d1773a4f94ce6cec18f0c48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1710276668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3633,7 @@ Animator:
   m_GameObject: {fileID: 2015247105}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ff0632fea6d16f4c938e0b143f38524, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31f337f8ee4d6fd4580546b4d958211b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3631,6 +3653,7 @@ GameObject:
   - component: {fileID: 2025175363}
   - component: {fileID: 2025175362}
   - component: {fileID: 2025175361}
+  - component: {fileID: 2025175364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3703,6 +3726,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2025175364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025175360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1da63591dc67445b632e87664be9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 703b245f98d111d418d988ba74eefbce, type: 3}
+  pixelSizeX: 1
+  pixelSizeY: 1
+  lockXY: 1
 --- !u!1 &2025623705
 GameObject:
   m_ObjectHideFlags: 0
