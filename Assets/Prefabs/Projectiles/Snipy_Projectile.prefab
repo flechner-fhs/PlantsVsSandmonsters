@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4239062151825133129}
   - component: {fileID: 7094455032138958141}
   - component: {fileID: 8723869808401171677}
-  m_Layer: 15
+  m_Layer: 16
   m_Name: Snipy_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
