@@ -10880,6 +10880,8 @@ MonoBehaviour:
   pauseObject: {fileID: 1711295016}
   pixelateCamera: {fileID: 1873074855}
   lifebars: {fileID: 1647592362}
+  audioMixer: {fileID: 24100000, guid: d69323a18a385cd43a172f412b6e33c4, type: 2}
+  exposedParameter: BackgroundMusicVolume
 --- !u!4 &1127966778
 Transform:
   m_ObjectHideFlags: 0

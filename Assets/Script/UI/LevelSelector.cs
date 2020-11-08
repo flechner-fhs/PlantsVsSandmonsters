@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class LevelSelector : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public GameObject startingButtons;
     public GameObject levelButtons;
-    public AudioSource audio;
+    public AudioMixer audioMixer;
+    public string exposedParameter;
 
+    
     public List<string> Scenes;
 
     public void SelectLevels()
@@ -21,9 +24,8 @@ public class LevelSelector : MonoBehaviour
     public void chooseButton(int levelNumber)
     {
         int level = Mathf.Clamp(levelNumber - 1, 0, Scenes.Count - 1);
+        StartCoroutine(FadeOutMain.StartFade(audioMixer, exposedParameter, 0.5f, 0.01f, level, Scenes));
 
-        
-        SceneManager.LoadScene(Scenes[level]);
     }
 
     public void startButton()

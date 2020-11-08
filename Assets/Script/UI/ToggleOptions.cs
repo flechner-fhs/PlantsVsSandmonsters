@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class ToggleOptions : MonoBehaviour
 {
@@ -9,9 +10,16 @@ public class ToggleOptions : MonoBehaviour
     public GameObject pauseObject;
     public GameObject pixelateCamera;
     public GameObject lifebars;
+    public AudioMixer audioMixer;
+    public string exposedParameter;
 
     private Pixelate pixeldCamera;
 
+
+    void Start()
+    {
+        StartCoroutine(FadeInAudio.StartFade(audioMixer, exposedParameter, 0.5f, 0.75f));
+    }
     void Update()
     {
         if (Input.GetKeyDown("escape"))
@@ -24,9 +32,9 @@ public class ToggleOptions : MonoBehaviour
             while (timeElapsed < 2)
             {
                 timeElapsed += Time.deltaTime;
-                pixeldCamera.pixelSizeX = (int) (timeElapsed * 9);
+                pixeldCamera.pixelSizeX = (int)(timeElapsed * 9);
             }
-            pauseObject.SetActive(true);         
+            pauseObject.SetActive(true);
         }
     }
 
