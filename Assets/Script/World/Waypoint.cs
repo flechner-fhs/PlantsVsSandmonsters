@@ -10,6 +10,6 @@ public class Waypoint : MonoBehaviour
 
     void Awake()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
     }
 }

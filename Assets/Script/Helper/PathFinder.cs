@@ -214,4 +214,10 @@ public class PathFinder : MonoBehaviour
             this.Parent = Parent;
         }
     }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            instance = null;
+    }
 }
