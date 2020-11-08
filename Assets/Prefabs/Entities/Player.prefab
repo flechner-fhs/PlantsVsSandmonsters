@@ -4912,7 +4912,6 @@ MonoBehaviour:
   Knockback: 500
   Team: 0
   MovementSpeed: 7
-  Size: 0.5
   collider: {fileID: 7057394062995393752}
   rigidbody: {fileID: 7057394062995393755}
   AnimationController: {fileID: 1154964119}
@@ -4998,7 +4997,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1398936500759614037, guid: a6a0dd24279e2d84da6897cf61e3dcc0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

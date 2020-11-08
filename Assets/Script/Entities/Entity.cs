@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D), typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
 public abstract class Entity : MonoBehaviour
 {
     [Header("Basic Stats")]
@@ -16,22 +16,20 @@ public abstract class Entity : MonoBehaviour
     public int Team = 0;
 
     public float MovementSpeed = 10;
-    public float Size = 0.4f;
 
     [HideInInspector]
-    public CircleCollider2D collider;
+    public Collider2D collider;
     [HideInInspector]
     public Rigidbody2D rigidbody;
 
     public void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        collider = GetComponent<CircleCollider2D>();
+        collider = GetComponent<Collider2D>();
     }
 
     public void Start()
     {
-        collider.radius = Size;
         Health = MaxHealth;
     }
 

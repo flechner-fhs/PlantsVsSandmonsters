@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 239594797965358968}
   - component: {fileID: 7317319103074179486}
-  - component: {fileID: -4826979201006039235}
+  - component: {fileID: 5419505595152446720}
   - component: {fileID: -366419117281617674}
   - component: {fileID: 1545274064247358726}
   m_Layer: 0
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &-4826979201006039235
-CircleCollider2D:
+--- !u!70 &5419505595152446720
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.1}
+  m_Size: {x: 0.35, y: 0.6}
+  m_Direction: 0
 --- !u!50 &-366419117281617674
 Rigidbody2D:
   serializedVersion: 4
@@ -137,19 +137,19 @@ MonoBehaviour:
   UnitName: Entity
   MaxHealth: 20
   Health: 20
-  Damage: 0.4
+  Damage: 2
   Knockback: 500
   Team: 0
   MovementSpeed: 1
-  Size: 0.4
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
-  ShootCooldown: 0.2
+  ShootCooldown: 0.1
   WaterCost: 10
   ProjectileCost: 0.15
-  WaterReservoir: 50
+  WaterReservoir: 100
   Target: 1
-  AttRange: 4
+  ProjectileSpeed: 10
+  AttRange: 100
   Sprite: {fileID: -8938968365321167671, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
   ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
     type: 3}
