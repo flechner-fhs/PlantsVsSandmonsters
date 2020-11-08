@@ -48,7 +48,7 @@ public class Player : Entity
     public override void Die()
     {
         Debug.Log("You died!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(3);
     }
 
     private void Update()

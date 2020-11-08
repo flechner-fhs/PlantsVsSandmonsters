@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JonasTestScene.unity
     guid: 1a6afe3ea81c65c4bbdcf41c4b1fba38
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 20597d5c1e5523b479a998001302557d
   m_configObjects: {}

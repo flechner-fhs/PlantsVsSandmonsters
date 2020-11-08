@@ -16,7 +16,7 @@ public class Core : Entity
     public override void Die()
     {
         Debug.Log("You lost!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(3);
     }
 
     public override void Move()
