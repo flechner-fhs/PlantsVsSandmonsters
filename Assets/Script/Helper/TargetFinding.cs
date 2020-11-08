@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -18,7 +19,7 @@ public class TargetFinding
      * (3 is strongest(visible idc))
      */
 
-    public bool findTarget(out Vector2 direction, Vector2 pos, int enemyPrio = 0, int range = 10, string tag = "Enemy")
+    public bool findATarget(out Vector2 direction, out GameObject obj, Vector2 pos, int enemyPrio = 0, int range = 10, string tag = "Enemy")
     {
         bool isTarget = false;
         updateCharacterList(pos, range);
@@ -28,6 +29,7 @@ public class TargetFinding
             {
                 case 0:
                     direction = (Vector2)characterInRangeList[0].transform.position - pos;
+                    obj = characterInRangeList[0];
                     isTarget = true;
                     break;
 
@@ -36,11 +38,13 @@ public class TargetFinding
                     if (visibleCharacterList.Count > 0)
                     {
                         direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                        obj = visibleCharacterList[0];
                         isTarget = true;
                     }
                     else
                     {
                         direction = Vector2.zero;
+                        obj = null;
                         isTarget = false;
                     }
                     break;
@@ -51,11 +55,13 @@ public class TargetFinding
                     {
                         sortAfterStrongest(true);
                         direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                        obj = visibleCharacterList[0];
                         isTarget = true;
                     }
                     else
                     {
                         direction = Vector2.zero;
+                        obj = null;
                         isTarget = false;
                     }
                     break;
@@ -65,17 +71,20 @@ public class TargetFinding
                     if (visibleCharacterList.Count > 0)
                     {
                         direction = (Vector2)visibleCharacterList[0].transform.position - pos;
+                        obj = visibleCharacterList[0];
                         isTarget = true;
                     }
                     else
                     {
                         direction = Vector2.zero;
+                        obj = null;
                         isTarget = false;
                     }
                     break;
 
                 default:
                     direction = Vector2.zero;
+                    obj = null;
                     isTarget = false;
                     break;
             }
@@ -83,9 +92,24 @@ public class TargetFinding
         else
         {
             direction = Vector2.zero;
+            obj = null;
         }
         return isTarget;
 
+    }
+    public bool findSpecialTarget(out Vector2 direction, GameObject target, Vector2 pos)
+    {
+        bool available = false;
+        try
+        {
+            direction = (Vector2)target.transform.position - pos;
+            available = true;
+        }
+        catch (Exception e)
+        {
+            direction = Vector2.zero;
+        }
+        return available;
     }
 
     private void updateCharacterList(Vector2 pos, int range)
@@ -129,4 +153,5 @@ public class TargetFinding
         Debug.Log("PRIO STRENGTH: " + strength);
         return (int)strength;
     }
+
 }

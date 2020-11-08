@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [HideInInspector]
-    public float MovementSpeed = 1;
+    public float MovementSpeed;
     [HideInInspector]
     public float Damage;
     [HideInInspector]
