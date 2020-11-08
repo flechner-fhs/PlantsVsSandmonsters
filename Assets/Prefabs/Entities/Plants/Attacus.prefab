@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7058759952769659955}
   - component: {fileID: -146541338494381385}
   - component: {fileID: -6974371984835947878}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Attacus
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   ShootCooldown: 1
   WaterCost: 10
   ProjectileCost: 2

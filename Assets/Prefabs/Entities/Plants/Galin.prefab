@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5419505595152446720}
   - component: {fileID: -366419117281617674}
   - component: {fileID: 1545274064247358726}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Galin
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   ShootCooldown: 0.1
   WaterCost: 10
   ProjectileCost: 0.15
@@ -151,7 +152,7 @@ MonoBehaviour:
   ProjectileSpeed: 10
   AttRange: 100
   Sprite: {fileID: -8938968365321167671, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
-  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
+  ThisPlantProjectile: {fileID: 3204292224932411124, guid: 2c2d609599ab517488eb2708f91b0ebc,
     type: 3}
   SpawnOffset: {x: -0.022, y: 0.387, z: 0}
   MenuOffset: {x: 0.049, y: 0.726, z: 0}
