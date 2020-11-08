@@ -15,6 +15,7 @@ public class Plant : Entity
     public int AttRange;
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
+    public bool isShoot = true;
     float cd = 0;
     float dmgPlantCd = 0;
 
@@ -30,7 +31,7 @@ public class Plant : Entity
     public override void Move()
     {
         cd += Time.fixedDeltaTime;
-        if (cd >= ShootCooldown)
+        if (cd >= ShootCooldown && isShoot)
         {
 
             if (WaterReservoir > ProjectileCost)

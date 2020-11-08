@@ -139,3 +139,4 @@ MonoBehaviour:
   Rigidbody: {fileID: 0}
   AttRange: 0
   target: {fileID: 0}
+  oldDirection: {x: 0, y: 0}
