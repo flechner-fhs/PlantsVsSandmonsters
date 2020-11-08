@@ -11,7 +11,7 @@ public static class FadeInAudio
         float currentTime = 0;
         float currentVol;
         audioMixer.GetFloat(exposedParam, out currentVol);
-        currentVol = Mathf.Pow(10, currentVol / 20);
+        currentVol = 0.01f;
         float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
 
         while (currentTime < duration)

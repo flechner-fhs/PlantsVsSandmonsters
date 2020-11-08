@@ -18,7 +18,7 @@ public class ToggleOptions : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(FadeInAudio.StartFade(audioMixer, exposedParameter, 0.5f, 0.75f));
+        StartCoroutine(FadeInAudio.StartFade(audioMixer, exposedParameter, 2f, 0.75f));
     }
     void Update()
     {
