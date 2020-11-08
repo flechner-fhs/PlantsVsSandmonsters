@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294658301627754075}
   - component: {fileID: 294658301627754074}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 294658302409400935}
   - component: {fileID: 294658302409400933}
   - component: {fileID: 294658302409400938}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: EarthDrop
   m_TagString: Drop
   m_Icon: {fileID: 0}
@@ -132,6 +132,11 @@ MonoBehaviour:
   FloatRange: 0.05
   FloatSpeed: 3
   MainSprite: {fileID: 294658302544927680}
+  IsHumid: 0
+  DrySprite: {fileID: -8516315568593869949, guid: f56bbb3235433c7439ea19c24d110f8b,
+    type: 3}
+  HumidSprite: {fileID: 6745324888986285581, guid: f56bbb3235433c7439ea19c24d110f8b,
+    type: 3}
 --- !u!58 &294658302409400933
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 294658302544927681}
   - component: {fileID: 294658302544927680}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

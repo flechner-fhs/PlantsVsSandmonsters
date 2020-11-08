@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -37,8 +38,12 @@ public class BuildMenu : MonoBehaviour
         Vector3Int playerPos = FlowerEarth.WorldToCell(Player.transform.position);
         if(FlowerEarth.GetTile(playerPos) != null && Obstacles.GetTile(playerPos) == null)
         {
-            transform.position = FlowerEarth.CellToWorld(playerPos) + new Vector3(.5f, .5f);
-            gameObject.SetActive(true);
+            Vector3 targetPos = FlowerEarth.CellToWorld(playerPos) + new Vector3(.5f, .5f);
+            if (FindObjectsOfType<Plant>().Where(x => (x.transform.position - targetPos).sqrMagnitude < .75f).Count() == 0)
+            {
+                transform.position = targetPos;
+                gameObject.SetActive(true);
+            }
         }
     }
 
@@ -46,7 +51,6 @@ public class BuildMenu : MonoBehaviour
     {
         if (FlowerEarth.GetTile(FlowerEarth.WorldToCell(transform.position)) != null)
         {
-
             GameObject newPlantGo = Instantiate(plant, transform.position, Quaternion.identity);
             Plant newPlant = newPlantGo.GetComponent<Plant>();
 
@@ -59,7 +63,6 @@ public class BuildMenu : MonoBehaviour
             {
                 Destroy(newPlantGo);
             }
-                
         }
     }
 
