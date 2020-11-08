@@ -27,6 +27,7 @@ public class Player : Entity
     public GameObject WaterProjectile;
     public Watergun Watergun;
 
+    private bool GunMenuLock = false;
 
     public override void Move()
     {
@@ -53,8 +54,10 @@ public class Player : Entity
 
     private void Update()
     {
+        if (BuildMenu.gameObject.activeSelf)
+            GunMenuLock = true;
         //Shoot Water
-        if (Input.GetMouseButton(0) && WaterSupply > 0)
+        if (Input.GetMouseButton(0) && WaterSupply > 0 && !GunMenuLock)
         {
             //Shoot
             Vector3 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -72,7 +75,10 @@ public class Player : Entity
         }
         //Stop Water
         if (Input.GetMouseButtonUp(0) || WaterSupply <= 0)
+        {
             Watergun.Deactivate();
+            GunMenuLock = false;
+        }
         //Place Earth
         if (Input.GetMouseButton(1) && Earth > 0)
         {
