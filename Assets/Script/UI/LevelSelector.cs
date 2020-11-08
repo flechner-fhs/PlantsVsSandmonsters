@@ -20,6 +20,11 @@ public class LevelSelector : MonoBehaviour
         startingButtons.SetActive(false);
         levelButtons.SetActive(true);
     }
+    public void OpenMainMenu()
+    {
+        startingButtons.SetActive(true);
+        levelButtons.SetActive(false);
+    }
 
     public void chooseButton(int levelNumber)
     {
