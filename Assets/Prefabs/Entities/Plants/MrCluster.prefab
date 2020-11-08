@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5445482381837355237}
   - component: {fileID: -7202956358669646985}
   - component: {fileID: 3508577605538870733}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MrCluster
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,13 +143,14 @@ MonoBehaviour:
   MovementSpeed: 10
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   ShootCooldown: 3
   WaterCost: 10
   ProjectileCost: 4
   WaterReservoir: 50
   Target: 1
-  ProjectileSpeed: 6
-  AttRange: 6
+  ProjectileSpeed: 3
+  AttRange: 10
   Sprite: {fileID: 8334941534491454899, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
   ThisPlantProjectile: {fileID: 1302166703835011316, guid: 4782d10c04f130c408e5528196fc5ecf,
     type: 3}

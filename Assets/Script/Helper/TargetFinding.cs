@@ -10,6 +10,7 @@ public class TargetFinding
 {
     private List<GameObject> characterInRangeList = new List<GameObject>();
     private List<GameObject> visibleCharacterList = new List<GameObject>();
+    bool showRayCasts = false;
 
     /**
      * prio -- what target 
@@ -28,6 +29,8 @@ public class TargetFinding
             switch (enemyPrio)
             {
                 case 0:
+                    if (showRayCasts)
+                        Debug.DrawRay(pos, ((Vector2)characterInRangeList[0].transform.position - pos), Color.red, 0.5f);
                     direction = (Vector2)characterInRangeList[0].transform.position - pos;
                     obj = characterInRangeList[0];
                     isTarget = true;
@@ -37,6 +40,8 @@ public class TargetFinding
                     updateVisibleList(pos, range);
                     if (visibleCharacterList.Count > 0)
                     {
+                        if (showRayCasts)
+                            Debug.DrawRay(pos, ((Vector2)visibleCharacterList[0].transform.position - pos), Color.blue, 0.5f);
                         direction = (Vector2)visibleCharacterList[0].transform.position - pos;
                         obj = visibleCharacterList[0];
                         isTarget = true;
@@ -54,6 +59,8 @@ public class TargetFinding
                     if (visibleCharacterList.Count > 0)
                     {
                         sortAfterStrongest(true);
+                        if (showRayCasts)
+                            Debug.DrawRay(pos, ((Vector2)visibleCharacterList[0].transform.position - pos), Color.red, 0.5f);
                         direction = (Vector2)visibleCharacterList[0].transform.position - pos;
                         obj = visibleCharacterList[0];
                         isTarget = true;
@@ -68,18 +75,12 @@ public class TargetFinding
 
                 case 3:
                     sortAfterStrongest(false);
-                    if (visibleCharacterList.Count > 0)
-                    {
-                        direction = (Vector2)visibleCharacterList[0].transform.position - pos;
-                        obj = visibleCharacterList[0];
-                        isTarget = true;
-                    }
-                    else
-                    {
-                        direction = Vector2.zero;
-                        obj = null;
-                        isTarget = false;
-                    }
+                    if (showRayCasts)
+                        Debug.DrawRay(pos, ((Vector2)characterInRangeList[0].transform.position - pos), Color.red, 0.5f);
+                    direction = (Vector2)characterInRangeList[0].transform.position - pos;
+                    obj = characterInRangeList[0];
+                    isTarget = true;
+
                     break;
 
                 default:
@@ -97,7 +98,7 @@ public class TargetFinding
         return isTarget;
 
     }
-    public bool findSpecialTarget(out Vector2 direction, GameObject target, Vector2 pos)
+    public bool findSpecialTarget(ref Vector2 direction, GameObject target, Vector2 pos)
     {
         bool available = false;
         try
@@ -107,7 +108,7 @@ public class TargetFinding
         }
         catch (Exception e)
         {
-            direction = Vector2.zero;
+            available = false;
         }
         return available;
     }
@@ -123,9 +124,10 @@ public class TargetFinding
     {
         foreach (GameObject character in characterInRangeList)
         {
-            Debug.DrawRay(pos, ((Vector2)character.transform.position - pos));
-            if (Physics2D.Raycast(pos, ((Vector2)character.transform.position - pos)))
+            //Debug.DrawRay(pos, ((Vector2)character.transform.position - pos), Color.red, 0.5f);
+            if (Physics2D.Raycast(pos, ((Vector2)character.transform.position - pos), range, 65535 ^ 0b111001000100110).collider.GetComponent<Enemy>())
             {
+                //Debug.DrawRay(pos, ((Vector2)character.transform.position - pos), Color.green);
                 visibleCharacterList.Add(character);
             }
         }
