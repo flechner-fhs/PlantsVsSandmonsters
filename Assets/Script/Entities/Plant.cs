@@ -9,8 +9,9 @@ public class Plant : Entity
     public float WaterCost = 10;
     public float ProjectileCost;
     public float WaterReservoir;
-    //
+    //whats priority
     public int Target = 1;
+    public float ProjectileSpeed;
     public int AttRange;
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
@@ -50,11 +51,13 @@ public class Plant : Entity
     private void Shoot()
     {
         TargetFinding tf = new TargetFinding();
-        if (tf.findTarget(out Vector2 direction, transform.position, Target, AttRange, "Enemy"))
+        if (tf.findATarget(out Vector2 direction, out GameObject obj, transform.position, Target, AttRange, "Enemy"))
         {
             GameObject thisProjectile = Instantiate(ThisPlantProjectile);
-            thisProjectile.GetComponent<Projectile>().Damage = Damage;
-            thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * Size);
+            thisProjectile.GetComponent<PlantProjectile>().Damage = Damage;
+            thisProjectile.GetComponent<PlantProjectile>().MovementSpeed = ProjectileSpeed;
+            thisProjectile.GetComponent<PlantProjectile>().target = obj;
+            thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * 1.1f);
             WaterReservoir -= ProjectileCost;
         }
     }

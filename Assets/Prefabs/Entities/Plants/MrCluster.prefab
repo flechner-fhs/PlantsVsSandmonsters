@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3784016821167694387}
   - component: {fileID: 3687252829666977858}
-  - component: {fileID: -5510484008371451290}
+  - component: {fileID: 5445482381837355237}
   - component: {fileID: -7202956358669646985}
-  - component: {fileID: 1160777284359841927}
+  - component: {fileID: 3508577605538870733}
   m_Layer: 0
   m_Name: MrCluster
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 8334941534491454899, guid: 399d6d1cf76ee45459433a5c8b9aadde,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,39 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5510484008371451290
-MonoBehaviour:
+--- !u!70 &5445482381837355237
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596134950924300615}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnitName: Entity
-  MaxHealth: 20
-  Health: 20
-  Damage: 6
-  Knockback: 500
-  Team: 0
-  MovementSpeed: 1
-  Size: 0.4
-  collider: {fileID: 0}
-  rigidbody: {fileID: 0}
-  ShootCooldown: 2.5
-  WaterCost: 10
-  ProjectileCost: 6
-  WaterReservoir: 50
-  Target: 2
-  AttRange: 7
-  Sprite: {fileID: 8334941534491454899, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
-  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
-    type: 3}
-  SpawnOffset: {x: 0.044, y: 0.375, z: 0}
-  MenuOffset: {x: 0.054, y: 0.742, z: 0}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05, y: -0.1}
+  m_Size: {x: 0.4, y: 0.7}
+  m_Direction: 0
 --- !u!50 &-7202956358669646985
 Rigidbody2D:
   serializedVersion: 4
@@ -139,19 +122,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &1160777284359841927
-CircleCollider2D:
+--- !u!114 &3508577605538870733
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596134950924300615}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitName: Entity
+  MaxHealth: 20
+  Health: 20
+  Damage: 7
+  Knockback: 500
+  Team: 0
+  MovementSpeed: 10
+  collider: {fileID: 0}
+  rigidbody: {fileID: 0}
+  ShootCooldown: 3
+  WaterCost: 10
+  ProjectileCost: 4
+  WaterReservoir: 50
+  Target: 1
+  ProjectileSpeed: 6
+  AttRange: 6
+  Sprite: {fileID: 8334941534491454899, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
+  ThisPlantProjectile: {fileID: 1302166703835011316, guid: 4782d10c04f130c408e5528196fc5ecf,
+    type: 3}
+  SpawnOffset: {x: 0.044, y: 0.35, z: 0}
+  MenuOffset: {x: 0.054, y: 0.742, z: 0}
