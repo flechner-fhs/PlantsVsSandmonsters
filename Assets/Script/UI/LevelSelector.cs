@@ -10,6 +10,8 @@ public class LevelSelector : MonoBehaviour
     public GameObject levelButtons;
     private GameObject nextLevel;
 
+    public List<string> Scenes;
+
     public void SelectLevels()
     {
         startingButtons.SetActive(false);
@@ -19,11 +21,14 @@ public class LevelSelector : MonoBehaviour
     public void chooseButton(int levelNumber)
     {
         Debug.Log(levelNumber);
-        SceneManager.LoadScene(/**levelNumber**/2);
+        //SceneManager.LoadScene(/**levelNumber**/2);
+        int level = Mathf.Clamp(levelNumber - 1, 0, Scenes.Count - 1);
+        SceneManager.LoadScene(Scenes[level]);
     }
 
     public void startButton()
     {
-        SceneManager.LoadScene(2);
+        chooseButton(1);
+        //SceneManager.LoadScene(2);
     }
 }

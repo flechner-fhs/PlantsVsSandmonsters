@@ -1659,6 +1659,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingButtons: {fileID: 1659243453}
   levelButtons: {fileID: 2014161078}
+  Scenes:
+  - Level 1
 --- !u!1 &1040414800
 GameObject:
   m_ObjectHideFlags: 0

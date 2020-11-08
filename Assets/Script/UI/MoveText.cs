@@ -20,7 +20,7 @@ public class MoveText : MonoBehaviour
             if(Time.timeScale > 0.25)
             {
                 animation.transform.localScale += new Vector3(0.0035f, 0.0035f, 0);
-                transform.Translate(new Vector3(0, -0.2f, 0));
+                //transform.Translate(new Vector3(0, -0.2f, 0));
             }
 
             Time.timeScale *= 0.998f;
