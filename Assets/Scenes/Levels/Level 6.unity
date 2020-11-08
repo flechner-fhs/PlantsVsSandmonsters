@@ -8878,7 +8878,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 29
-      m_TileSpriteIndex: 26
+      m_TileSpriteIndex: 31
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12982,7 +12982,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 25
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14692,9 +14692,8 @@ Tilemap:
   - m_RefCount: 90
     m_Data: {fileID: 6802492441718548012, guid: 72f975584f4d7164a81ac2d5273baeac,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1000654346071512540, guid: f56bbb3235433c7439ea19c24d110f8b,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -2066479735456320493, guid: 72f975584f4d7164a81ac2d5273baeac,
       type: 3}
@@ -14717,7 +14716,7 @@ Tilemap:
     m_Data: {fileID: 5497780212352722680, guid: f56bbb3235433c7439ea19c24d110f8b,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 5725798788661185371, guid: f56bbb3235433c7439ea19c24d110f8b,
+    m_Data: {fileID: -1000654346071512540, guid: f56bbb3235433c7439ea19c24d110f8b,
       type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -8894770636494502409, guid: f56bbb3235433c7439ea19c24d110f8b,
@@ -14731,8 +14730,9 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -7571849061148139934, guid: 72f975584f4d7164a81ac2d5273baeac,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 5725798788661185371, guid: f56bbb3235433c7439ea19c24d110f8b,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8497118392779985019, guid: 72f975584f4d7164a81ac2d5273baeac,
       type: 3}
@@ -16614,7 +16614,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540200581}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

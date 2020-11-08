@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2857361136860397501}
   - component: {fileID: 2857361136860397500}
-  - component: {fileID: 6327751146781790573}
-  - component: {fileID: 7131818126713069826}
-  - component: {fileID: 4911347183556642061}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -53,57 +50,5 @@ MonoBehaviour:
   RainDuration: 5
   PrepareDuration: 10
   Infobox: {fileID: 0}
---- !u!114 &6327751146781790573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857361136860397503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51a4730d8689b94898f628851d432b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Index: 0
-  Spawner: {fileID: 0}
-  Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  MonsterAmounts: 0a000000
---- !u!114 &7131818126713069826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857361136860397503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51a4730d8689b94898f628851d432b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Index: 1
-  Spawner: {fileID: 0}
-  Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  MonsterAmounts: 0a00000005000000
---- !u!114 &4911347183556642061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857361136860397503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e51a4730d8689b94898f628851d432b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Index: 2
-  Spawner: {fileID: 0}
-  Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  MonsterAmounts: 0d0000000500000002000000
+  LevelInfo: {fileID: 0}
+  RainOverlay: {fileID: 0}

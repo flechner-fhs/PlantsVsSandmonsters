@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public List<MonsterWave> Waves;
+    private List<MonsterWave> Waves;
 
     public enum Stage { Rain, Prepare, Wave }
     public Stage WaveStage = Stage.Rain;
@@ -20,13 +20,16 @@ public class LevelManager : MonoBehaviour
     public float PrepareDuration = 10;
 
     public Text Infobox;
+    public Text LevelInfo;
+
+    public GameObject RainOverlay;
 
     private void Start()
     {
         StopAllCoroutines();
+        RainOverlay.GetComponent<Fader>().MakeTransparent();
 
-        if (Waves.Count == 0)
-            Waves = GetComponents<MonsterWave>().ToList();
+        Waves = GetComponentsInChildren<MonsterWave>().ToList();
 
         Waves.Sort((a, b) => a.Index - b.Index);
 
@@ -36,6 +39,7 @@ public class LevelManager : MonoBehaviour
     public void NextStage()
     {
         WaveStage = (Stage)(((int)WaveStage + 1) % 3);
+        UpdateLevelInfo();
 
         switch (WaveStage)
         {
@@ -53,24 +57,37 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator MakeRain()
     {
-        Infobox.text = "Rain Stage " + (Wave + 1);
-        Player.WaterSupply = 100;
-        yield return new WaitForSeconds(RainDuration);
+        Infobox.text = "Rain Phase";
+        RainOverlay.GetComponent<Fader>().FadeIn(1);
+        FindObjectsOfType<EarthDrop>().ToList().ForEach(x => x.IsHumid = true);
+        for (int i = 0; i < 10; i++)
+        {
+            Player.AddWaterToSupply(10);
+            yield return new WaitForSeconds(RainDuration/10f);
+        }
+        RainOverlay.GetComponent<Fader>().FadeOut(1);
         NextStage();
     }
+
     public IEnumerator StartPreparation()
     {
-        Infobox.text = "Preparation Stage " + (Wave + 1);
-        yield return new WaitForSeconds(PrepareDuration);
+        for(int i = 0; i < PrepareDuration; i++)
+        {
+            Infobox.text = $"Preparation {(int)PrepareDuration-i}s";
+            yield return new WaitForSeconds(1);
+        }
         NextStage();
     }
+
     public IEnumerator StartWave()
     {
-        Infobox.text = "Wave " + (Wave + 1);
+        Infobox.text = "Wave incoming!";
         MonsterWave[] waves = Waves.Where(x => x.Index == Wave).ToArray();
         waves.ToList().ForEach(x => x.Spawner.SpawnWave(x.Monsters));
+        Coroutine counter = StartCoroutine(UpdateMonsterCounter());
         yield return new WaitForSeconds(5);
         yield return new WaitUntil(() => Enemy.Enemies.Count == 0);
+        StopCoroutine(counter);
         Waves.RemoveAll(x => waves.Contains(x));
         Wave++;
 
@@ -81,6 +98,18 @@ public class LevelManager : MonoBehaviour
         else
             NextStage();
     }
+
+    public void UpdateLevelInfo() => LevelInfo.text = SceneManager.GetActiveScene().name + "\nWave " + (Wave + 1); 
+
+    public IEnumerator UpdateMonsterCounter()
+    {
+        while (true)
+        {
+            Infobox.text = $"Wave incoming!\n{Enemy.Enemies.Count} left";
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
 
     private void OnDestroy()
     {

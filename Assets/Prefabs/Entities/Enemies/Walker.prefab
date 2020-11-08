@@ -74,7 +74,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7611472369936798052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 0.6954553, z: -0.953125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7611472371683499393}
@@ -138,9 +138,10 @@ MonoBehaviour:
   Knockback: 800
   Team: 1
   MovementSpeed: 3
-  Size: 0.3
   collider: {fileID: 7611472369936798059}
   rigidbody: {fileID: 7611472369936798056}
+  IsDead: 0
+  FacingLeft: 0
   Player: {fileID: 0}
   Core: {fileID: 0}
   AttackSleep: 0.5
@@ -160,6 +161,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7611472371683499393}
   - component: {fileID: 7611472371683499392}
+  - component: {fileID: 3422068685877820648}
+  - component: {fileID: 2689402023816077551}
   m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
@@ -220,7 +223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -8552545627438110159, guid: a9cdac78de40c5245b56616867f9ab4a,
+  m_Sprite: {fileID: -8783653710271863444, guid: 28f15de5a2c7bb948af06023bd730f98,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -232,3 +235,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3422068685877820648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611472371683499394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08118b5a37aced74bbd4a47901f40822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 7611472371683499392}
+  Image: {fileID: 0}
+  AnimationSpeed: 10
+  Sprites:
+  - {fileID: 5516991277565641601, guid: 28f15de5a2c7bb948af06023bd730f98, type: 3}
+  - {fileID: -5267821443897777032, guid: 28f15de5a2c7bb948af06023bd730f98, type: 3}
+--- !u!114 &2689402023816077551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611472371683499394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ddb4463df353743bee937f17604eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsLeftOriented: 0
