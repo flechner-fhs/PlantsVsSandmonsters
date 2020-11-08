@@ -91,9 +91,9 @@ MonoBehaviour:
   Knockback: 500
   Team: 1
   MovementSpeed: 5
-  Size: 0.4
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   Player: {fileID: 0}
   Core: {fileID: 0}
   AttackSleep: 0.5
@@ -116,6 +116,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3127543569805794341}
   - component: {fileID: 3127543569805794340}
+  - component: {fileID: 5267326466540902623}
+  - component: {fileID: 5438235385092216615}
   m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
@@ -176,7 +178,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -7325397381280489289, guid: 1f65441e443db244a8938e5009fa1ed2,
+  m_Sprite: {fileID: -8142337878165218825, guid: 28f15de5a2c7bb948af06023bd730f98,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,6 +190,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5267326466540902623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3127543569805794342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08118b5a37aced74bbd4a47901f40822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 3127543569805794340}
+  Image: {fileID: 0}
+  AnimationSpeed: 15
+  Sprites:
+  - {fileID: -8142337878165218825, guid: 28f15de5a2c7bb948af06023bd730f98, type: 3}
+  - {fileID: -2014736274092529129, guid: 28f15de5a2c7bb948af06023bd730f98, type: 3}
+  - {fileID: -2536535022812745299, guid: 28f15de5a2c7bb948af06023bd730f98, type: 3}
+  - {fileID: -7649105780277155434, guid: 28f15de5a2c7bb948af06023bd730f98, type: 3}
+--- !u!114 &5438235385092216615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3127543569805794342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ddb4463df353743bee937f17604eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsLeftOriented: 1
 --- !u!1 &8918566105065000434
 GameObject:
   m_ObjectHideFlags: 0

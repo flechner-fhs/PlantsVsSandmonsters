@@ -25,6 +25,9 @@ public abstract class Entity : MonoBehaviour
     [HideInInspector]
     public bool IsDead = false;
 
+    [HideInInspector]
+    public bool FacingLeft;
+
     public void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();

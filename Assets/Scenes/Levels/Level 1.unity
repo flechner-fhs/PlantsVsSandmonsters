@@ -16267,6 +16267,11 @@ PrefabInstance:
       propertyPath: LevelInfo
       value: 
       objectReference: {fileID: 753372585}
+    - target: {fileID: 2857361136860397500, guid: 2aef37346fdff7144a03691057d64746,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2857361136860397501, guid: 2aef37346fdff7144a03691057d64746,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16326,6 +16331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857361136860397503, guid: 2aef37346fdff7144a03691057d64746,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4911347183556642061, guid: 2aef37346fdff7144a03691057d64746,
         type: 3}
