@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7499406000326622673}
   - component: {fileID: 1432821244290501781}
-  - component: {fileID: 864560061492951881}
+  - component: {fileID: 4171934495236461403}
   - component: {fileID: 8077408794096216429}
-  - component: {fileID: -5875232286747528248}
+  - component: {fileID: 864560061492951881}
   m_Layer: 0
   m_Name: Bumarang
   m_TagString: Untagged
@@ -85,39 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &864560061492951881
-MonoBehaviour:
+--- !u!70 &4171934495236461403
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3433418733136233912}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UnitName: Entity
-  MaxHealth: 20
-  Health: 20
-  Damage: 1
-  Knockback: 500
-  Team: 0
-  MovementSpeed: 1
-  Size: 0.4
-  collider: {fileID: 0}
-  rigidbody: {fileID: 0}
-  ShootCooldown: 0.5
-  WaterCost: 10
-  ProjectileCost: 0.4
-  WaterReservoir: 30
-  Target: 1
-  AttRange: 4
-  Sprite: {fileID: -1624672663843960911, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
-  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
-    type: 3}
-  SpawnOffset: {x: -0.04, y: 0.393, z: 0}
-  MenuOffset: {x: 0.014, y: 0.745, z: 0}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05, y: -0.1}
+  m_Size: {x: 0.35, y: 0.7}
+  m_Direction: 0
 --- !u!50 &8077408794096216429
 Rigidbody2D:
   serializedVersion: 4
@@ -139,19 +122,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &-5875232286747528248
-CircleCollider2D:
+--- !u!114 &864560061492951881
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3433418733136233912}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b549d819837a3488d65580024a2a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitName: Entity
+  MaxHealth: 20
+  Health: 20
+  Damage: 1
+  Knockback: 500
+  Team: 0
+  MovementSpeed: 1
+  collider: {fileID: 0}
+  rigidbody: {fileID: 0}
+  ShootCooldown: 0.5
+  WaterCost: 10
+  ProjectileCost: 0.4
+  WaterReservoir: 30
+  Target: 1
+  ProjectileSpeed: 10
+  AttRange: 4
+  Sprite: {fileID: -1624672663843960911, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
+  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
+    type: 3}
+  SpawnOffset: {x: -0.04, y: 0.393, z: 0}
+  MenuOffset: {x: 0.014, y: 0.745, z: 0}

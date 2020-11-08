@@ -9,6 +9,7 @@ public class Player : Entity
 {
     [Header("Animation")]
     public AnimationController AnimationController;
+    public Sprite DeathSprite;
 
     [Header("Crafting")]
     public BuildMenu BuildMenu;
@@ -51,11 +52,23 @@ public class Player : Entity
     public override void Die()
     {
         Debug.Log("You died!");
-        SceneManager.LoadScene(3);
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        sr.sprite = DeathSprite;
+        sr.gameObject.GetComponent<AnimationController>().enabled = false;
+        StartCoroutine(DeathSequence());
+    }
+
+    IEnumerator DeathSequence()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("GameOverScene");
     }
 
     private void Update()
     {
+        if (IsDead)
+            return;
+
         if (BuildMenu.gameObject.activeSelf)
             GunMenuLock = true;
         //Shoot Water
