@@ -21,6 +21,8 @@ public abstract class Entity : MonoBehaviour
     public Collider2D collider;
     [HideInInspector]
     public Rigidbody2D rigidbody;
+    [HideInInspector]
+    public SpriteRenderer Renderer;
 
     [HideInInspector]
     public bool IsDead = false;
@@ -32,6 +34,7 @@ public abstract class Entity : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
+        Renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void Start()
@@ -42,12 +45,26 @@ public abstract class Entity : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Health -= damage;
+        StartCoroutine(Flash(new Color(1, .5f, .5f)));
 
         if (Health <= 0 && !IsDead)
         {
             IsDead = true;
             Die();
         }
+    }
+
+    private bool stillFlashing = false;
+    public IEnumerator Flash(Color tint, float duration = .1f)
+    {
+        if (stillFlashing)
+            yield break;
+        stillFlashing = true;
+        Color prevCol = Renderer.color;
+        Renderer.color = tint;
+        yield return new WaitForSeconds(duration);
+        Renderer.color = prevCol;
+        stillFlashing = false;
     }
 
     public void Heal(float healing)
