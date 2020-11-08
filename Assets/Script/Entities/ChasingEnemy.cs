@@ -22,6 +22,9 @@ public class ChasingEnemy : Enemy
         {
             Path = new PathFinder.Path();
             Vector3 direction = Target.transform.position - transform.position;
+
+            FacingLeft = direction.x < 0;
+
             direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
 
             rigidbody.MovePosition(transform.position + direction);
@@ -49,6 +52,8 @@ public class ChasingEnemy : Enemy
                     UpdateMarkers();
                 }
             }
+
+            FacingLeft = direction.x < 0;
 
             direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
 

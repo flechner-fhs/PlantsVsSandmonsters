@@ -26,6 +26,7 @@ public class WalkingEnemy : Enemy
             nextPoint = Path.waypoints[Progress];
             direction = nextPoint.Position - transform.position;
         }
+        FacingLeft = direction.x < 0;
 
         direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
 

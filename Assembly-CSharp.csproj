@@ -104,6 +104,7 @@
     <Compile Include="Assets\Script\World\WalkingPath.cs" />
     <Compile Include="Assets\Script\World\Waypoint.cs" />
     <Compile Include="Assets\SpriteAnimaton.cs" />
+    <Compile Include="Assets\SpriteFlipper.cs" />
     <None Include="Assets\Pixelate\Pixelate.shader" />
     <None Include="Assets\Fonts\README.txt" />
     <None Include="Assets\Fonts\OFL.txt" />
