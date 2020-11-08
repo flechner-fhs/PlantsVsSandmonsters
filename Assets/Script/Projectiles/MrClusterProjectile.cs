@@ -5,26 +5,20 @@ using UnityEngine;
 public class MrClusterProjectile : PlantProjectile
 {
     public GameObject ThisProjProj;
-    protected void OnCollisionEnter2D(Collision2D collision)
+
+    protected new void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
         GameObject obj = collision.gameObject;
-        if (obj.tag == "Enemy")
-        {
-            obj.GetComponent<Enemy>().TakeDamage(Damage);
-        }
-
-
 
         if (!obj.GetComponent<Plant>() || !obj.GetComponent<Projectile>() || !obj.GetComponent<Player>())
         {
-
             CreateProjectile(1, 1);
             CreateProjectile(-1, -1);
             CreateProjectile(0, -1);
             CreateProjectile(-1, 1);
             CreateProjectile(1, -1);
-            Destroy(gameObject);
-
+            //Destroy(gameObject);
         }
     }
 
