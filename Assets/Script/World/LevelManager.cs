@@ -93,7 +93,8 @@ public class LevelManager : MonoBehaviour
 
         if(Waves.Count == 0)
         {
-            SceneManager.LoadScene("VictoryScene");
+            if(!FindObjectOfType<Core>().IsDead && !Player.IsDead)
+                SceneManager.LoadScene("VictoryScene");
         }
         else
             NextStage();
