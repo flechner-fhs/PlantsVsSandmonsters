@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8432612618383863182}
   - component: {fileID: 5862696155278234244}
   - component: {fileID: -4105770675337645475}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bomba
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   ShootCooldown: 4
   WaterCost: 10
   ProjectileCost: 7

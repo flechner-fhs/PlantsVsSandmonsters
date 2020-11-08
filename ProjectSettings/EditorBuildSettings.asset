@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/notLevels/GameOverScene.unity
     guid: 20597d5c1e5523b479a998001302557d
+  - enabled: 1
+    path: Assets/Scenes/notLevels/VictoryScene.unity
+    guid: 06915e57b657d964098cae1860a008d0
   m_configObjects: {}

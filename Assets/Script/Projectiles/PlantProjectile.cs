@@ -1,41 +1,75 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UIElements;
 
 public class PlantProjectile : Projectile
 {
-    float cd = 0.5f;
+    [HideInInspector]
+    public float AttRange;
+    protected float lifeTime;
+    float cd = 10f;
     [HideInInspector]
     public GameObject target = null;
-    Vector2 oldDirection = Vector2.zero;
+    [HideInInspector]
+    public Vector2 oldDirection = Vector2.zero;
+
+    void Start()
+    {
+        lifeTime = AttRange / MovementSpeed * 2;
+        //Debug.Log("LIFETIME: " + lifeTime);
+    }
 
     void Update()
     {
-        if (cd >= 0.5)
+        Fly();
+    }
+
+    public void Fly()
+    {
+        if (lifeTime > 0)
         {
-            TargetFinding tf = new TargetFinding();
-            if (tf.findSpecialTarget(out Vector2 direction, target, transform.position))
+            if (cd >= 0.5)
             {
-                direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
-                oldDirection = direction;
+                TargetFinding tf = new TargetFinding();
+                Vector2 direction = oldDirection;
+                if (tf.findSpecialTarget(ref direction, target, transform.position))
+                {
+
+                    direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
+                    oldDirection = direction;
+                }
+                else
+                {
+                    oldDirection *= MovementSpeed;
+                }
+                Debug.DrawRay(transform.position, oldDirection, Color.cyan, 1);
+                cd = 0;
             }
-            cd = 0;
+            else
+            {
+                cd += Time.fixedDeltaTime;
+            }
+            //Debug.Log("Length: " + oldDirection.magnitude);
+            Rigidbody.MovePosition((Vector2)transform.position + oldDirection);
+            lifeTime -= Time.fixedDeltaTime;
         }
         else
         {
-            cd += Time.fixedDeltaTime;
+            Destroy(gameObject);
         }
-        Rigidbody.MovePosition((Vector2)transform.position + oldDirection * 1.2f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        GameObject obj = collision.gameObject;
+        if (obj.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
+            obj.GetComponent<Enemy>().TakeDamage(Damage);
         }
-        if (!collision.gameObject.GetComponent<Plant>())
+
+        if (!obj.GetComponent<Plant>() || !obj.GetComponent<Projectile>() || !obj.GetComponent<Player>())
             Destroy(gameObject);
     }
 }

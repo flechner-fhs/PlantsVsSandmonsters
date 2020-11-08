@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5447537820517359288}
   - component: {fileID: 1259817383457911112}
   - component: {fileID: 3735735411490203811}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Snipy
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,15 +143,16 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   ShootCooldown: 5
   WaterCost: 10
   ProjectileCost: 5
   WaterReservoir: 30
-  Target: 7
+  Target: 3
   ProjectileSpeed: 40
   AttRange: 50
   Sprite: {fileID: 2125229475114858618, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
-  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
+  ThisPlantProjectile: {fileID: 7320990121218258122, guid: 8b0603e5298e07d4cb79ad9a0cd6f7cc,
     type: 3}
   SpawnOffset: {x: -0.046, y: 0.441, z: 0}
   MenuOffset: {x: 0.097, y: 0.892, z: 0}
