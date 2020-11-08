@@ -43,6 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5103b5a7a83427148bfc28c866a920cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockedPlants: []
+  unlockedPlants:
+  - {fileID: 9064731336121108471, guid: f6215615b657bf54ab77e599512e6f7f, type: 3}
+  - {fileID: 9108640058339567271, guid: 80d3650a9836fa34fbe605cce07ef1e6, type: 3}
+  - {fileID: 3433418733136233912, guid: d3553a94c92e004489ea709cc78f9737, type: 3}
+  - {fileID: 8327744619649515149, guid: a7ae4b1ca742a5c468b449cb65efead0, type: 3}
+  - {fileID: 1596134950924300615, guid: 3e816350af029e34e9c74dcd8b8bea48, type: 3}
+  - {fileID: 2490907944781874427, guid: c2a242923ddb44b4799e2f1b59e00d9f, type: 3}
   BuildOptionPrefab: {fileID: 6510946153806637710, guid: 86aac0b279a84d84eb3417ffc33c7ba6,
     type: 3}
+  FlowerEarth: {fileID: 0}
+  Obstacles: {fileID: 0}
+  Player: {fileID: 0}
+  BuildRestriction: 0.2

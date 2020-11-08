@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0e581659bbd334a999cdbb7ab2a24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitName: Entity
+  UnitName: Core
   MaxHealth: 20
   Health: 20
   Damage: 1

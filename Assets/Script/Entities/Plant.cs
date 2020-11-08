@@ -9,6 +9,7 @@ public class Plant : Entity
     public float ShootCooldown;
     public float WaterCost = 10;
     public float ProjectileCost;
+    public float MaxWaterReservoir = 30;
     public float WaterReservoir;
     //whats priority
     public int Target = 1;
@@ -28,6 +29,7 @@ public class Plant : Entity
         base.Start();
         transform.position += SpawnOffset;
         DrawRange((float)AttRange);
+        WaterReservoir = MaxWaterReservoir;
     }
 
     public override void Move()
@@ -42,7 +44,7 @@ public class Plant : Entity
             }
             else if (WaterReservoir > 0 && dmgPlantCd > 1)
             {
-                WaterReservoir--;
+                ChangeWaterSupply(-1);
                 dmgPlantCd = 0;
             }
             else if (WaterReservoir > 0)
@@ -71,6 +73,13 @@ public class Plant : Entity
             thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * 1.1f);
             WaterReservoir -= ProjectileCost;
         }
+    }
+
+
+
+    public void ChangeWaterSupply(float value)
+    {
+        WaterReservoir = Mathf.Clamp(WaterReservoir + value, 0, MaxWaterReservoir);
     }
 
     public override void Die()

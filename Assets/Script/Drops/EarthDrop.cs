@@ -6,7 +6,11 @@ public class EarthDrop : Drop
 {
     public bool IsHumid {
         get => WaterCollected >= WaterNeeded;
-        set => WaterCollected = value ? WaterNeeded : 0;
+        set {
+            WaterCollected = value ? WaterNeeded : 0;
+            if (value)
+                ChangeToHumid();
+        }
     }
 
     public float WaterNeeded = 10;
@@ -34,11 +38,13 @@ public class EarthDrop : Drop
             WaterCollected++;
 
             if (IsHumid)
-            {
-                GetComponentInChildren<SpriteRenderer>().sprite = HumidSprite;
-                gameObject.layer = 12;
-            }
-            
+                ChangeToHumid();
         }
+    }
+
+    private void ChangeToHumid()
+    {
+        GetComponentInChildren<SpriteRenderer>().sprite = HumidSprite;
+        gameObject.layer = 12;
     }
 }
