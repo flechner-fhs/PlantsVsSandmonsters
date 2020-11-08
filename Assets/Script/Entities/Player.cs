@@ -80,7 +80,7 @@ public class Player : Entity
             GunMenuLock = false;
         }
         //Place Earth
-        if (Input.GetMouseButton(1) && Earth > 0)
+        if (Input.GetMouseButtonDown(1) && Earth > 0)
         {
             Vector3Int pos = Obstacles.WorldToCell(transform.position);
             if (Obstacles.GetTile(pos) == null && FlowerEarth.GetTile(pos) == null)

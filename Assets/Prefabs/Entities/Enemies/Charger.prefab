@@ -103,6 +103,8 @@ MonoBehaviour:
   Path: {fileID: 0}
   Progress: 0
   PathTolerance: 0.02
+  ExplosionEffect: {fileID: 3082701436088570910, guid: 03c9a37990f632b4d948f16c961a475b,
+    type: 3}
   Range: 2
 --- !u!1 &3127543569805794342
 GameObject:

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103690872994518425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 4056161846591244577}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.72156864, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: -3895934258554573126}
   m_Layer: 0
   m_Name: MonsterSpawner
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe53535f86aa8b4c9d0147108854727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyPrefabs:
+  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
+  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
+  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
+  EnemyProbability:
+  - 3
+  - 5
+  - 1
+  WalkingPaths:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Interval: 0.2
+  TestMode: 0
+  EndlessMode: 0
