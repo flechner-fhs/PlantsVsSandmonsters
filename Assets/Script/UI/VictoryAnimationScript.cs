@@ -9,7 +9,10 @@ public class VictoryAnimationScript : MonoBehaviour
     public GameObject victoryAnim;
     public GameObject monsterAnim;
     public GameObject victorySprite;
-    public GameObject victoryText;
+    public GameObject victoryCanvas;
+    public AudioSource smackAudio;
+    public AudioSource vicoryAudio;
+    public AudioSource pianoAudio;
 
 
 
@@ -22,6 +25,7 @@ public class VictoryAnimationScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pianoAudio.Play();
         isBeingChased = true;
         Time.timeScale = 3;
         playerSpriteRenderer = victoryAnim.GetComponent<SpriteRenderer>();
@@ -60,6 +64,9 @@ public class VictoryAnimationScript : MonoBehaviour
                 Time.timeScale = 1;
                 isChasing = false;
                 playerSpriteRenderer.flipX = false;
+                pianoAudio.Stop();
+                smackAudio.Play(0);
+                vicoryAudio.PlayDelayed(2);
             }
         }
 
@@ -73,7 +80,7 @@ public class VictoryAnimationScript : MonoBehaviour
             {
                 victoryAnim.SetActive(false);
                 victorySprite.SetActive(true);
-                victoryText.SetActive(true);
+                victoryCanvas.SetActive(true);
             }
         }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7059884130695551511}
   - component: {fileID: 4513014045302493329}
   - component: {fileID: 5815976962397695512}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Bumarang_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,3 +139,4 @@ MonoBehaviour:
   Rigidbody: {fileID: 0}
   AttRange: 0
   target: {fileID: 0}
+  oldDirection: {x: 0, y: 0}

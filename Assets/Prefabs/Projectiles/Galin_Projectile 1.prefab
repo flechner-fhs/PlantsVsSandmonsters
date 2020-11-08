@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2221415564371739236}
   - component: {fileID: 1863644984869532932}
   - component: {fileID: 930771259833128242}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Galin_Projectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,3 +139,4 @@ MonoBehaviour:
   Rigidbody: {fileID: 0}
   AttRange: 0
   target: {fileID: 0}
+  oldDirection: {x: 0, y: 0}

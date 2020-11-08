@@ -17,7 +17,7 @@ public class PlantProjectile : Projectile
 
     void Start()
     {
-        lifeTime = AttRange / MovementSpeed * 2;
+        lifeTime = AttRange / MovementSpeed * 5;
         //Debug.Log("LIFETIME: " + lifeTime);
     }
 
@@ -30,6 +30,7 @@ public class PlantProjectile : Projectile
     {
         if (lifeTime > 0)
         {
+
             if (cd >= 0.5)
             {
                 TargetFinding tf = new TargetFinding();
@@ -44,7 +45,6 @@ public class PlantProjectile : Projectile
                 {
                     oldDirection *= MovementSpeed;
                 }
-                Debug.DrawRay(transform.position, oldDirection, Color.cyan, 1);
                 cd = 0;
             }
             else
@@ -52,7 +52,15 @@ public class PlantProjectile : Projectile
                 cd += Time.fixedDeltaTime;
             }
             //Debug.Log("Length: " + oldDirection.magnitude);
-            Rigidbody.MovePosition((Vector2)transform.position + oldDirection);
+            Debug.DrawRay(transform.position, oldDirection, Color.cyan, 1);
+            if (((Vector2)transform.position + oldDirection).magnitude < 10000)
+            {
+                Rigidbody.MovePosition((Vector2)transform.position + oldDirection);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             lifeTime -= Time.fixedDeltaTime;
         }
         else
@@ -69,7 +77,7 @@ public class PlantProjectile : Projectile
             obj.GetComponent<Enemy>().TakeDamage(Damage);
         }
 
-        if (!obj.GetComponent<Plant>() || !obj.GetComponent<Projectile>() || !obj.GetComponent<Player>())
+        if (!obj.GetComponent<Plant>() && !obj.GetComponent<Projectile>() && !obj.GetComponent<Player>())
             Destroy(gameObject);
     }
 }
