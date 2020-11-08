@@ -9,7 +9,7 @@ public class VictoryAnimationScript : MonoBehaviour
     public GameObject victoryAnim;
     public GameObject monsterAnim;
     public GameObject victorySprite;
-    public GameObject victoryText;
+    public GameObject victoryCanvas;
 
 
 
@@ -73,7 +73,7 @@ public class VictoryAnimationScript : MonoBehaviour
             {
                 victoryAnim.SetActive(false);
                 victorySprite.SetActive(true);
-                victoryText.SetActive(true);
+                victoryCanvas.SetActive(true);
             }
         }
 
