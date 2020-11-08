@@ -44,7 +44,6 @@ public class PlantProjectile : Projectile
                 {
                     oldDirection *= MovementSpeed;
                 }
-                Debug.DrawRay(transform.position, oldDirection, Color.cyan, 1);
                 cd = 0;
             }
             else
@@ -52,6 +51,7 @@ public class PlantProjectile : Projectile
                 cd += Time.fixedDeltaTime;
             }
             //Debug.Log("Length: " + oldDirection.magnitude);
+            Debug.DrawRay(transform.position, oldDirection, Color.cyan, 1);
             Rigidbody.MovePosition((Vector2)transform.position + oldDirection);
             lifeTime -= Time.fixedDeltaTime;
         }
