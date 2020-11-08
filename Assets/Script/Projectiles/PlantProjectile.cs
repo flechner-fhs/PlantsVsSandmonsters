@@ -17,7 +17,7 @@ public class PlantProjectile : Projectile
 
     void Start()
     {
-        lifeTime = AttRange / MovementSpeed * 2;
+        lifeTime = AttRange / MovementSpeed * 5;
         //Debug.Log("LIFETIME: " + lifeTime);
     }
 
