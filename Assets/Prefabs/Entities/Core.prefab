@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 5143354353250016894, guid: 72f975584f4d7164a81ac2d5273baeac,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -172,6 +172,10 @@ MonoBehaviour:
   Knockback: 5
   Team: 0
   MovementSpeed: 0
-  Size: 0.6
   collider: {fileID: 7775306649018228270}
   rigidbody: {fileID: 7775306649018228272}
+  IsDead: 0
+  FacingLeft: 0
+  Explosion: {fileID: 3082701436088570910, guid: 03c9a37990f632b4d948f16c961a475b,
+    type: 3}
+  VCam: {fileID: 0}

@@ -14,6 +14,8 @@ public class PathFinder : MonoBehaviour
 
     public Tilemap Obstacles;
 
+    public Player Player;
+
     public struct Path
     {
         public GameObject Target;
@@ -28,6 +30,9 @@ public class PathFinder : MonoBehaviour
         if (Instance != null)
             Destroy(gameObject);
         instance = this;
+
+        if (Player == null)
+            Player = FindObjectOfType<Player>();
     }
 
     public Path GetPathTo(GameObject me, GameObject target)
@@ -79,24 +84,16 @@ public class PathFinder : MonoBehaviour
                     AddIfAbsent(ref newNodes, checkedNodes, new Node(node.Position + Vector3Int.right, node.Distance + 1, node));
                     AddIfAbsent(ref newNodes, checkedNodes, new Node(node.Position + Vector3Int.up, node.Distance + 1, node));
                     AddIfAbsent(ref newNodes, checkedNodes, new Node(node.Position + Vector3Int.down, node.Distance + 1, node));
+
+                    Vector3 tilePosActual = Obstacles.CellToWorld(node.Position) + new Vector3(.5f, .5f, 0);
+                    RaycastHit2D hit = Physics2D.Raycast(Obstacles.CellToWorld(node.Position), Player.transform.position - tilePosActual, Mathf.Infinity, 512 + 1);
+
+                    AddIfAbsent(ref newNodes, checkedNodes, new Node(Obstacles.WorldToCell(hit.point), node.Distance + hit.distance, node));
+
                 }
                 else
                 {
-                    Path returnValue = new Path();
-                    returnValue.Target = target;
-                    returnValue.TargetPos = targetPos;
-                    returnValue.Directions = new List<Vector3>();
-                    returnValue.age = PATH_AGE;
-                    while (true)
-                    {
-                        returnValue.Directions.Insert(0, Obstacles.CellToWorld(node.Position) + new Vector3(.5f, .5f, 0));
-                        node = node.Parent;
-                        if(node == null || node.Parent == null)
-                        {
-                            returnValue.Directions = SimplifyPath(returnValue.Directions);
-                            return returnValue;
-                        }
-                    }
+                    return GetPathFromNode(node, target);
                 }
             }
 
@@ -110,6 +107,34 @@ public class PathFinder : MonoBehaviour
         }
 
         return new Path();
+    }
+
+    /*
+     * private IEnumerator CheckNodes()
+    {
+
+    }*/
+
+
+    private Path GetPathFromNode(Node node, GameObject target)
+    {
+        Vector3Int targetPos = Obstacles.WorldToCell(target.transform.position);
+
+        Path returnValue = new Path();
+        returnValue.Target = target;
+        returnValue.TargetPos = targetPos;
+        returnValue.Directions = new List<Vector3>();
+        returnValue.age = PATH_AGE;
+        while (true)
+        {
+            returnValue.Directions.Insert(0, Obstacles.CellToWorld(node.Position) + new Vector3(.5f, .5f, 0));
+            node = node.Parent;
+            if (node == null || node.Parent == null)
+            {
+                returnValue.Directions = SimplifyPath(returnValue.Directions);
+                return returnValue;
+            }
+        }
     }
 
     private List<Vector3> SimplifyPath(List<Vector3> list)
