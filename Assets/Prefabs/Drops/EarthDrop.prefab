@@ -132,7 +132,7 @@ MonoBehaviour:
   FloatRange: 0.05
   FloatSpeed: 3
   MainSprite: {fileID: 294658302544927680}
-  IsHumid: 0
+  WaterNeeded: 20
   DrySprite: {fileID: -8516315568593869949, guid: f56bbb3235433c7439ea19c24d110f8b,
     type: 3}
   HumidSprite: {fileID: 6745324888986285581, guid: f56bbb3235433c7439ea19c24d110f8b,

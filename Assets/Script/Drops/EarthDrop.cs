@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class EarthDrop : Drop
 {
-    public bool IsHumid = false;
+    public bool IsHumid {
+        get => WaterCollected >= WaterNeeded;
+        set => WaterCollected = value ? WaterNeeded : 0;
+    }
+
+    public float WaterNeeded = 10;
+    private float WaterCollected = 0;
 
     public Sprite DrySprite, HumidSprite;
 
     private void Awake()
     {
         GetComponentInChildren<SpriteRenderer>().sprite = DrySprite;
+        IsHumid = false;
     }
 
     public override void Collect(Player player)
@@ -24,9 +31,14 @@ public class EarthDrop : Drop
     {
         if (other.GetComponent<Watergun>())
         {
-            IsHumid = true;
-            GetComponentInChildren<SpriteRenderer>().sprite = HumidSprite;
-            gameObject.layer = 12;
+            WaterCollected++;
+
+            if (IsHumid)
+            {
+                GetComponentInChildren<SpriteRenderer>().sprite = HumidSprite;
+                gameObject.layer = 12;
+            }
+            
         }
     }
 }
