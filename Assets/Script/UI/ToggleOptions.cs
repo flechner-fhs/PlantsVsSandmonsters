@@ -22,7 +22,7 @@ public class ToggleOptions : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape") && (pauseObject.activeSelf == false) && (settingsObject.activeSelf == false))
         {
             lifebars.SetActive(false);
             pixeldCamera = pixelateCamera.GetComponent<Pixelate>();
