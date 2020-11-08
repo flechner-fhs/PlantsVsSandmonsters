@@ -95,6 +95,7 @@
     <Compile Include="Assets\Script\UI\LevelSelector.cs" />
     <Compile Include="Assets\Script\UI\ToggleOptions.cs" />
     <Compile Include="Assets\Script\UI\WaterScale.cs" />
+    <Compile Include="Assets\Script\UI\backToTitle.cs" />
     <Compile Include="Assets\Script\World\LevelManager.cs" />
     <Compile Include="Assets\Script\World\MonsterSpawner.cs" />
     <Compile Include="Assets\Script\World\MonsterWave.cs" />
@@ -104,6 +105,7 @@
     <None Include="Assets\Pixelate\Pixelate.shader" />
     <None Include="Assets\Fonts\README.txt" />
     <None Include="Assets\Fonts\OFL.txt" />
+    <None Include="Assets\Fonts\You Murderer\font info.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
