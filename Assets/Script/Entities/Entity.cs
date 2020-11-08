@@ -23,6 +23,9 @@ public abstract class Entity : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rigidbody;
 
+    [HideInInspector]
+    public bool IsDead = false;
+
     public void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -39,8 +42,11 @@ public abstract class Entity : MonoBehaviour
     {
         Health -= damage;
 
-        if (Health <= 0)
+        if (Health <= 0 && !IsDead)
+        {
+            IsDead = true;
             Die();
+        }
     }
 
     public void Heal(float healing)
@@ -50,7 +56,8 @@ public abstract class Entity : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Move();
+        if(!IsDead)
+            Move();
     }
 
     abstract public void Move();

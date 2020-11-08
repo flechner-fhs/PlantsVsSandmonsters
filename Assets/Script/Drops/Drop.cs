@@ -13,12 +13,14 @@ public abstract class Drop : MonoBehaviour
 
     public SpriteRenderer MainSprite;
 
+    public abstract bool IsCollectible();
+
     public abstract void Collect(Player player);
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();
-        if (player)
+        if (player && IsCollectible())
         {
             Collect(player);
             Destroy(gameObject);

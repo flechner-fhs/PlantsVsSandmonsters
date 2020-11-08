@@ -6,6 +6,7 @@ using System.Linq;
 
 public class Charger : WalkingEnemy
 {
+    public GameObject ExplosionEffect;
 
     // Update is called once per frame
     float cd = 0;
@@ -34,6 +35,9 @@ public class Charger : WalkingEnemy
     public override void Die()
     {
         base.Die();
+        GameObject go = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
+        go.transform.localScale = Vector3.one * Range;
+
         FindObjectsOfType<Entity>()
             .Where(x => x.Team != Team)
             .Where(x => (x.transform.position - transform.position).magnitude < Range)
