@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2688821760361197151}
   - component: {fileID: -8654894758362475206}
   - component: {fileID: -37539205312454224}
-  - component: {fileID: -1518537322677663537}
-  m_Layer: 0
+  - component: {fileID: -7628565515312526766}
+  m_Layer: 15
   m_Name: MrCluster_ProjectileSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1518537322677663537
+--- !u!114 &-7628565515312526766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6543751755172336603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7917f47d5c6994ca620654b5320300, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c00730cd357e324099174506388d285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 0
@@ -139,3 +139,5 @@ MonoBehaviour:
   Rigidbody: {fileID: 0}
   AttRange: 0
   target: {fileID: 0}
+  oldDirection: {x: 0, y: 0}
+  direction: {x: 0, y: 0}

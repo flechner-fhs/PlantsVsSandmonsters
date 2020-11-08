@@ -144,15 +144,17 @@ MonoBehaviour:
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   IsDead: 0
+  FacingLeft: 0
   ShootCooldown: 3
   WaterCost: 10
   ProjectileCost: 4
   WaterReservoir: 50
   Target: 1
-  ProjectileSpeed: 3
-  AttRange: 10
+  ProjectileSpeed: 5
+  AttRange: 5
   Sprite: {fileID: 8334941534491454899, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
   ThisPlantProjectile: {fileID: 1302166703835011316, guid: 4782d10c04f130c408e5528196fc5ecf,
     type: 3}
+  isShoot: 1
   SpawnOffset: {x: 0.044, y: 0.35, z: 0}
   MenuOffset: {x: 0.054, y: 0.742, z: 0}
