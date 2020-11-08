@@ -1661,12 +1661,12 @@ MonoBehaviour:
   levelButtons: {fileID: 2014161078}
   audioMixer: {fileID: 24100000, guid: d69323a18a385cd43a172f412b6e33c4, type: 2}
   exposedParameter: BackgroundMusicVolume
-  pixelCamera: {fileID: 2025175362}
   Scenes:
   - Level 1
   - Level 2
   - Level 3
   - Level 4
+  - Level 5
   - Level 6
 --- !u!1 &1040414800
 GameObject:
