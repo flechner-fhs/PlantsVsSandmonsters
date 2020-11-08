@@ -60,9 +60,11 @@ public class LevelManager : MonoBehaviour
         Infobox.text = "Rain Phase";
         RainOverlay.GetComponent<Fader>().FadeIn(1);
         FindObjectsOfType<EarthDrop>().ToList().ForEach(x => x.IsHumid = true);
+        List<Plant> plants = FindObjectsOfType<Plant>().ToList();
         for (int i = 0; i < 10; i++)
         {
             Player.AddWaterToSupply(10);
+            plants.ForEach(x => x.ChangeWaterSupply(10));
             yield return new WaitForSeconds(RainDuration/10f);
         }
         RainOverlay.GetComponent<Fader>().FadeOut(1);
