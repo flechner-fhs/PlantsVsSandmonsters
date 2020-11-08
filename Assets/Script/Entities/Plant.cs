@@ -16,6 +16,7 @@ public class Plant : Entity
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
     float cd = 0;
+    float dmgPlantCd = 0;
 
     public Vector3 SpawnOffset;
     public Vector3 MenuOffset;
@@ -29,16 +30,21 @@ public class Plant : Entity
     public override void Move()
     {
         cd += Time.fixedDeltaTime;
-
         if (cd >= ShootCooldown)
         {
+
             if (WaterReservoir > ProjectileCost)
             {
                 Shoot();
             }
-            else if (WaterReservoir > 0)
+            else if (WaterReservoir > 0 && dmgPlantCd > 1)
             {
                 WaterReservoir--;
+                dmgPlantCd = 0;
+            }
+            else if (WaterReservoir > 0)
+            {
+                dmgPlantCd += cd;
             }
             else
             {
@@ -56,7 +62,9 @@ public class Plant : Entity
             GameObject thisProjectile = Instantiate(ThisPlantProjectile);
             thisProjectile.GetComponent<PlantProjectile>().Damage = Damage;
             thisProjectile.GetComponent<PlantProjectile>().MovementSpeed = ProjectileSpeed;
+            thisProjectile.GetComponent<PlantProjectile>().AttRange = AttRange;
             thisProjectile.GetComponent<PlantProjectile>().target = obj;
+            thisProjectile.GetComponent<PlantProjectile>().oldDirection = transform.position + (Vector3)(direction.normalized * 1.1f);
             thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * 1.1f);
             WaterReservoir -= ProjectileCost;
         }

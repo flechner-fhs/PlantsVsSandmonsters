@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4171934495236461403}
   - component: {fileID: 8077408794096216429}
   - component: {fileID: 864560061492951881}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bumarang
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  IsDead: 0
   ShootCooldown: 0.5
   WaterCost: 10
   ProjectileCost: 0.4
@@ -151,7 +152,7 @@ MonoBehaviour:
   ProjectileSpeed: 10
   AttRange: 4
   Sprite: {fileID: -1624672663843960911, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
-  ThisPlantProjectile: {fileID: 1066322041060448095, guid: 8eaeb0fefe036cd4ab742d4a2c15e826,
+  ThisPlantProjectile: {fileID: 8692773448721005103, guid: 59e80686f4c63a44f931eadebcd4b1ba,
     type: 3}
   SpawnOffset: {x: -0.04, y: 0.393, z: 0}
   MenuOffset: {x: 0.014, y: 0.745, z: 0}

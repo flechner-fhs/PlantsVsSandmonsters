@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1052960550160087668}
   - component: {fileID: -7181246521764362526}
   - component: {fileID: -1351049070686746230}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Attacus_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,3 +137,5 @@ MonoBehaviour:
   MovementSpeed: 5
   Damage: 0
   Rigidbody: {fileID: 0}
+  AttRange: 0
+  target: {fileID: 0}
