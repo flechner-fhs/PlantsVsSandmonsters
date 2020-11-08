@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
 
         if(Waves.Count == 0)
         {
-            SceneManager.LoadScene("TitleScene");
+            SceneManager.LoadScene("VictoryScene");
         }
         else
             NextStage();
