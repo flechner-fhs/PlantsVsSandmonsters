@@ -66,6 +66,8 @@
     <Compile Include="Assets\Fader.cs" />
     <Compile Include="Assets\Pixelate\Pixelate.cs" />
     <Compile Include="Assets\Script\Audio\BackgroundMusicScript.cs" />
+    <Compile Include="Assets\Script\Audio\FadeInAudio.cs" />
+    <Compile Include="Assets\Script\Audio\FadeOutMain.cs" />
     <Compile Include="Assets\Script\Audio\SetBackgroundVolume.cs" />
     <Compile Include="Assets\Script\BuildMenu\BuildMenu.cs" />
     <Compile Include="Assets\Script\BuildMenu\BuildOption.cs" />
