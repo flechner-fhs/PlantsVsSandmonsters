@@ -20,7 +20,6 @@ public class WalkingEnemy : Enemy
         Waypoint nextPoint = Path.waypoints[Progress];
         Vector3 direction = nextPoint.Position - transform.position;
 
-        Debug.Log(direction.sqrMagnitude);
         if (direction.sqrMagnitude < PathTolerance)
         {
             Progress++;
