@@ -61,7 +61,7 @@ public class Player : Entity
     IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("GameOverScene");
     }
 
     private void Update()

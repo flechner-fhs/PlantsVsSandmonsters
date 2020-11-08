@@ -1661,6 +1661,10 @@ MonoBehaviour:
   levelButtons: {fileID: 2014161078}
   Scenes:
   - Level 1
+  - Level 2
+  - Level 3
+  - Level 4
+  - Level 6
 --- !u!1 &1040414800
 GameObject:
   m_ObjectHideFlags: 0
