@@ -12,8 +12,11 @@ public class DeathScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioSource backgroundAudio = backgroundMusic.GetComponent<AudioSource>();
-        backgroundAudio.volume = 0;
+        if (backgroundMusic)
+        {
+            AudioSource backgroundAudio = backgroundMusic.GetComponent<AudioSource>();
+            backgroundAudio.volume = 0;
+        }
     }
 
     // Update is called once per frame

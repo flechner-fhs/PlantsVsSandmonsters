@@ -89,10 +89,10 @@
     <Compile Include="Assets\Script\Projectiles\WaterProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\Watergun.cs" />
     <Compile Include="Assets\Script\UI\CoreHealthbar.cs" />
+    <Compile Include="Assets\Script\UI\DeathScreen.cs" />
     <Compile Include="Assets\Script\UI\DirtCounter.cs" />
     <Compile Include="Assets\Script\UI\Healthbar.cs" />
     <Compile Include="Assets\Script\UI\LevelSelector.cs" />
-    <Compile Include="Assets\Script\UI\MoveText.cs" />
     <Compile Include="Assets\Script\UI\ToggleOptions.cs" />
     <Compile Include="Assets\Script\UI\WaterScale.cs" />
     <Compile Include="Assets\Script\World\LevelManager.cs" />
