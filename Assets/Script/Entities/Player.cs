@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class Player : Entity
 {
     [Header("Animation")]
     public AnimationController AnimationController;
+    public Sprite DeathSprite;
 
     [Header("Crafting")]
     public BuildMenu BuildMenu;
@@ -29,6 +31,7 @@ public class Player : Entity
 
     private bool GunMenuLock = false;
 
+
     public override void Move()
     {
         Vector3 movement = Vector2.zero;
@@ -49,11 +52,23 @@ public class Player : Entity
     public override void Die()
     {
         Debug.Log("You died!");
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        sr.sprite = DeathSprite;
+        sr.gameObject.GetComponent<AnimationController>().enabled = false;
+        StartCoroutine(DeathSequence());
+    }
+
+    IEnumerator DeathSequence()
+    {
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(3);
     }
 
     private void Update()
     {
+        if (IsDead)
+            return;
+
         if (BuildMenu.gameObject.activeSelf)
             GunMenuLock = true;
         //Shoot Water
@@ -80,7 +95,7 @@ public class Player : Entity
             GunMenuLock = false;
         }
         //Place Earth
-        if (Input.GetMouseButton(1) && Earth > 0)
+        if (Input.GetMouseButtonDown(1) && Earth > 0)
         {
             Vector3Int pos = Obstacles.WorldToCell(transform.position);
             if (Obstacles.GetTile(pos) == null && FlowerEarth.GetTile(pos) == null)

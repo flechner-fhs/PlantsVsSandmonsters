@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 949594320}
   - component: {fileID: 949594319}
   - component: {fileID: 949594321}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Watergun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3741,7 +3741,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 3383
+      m_Bits: 6455
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4919,7 +4919,7 @@ MonoBehaviour:
   Obstacles: {fileID: 0}
   FlowerEarth: {fileID: 0}
   EarthTile: {fileID: 11400000, guid: 888fadfaff6e5904c80deb6c1977db94, type: 2}
-  Earth: 5
+  Earth: 2
   WaterSupply: 100
   ShootCostPerSecond: 10
   ShootSlow: 0.5
@@ -5031,21 +5031,25 @@ MonoBehaviour:
   IdleRight:
   - {fileID: 9135197895242554102, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
   MoveUp:
-  - {fileID: 6957868187312738569, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 8582945375850329407, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 7978115625423758751, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 8582945375850329407, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 3809638275742720303, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 1282742668147967508, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: -8783182576626815965, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 1282742668147967508, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
   MoveDown:
-  - {fileID: 2387998329614426519, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 1398936500759614037, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 8364634281159674166, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 1398936500759614037, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 4374133696448490102, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 1618498333318826750, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 3048415832208597430, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 1618498333318826750, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
   MoveLeft:
-  - {fileID: -7611426408432848315, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: -1414084095359316237, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 8394814791401411028, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 3330070428184757500, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: -254694166260279691, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 3330070428184757500, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
   MoveRight:
-  - {fileID: 4885963110024258471, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
-  - {fileID: 9135197895242554102, guid: a6a0dd24279e2d84da6897cf61e3dcc0, type: 3}
+  - {fileID: 7083710128030792363, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 7922452886380593672, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 8343304247643682892, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
+  - {fileID: 7922452886380593672, guid: fee13bf6935d8a94ab424d578f2a3f64, type: 3}
   MaxFrames: 4
   PlaybackSpeed: 0.1
   Sprite: {fileID: 0}
