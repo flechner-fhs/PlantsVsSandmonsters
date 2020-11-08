@@ -8,7 +8,7 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     public GameObject startingButtons;
     public GameObject levelButtons;
-    private GameObject nextLevel;
+    public AudioSource audio;
 
     public List<string> Scenes;
 
@@ -20,15 +20,14 @@ public class LevelSelector : MonoBehaviour
 
     public void chooseButton(int levelNumber)
     {
-        Debug.Log(levelNumber);
-        //SceneManager.LoadScene(/**levelNumber**/2);
         int level = Mathf.Clamp(levelNumber - 1, 0, Scenes.Count - 1);
+
+        
         SceneManager.LoadScene(Scenes[level]);
     }
 
     public void startButton()
     {
         chooseButton(1);
-        //SceneManager.LoadScene(2);
     }
 }
