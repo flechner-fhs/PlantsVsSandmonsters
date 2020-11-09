@@ -241,11 +241,14 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  Renderer: {fileID: 0}
+  BaseColor: {r: 0, g: 0, b: 0, a: 0}
   IsDead: 0
   FacingLeft: 0
   ShootCooldown: 0.8
   WaterCost: 10
   ProjectileCost: 2
+  MaxWaterReservoir: 30
   WaterReservoir: 80
   Target: 1
   ProjectileSpeed: 5

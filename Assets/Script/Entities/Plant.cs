@@ -10,6 +10,7 @@ public class Plant : Entity
     public float WaterCost = 10;
     public float ProjectileCost;
     public float MaxWaterReservoir = 30;
+    [HideInInspector]
     public float WaterReservoir;
     //whats priority
     public int Target = 1;
@@ -44,7 +45,7 @@ public class Plant : Entity
             }
             else if (WaterReservoir > 0 && dmgPlantCd > 1)
             {
-                ChangeWaterSupply(-1);
+                ChangeWaterSupply(-ProjectileCost);
                 dmgPlantCd = 0;
             }
             else if (WaterReservoir > 0)
@@ -71,7 +72,7 @@ public class Plant : Entity
             thisProjectile.GetComponent<PlantProjectile>().target = obj;
             thisProjectile.GetComponent<PlantProjectile>().oldDirection = transform.position + (Vector3)(direction.normalized * 1.1f);
             thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * 1.1f);
-            WaterReservoir -= ProjectileCost;
+            ChangeWaterSupply(-ProjectileCost);
         }
     }
 

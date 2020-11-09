@@ -23,6 +23,7 @@ public abstract class Entity : MonoBehaviour
     public Rigidbody2D rigidbody;
     [HideInInspector]
     public SpriteRenderer Renderer;
+    public Color BaseColor;
 
     [HideInInspector]
     public bool IsDead = false;
@@ -35,6 +36,7 @@ public abstract class Entity : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         Renderer = GetComponentInChildren<SpriteRenderer>();
+        BaseColor = Renderer.color;
     }
 
     public void Start()
