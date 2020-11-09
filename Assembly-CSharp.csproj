@@ -93,6 +93,8 @@
     <Compile Include="Assets\Script\Helper\PathFinder.cs" />
     <Compile Include="Assets\Script\Helper\SaveManager.cs" />
     <Compile Include="Assets\Script\Helper\TargetFinding.cs" />
+    <Compile Include="Assets\Script\MenuAssets\PlantAssetMenu.cs" />
+    <Compile Include="Assets\Script\Projectiles\FollowProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\MrClusterProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\MrClusterSmallProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\PlantProjectile.cs" />
