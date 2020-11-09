@@ -236,7 +236,7 @@ MonoBehaviour:
   MaxHealth: 20
   Health: 20
   Damage: 25
-  Knockback: 5000
+  Knockback: 8000
   Team: 0
   MovementSpeed: 10
   collider: {fileID: 0}
