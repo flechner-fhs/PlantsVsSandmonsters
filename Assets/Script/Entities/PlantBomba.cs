@@ -12,18 +12,14 @@ public class PlantBomba : Plant
     public override void Die()
     {
         base.Die();
-        try
-        {
-            GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
-            characterInRangeList = monsters.Where(x => ((Vector3)transform.position - x.transform.position).magnitude < AttRange).ToList();
-            foreach (GameObject monster in monsters)
-            {
-                monster.GetComponent<Enemy>().TakeDamage(2);
-            }
-        }
-        catch (Exception e)
-        {
 
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
+        characterInRangeList = monsters.Where(x => (transform.position - x.transform.position).sqrMagnitude < AttRange * AttRange).ToList();
+        foreach (GameObject monster in characterInRangeList)
+        {
+            monster.GetComponent<Enemy>().TakeDamage(Damage);
+            monster.GetComponent<Enemy>().rigidbody.AddForce((monster.GetComponent<Enemy>().transform.position - transform.position).normalized * Knockback);
         }
+
     }
 }
