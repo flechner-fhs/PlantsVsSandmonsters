@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9108640058339567271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -242,6 +242,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
   Renderer: {fileID: 0}
+  BaseColor: {r: 0, g: 0, b: 0, a: 0}
   IsDead: 0
   FacingLeft: 0
   ShootCooldown: 0
@@ -249,6 +250,9 @@ MonoBehaviour:
   ProjectileCost: 0
   MaxWaterReservoir: 30
   WaterReservoir: 0
+  SweatDropPrefab: {fileID: 6298314541659030589, guid: fda80bd246e153f48a2e54ad320afe1e,
+    type: 3}
+  SweatThreshhold: 0.5
   Target: 1
   ProjectileSpeed: 0
   AttRange: 1

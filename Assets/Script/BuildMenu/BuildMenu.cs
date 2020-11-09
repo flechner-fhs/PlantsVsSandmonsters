@@ -9,6 +9,7 @@ public class BuildMenu : MonoBehaviour
     public List<GameObject> unlockedPlants;
 
     public GameObject BuildOptionPrefab;
+    public GameObject OptionContainer;
 
     public Tilemap FlowerEarth;
     public Tilemap Obstacles;
@@ -17,6 +18,9 @@ public class BuildMenu : MonoBehaviour
 
     public float BuildRestriction = .2f;
 
+    public float PopupTime = .5f;
+    public bool IsOpened = false;
+
     private void Awake()
     {
         for(int i = 0; i < unlockedPlants.Count; i++)
@@ -24,7 +28,7 @@ public class BuildMenu : MonoBehaviour
             if (!unlockedPlants[i].GetComponent<Plant>())
                 continue;
 
-            GameObject BuildOptionObj = Instantiate(BuildOptionPrefab, transform);
+            GameObject BuildOptionObj = Instantiate(BuildOptionPrefab, OptionContainer.transform);
             BuildOption BuildOption = BuildOptionObj.GetComponent<BuildOption>();
             BuildOption.Plant = unlockedPlants[i];
             BuildOption.SetRotation(-i * Mathf.Min(360 / unlockedPlants.Count, 60));
@@ -32,7 +36,9 @@ public class BuildMenu : MonoBehaviour
             BuildOption.Setup();
         }
 
-        gameObject.SetActive(false);
+        OptionContainer.transform.localScale = Vector3.zero;
+        OptionContainer.SetActive(true);
+        IsOpened = false;
     }
 
     public void Activate()
@@ -44,10 +50,37 @@ public class BuildMenu : MonoBehaviour
             if (FindObjectsOfType<Plant>().Where(x => (x.transform.position - targetPos).sqrMagnitude < BuildRestriction).Count() == 0)
             {
                 transform.position = targetPos;
-                gameObject.SetActive(true);
+                StartCoroutine(PopUp());
             }
 
         }
+    }
+
+    IEnumerator PopUp()
+    {
+        float steps = 30;
+        OptionContainer.transform.localScale = Vector3.zero;
+        OptionContainer.SetActive(true);
+        for (int i = 0; i < steps; i++)
+        {
+            OptionContainer.transform.localScale = Vector3.one * (i / steps);
+            yield return new WaitForSeconds(PopupTime / steps);
+        }
+        OptionContainer.transform.localScale = Vector3.one;
+        IsOpened = true;
+    }
+    IEnumerator CloseDown()
+    {
+        float steps = 30;
+        OptionContainer.transform.localScale = Vector3.one;
+        IsOpened = false;
+        for (int i = 0; i < steps; i++)
+        {
+            OptionContainer.transform.localScale = Vector3.one * (1 - i / steps);
+            yield return new WaitForSeconds(PopupTime / steps);
+        }
+        OptionContainer.transform.localScale = Vector3.zero;
+        OptionContainer.SetActive(false);
     }
 
     public void OnSelected(GameObject plant)
@@ -60,7 +93,7 @@ public class BuildMenu : MonoBehaviour
             if (Player.WaterSupply >= newPlant.WaterCost)
             {
                 Player.WaterSupply -= newPlant.WaterCost;
-                gameObject.SetActive(false);
+                StartCoroutine(CloseDown());
             }
             else
             {
@@ -71,7 +104,7 @@ public class BuildMenu : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).sqrMagnitude > 0)
-            gameObject.SetActive(false);
+        if (IsOpened && new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).sqrMagnitude > 0)
+            StartCoroutine(CloseDown());
     }
 }
