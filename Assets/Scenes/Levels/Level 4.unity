@@ -241,9 +241,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
 --- !u!114 &27161523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,9 +256,6 @@ MonoBehaviour:
   Index: 2
   Spawner: {fileID: 684477617}
   Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
 --- !u!114 &27161524
@@ -281,9 +275,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
 --- !u!114 &27161525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,9 +290,6 @@ MonoBehaviour:
   Index: 2
   Spawner: {fileID: 1698818110}
   Monsters:
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
 --- !u!1 &46759561
@@ -6803,9 +6791,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
 --- !u!114 &593588663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6821,9 +6806,6 @@ MonoBehaviour:
   Index: 3
   Spawner: {fileID: 684477617}
   Monsters:
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
 --- !u!114 &593588664
@@ -6843,9 +6825,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
 --- !u!114 &593588665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6861,9 +6840,6 @@ MonoBehaviour:
   Index: 3
   Spawner: {fileID: 1698818110}
   Monsters:
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
 --- !u!114 &666462492 stripped
@@ -43445,7 +43421,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
 --- !u!114 &1163141586
@@ -43465,7 +43440,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
 --- !u!114 &1163141587
@@ -43485,7 +43459,6 @@ MonoBehaviour:
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
 --- !u!114 &1163141588
@@ -43503,7 +43476,6 @@ MonoBehaviour:
   Index: 0
   Spawner: {fileID: 1302550073}
   Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
@@ -44525,6 +44497,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -895234939453663210, guid: fee13bf6935d8a94ab424d578f2a3f64,
         type: 3}
+    - target: {fileID: 7057394062995393754, guid: a2e1ec43bc17b674e99166440b51bde9,
+        type: 3}
+      propertyPath: Earth
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
 --- !u!114 &1823864490 stripped
@@ -45223,11 +45200,8 @@ MonoBehaviour:
   Index: 1
   Spawner: {fileID: 1302550073}
   Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
+  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
+  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
 --- !u!114 &1947637130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45243,11 +45217,8 @@ MonoBehaviour:
   Index: 1
   Spawner: {fileID: 684477617}
   Monsters:
-  - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
+  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
 --- !u!114 &1947637131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45263,11 +45234,8 @@ MonoBehaviour:
   Index: 1
   Spawner: {fileID: 666462492}
   Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
+  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
 --- !u!114 &1947637132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45283,11 +45251,8 @@ MonoBehaviour:
   Index: 1
   Spawner: {fileID: 1698818110}
   Monsters:
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 3787623321157806715, guid: c5c8666888479b141a2391c62a748b87, type: 3}
   - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
+  - {fileID: 1506399760345113035, guid: 5c3adebfb5047d546bbbb40a33f61c76, type: 3}
 --- !u!1001 &1973658932
 PrefabInstance:
   m_ObjectHideFlags: 0
