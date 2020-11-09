@@ -49,7 +49,7 @@ public class ChasingEnemy : WalkingEnemy
 
             direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
 
-            rigidbody.MovePosition(transform.position + direction);
+            Rigidbody.MovePosition(transform.position + direction);
         }
         else
         {
@@ -79,7 +79,7 @@ public class ChasingEnemy : WalkingEnemy
 
             direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
 
-            rigidbody.MovePosition(transform.position + direction);
+            Rigidbody.MovePosition(transform.position + direction);
         }
     }
 

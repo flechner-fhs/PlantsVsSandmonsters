@@ -18,7 +18,7 @@ public class PlantBomba : Plant
         foreach (GameObject monster in characterInRangeList)
         {
             monster.GetComponent<Enemy>().TakeDamage(Damage);
-            monster.GetComponent<Enemy>().rigidbody.AddForce((monster.GetComponent<Enemy>().transform.position - transform.position).normalized * Knockback);
+            monster.GetComponent<Enemy>().Rigidbody.AddForce((monster.GetComponent<Enemy>().transform.position - transform.position).normalized * Knockback);
         }
 
     }

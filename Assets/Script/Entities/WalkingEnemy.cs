@@ -30,6 +30,6 @@ public class WalkingEnemy : Enemy
 
         direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
 
-        rigidbody.MovePosition(transform.position + direction);
+        Rigidbody.MovePosition(transform.position + direction);
     }
 }

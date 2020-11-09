@@ -63,7 +63,7 @@ public class Plant : Entity
     private void Shoot()
     {
         TargetFinding tf = new TargetFinding();
-        if (tf.findATarget(out Vector2 direction, out GameObject obj, transform.position, Target, AttRange, "Enemy"))
+        if (tf.FindATarget(out Vector2 direction, out GameObject obj, transform.position, Target, AttRange, "Enemy"))
         {
             GameObject thisProjectile = Instantiate(ThisPlantProjectile);
             thisProjectile.GetComponent<PlantProjectile>().Damage = Damage;

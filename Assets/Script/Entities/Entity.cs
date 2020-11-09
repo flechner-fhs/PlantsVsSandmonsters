@@ -18,9 +18,9 @@ public abstract class Entity : MonoBehaviour
     public float MovementSpeed = 10;
 
     [HideInInspector]
-    public Collider2D collider;
+    public Collider2D Collider;
     [HideInInspector]
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D Rigidbody;
     [HideInInspector]
     public SpriteRenderer Renderer;
     public Color BaseColor;
@@ -33,8 +33,8 @@ public abstract class Entity : MonoBehaviour
 
     public void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
+        Collider = GetComponent<Collider2D>();
         Renderer = GetComponentInChildren<SpriteRenderer>();
         BaseColor = Renderer.color;
     }
@@ -76,7 +76,7 @@ public abstract class Entity : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if(!IsDead)
+        if (!IsDead)
             Move();
     }
 

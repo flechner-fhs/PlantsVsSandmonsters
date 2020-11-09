@@ -13,7 +13,7 @@ public class SnipyProjectile : PlantProjectile
             first = false;
             TargetFinding tf = new TargetFinding();
             Vector2 direction = Vector2.zero;
-            if (tf.findSpecialTarget(ref direction, target, transform.position))
+            if (tf.FindSpecialTarget(ref direction, target, transform.position))
             {
                 Rigidbody.MovePosition(direction.normalized * MovementSpeed * Time.fixedDeltaTime * AttRange);
             }
