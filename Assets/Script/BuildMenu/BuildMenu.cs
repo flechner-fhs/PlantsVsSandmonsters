@@ -23,7 +23,7 @@ public class BuildMenu : MonoBehaviour
 
     private void Awake()
     {
-        for(int i = 0; i < unlockedPlants.Count; i++)
+        for (int i = 0; i < unlockedPlants.Count; i++)
         {
             if (!unlockedPlants[i].GetComponent<Plant>())
                 continue;
@@ -44,7 +44,7 @@ public class BuildMenu : MonoBehaviour
     public void Activate()
     {
         Vector3Int playerPos = FlowerEarth.WorldToCell(Player.transform.position);
-        if(FlowerEarth.GetTile(playerPos) != null && Obstacles.GetTile(playerPos) == null)
+        if (FlowerEarth.GetTile(playerPos) != null && Obstacles.GetTile(playerPos) == null)
         {
             Vector3 targetPos = FlowerEarth.CellToWorld(playerPos) + new Vector3(.5f, .5f);
             if (FindObjectsOfType<Plant>().Where(x => (x.transform.position - targetPos).sqrMagnitude < BuildRestriction).Count() == 0)

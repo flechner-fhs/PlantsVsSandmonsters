@@ -18,7 +18,6 @@ public class PlantProjectile : Projectile
     void Start()
     {
         lifeTime = AttRange / MovementSpeed * 5;
-        //Debug.Log("LIFETIME: " + lifeTime);
     }
 
     void Update()
@@ -30,7 +29,6 @@ public class PlantProjectile : Projectile
     {
         if (lifeTime > 0)
         {
-
             if (cd >= 0.5)
             {
                 TargetFinding tf = new TargetFinding();
@@ -41,17 +39,14 @@ public class PlantProjectile : Projectile
                     direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
                     oldDirection = direction;
                 }
-                else
-                {
-                    oldDirection *= MovementSpeed;
-                }
+
                 cd = 0;
             }
             else
             {
                 cd += Time.fixedDeltaTime;
             }
-            //Debug.Log("Length: " + oldDirection.magnitude);
+
             Debug.DrawRay(transform.position, oldDirection, Color.cyan, 1);
             if (((Vector2)transform.position + oldDirection).magnitude < 10000)
             {

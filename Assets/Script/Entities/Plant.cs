@@ -6,28 +6,41 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Plant : Entity
 {
-    public float ShootCooldown;
-    public float WaterCost = 10;
-    public float ProjectileCost;
-    public float MaxWaterReservoir = 30;
-    //[HideInInspector]
-    public float WaterReservoir;
-    public GameObject SweatDropPrefab;
-    private SweatDrop SweatDrop;
-    [Range(0,1)]
-    public float SweatThreshhold = .5f;
-    //whats priority
-    public int Target = 1;
-    public float ProjectileSpeed;
-    public int AttRange;
+    public PlantAssetMenu stats;
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
-    public bool isShoot = true;
+    public GameObject SweatDropPrefab;
+    [Range(0, 1)]
+    public float SweatThreshhold = .5f;
+
+
+    [HideInInspector]
+    public float WaterCost;
+    [HideInInspector]
+    public float AttRange;
+    [HideInInspector]
+    public Vector3 MenuOffset;
+    private SweatDrop SweatDrop;
+    private Vector3 SpawnOffset;
+    private float ShootCooldown;
+    private float ProjectileCost;
+    private float MaxWaterReservoir;
+    private float WaterReservoir;
+    //whats priority
+    private int Target;
+    private float ProjectileSpeed;
+    private bool isShoot;
+
+
+
     float cd = 0;
     float dmgPlantCd = 0;
 
-    public Vector3 SpawnOffset;
-    public Vector3 MenuOffset;
+    public new void Awake()
+    {
+        base.Awake();
+        ReadStats();
+    }
 
     public new void Start()
     {
@@ -35,6 +48,7 @@ public class Plant : Entity
         transform.position += SpawnOffset;
         DrawRange(AttRange);
         WaterReservoir = MaxWaterReservoir;
+        Knockback *= 1000;
     }
 
     public override void Move()
@@ -64,6 +78,27 @@ public class Plant : Entity
         }
     }
 
+    private void ReadStats()
+    {
+        UnitName = stats.Name;
+        Health = stats.Health;
+        Damage = stats.Damage;
+        Knockback = stats.Knockback;
+        WaterCost = stats.WaterCost;
+        AttRange = stats.AttackRange;
+        SpawnOffset = (Vector3)stats.SpawnOffset;
+        MenuOffset = (Vector3)stats.MenuOffset;
+        isShoot = stats.Shooter;
+        if (isShoot)
+        {
+            ShootCooldown = stats.ShootCooldown;
+            ProjectileCost = stats.ProjectileCost;
+            MaxWaterReservoir = stats.MaxWaterReservoir;
+            ProjectileSpeed = stats.ProjectileSpeed;
+            Target = stats.TargetSelection;
+        }
+    }
+
     private void Shoot()
     {
         TargetFinding tf = new TargetFinding();
@@ -74,8 +109,8 @@ public class Plant : Entity
             thisProjectile.GetComponent<PlantProjectile>().MovementSpeed = ProjectileSpeed;
             thisProjectile.GetComponent<PlantProjectile>().AttRange = AttRange;
             thisProjectile.GetComponent<PlantProjectile>().target = obj;
-            thisProjectile.GetComponent<PlantProjectile>().oldDirection = transform.position + (Vector3)(direction.normalized * 1.1f);
-            thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * 1.1f);
+            thisProjectile.GetComponent<PlantProjectile>().oldDirection = (Vector3)(direction.normalized * 1.1f);
+            thisProjectile.GetComponent<PlantProjectile>().transform.position = transform.position;
             ChangeWaterSupply(-ProjectileCost);
         }
     }

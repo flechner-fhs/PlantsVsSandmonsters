@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 308405399}
   - component: {fileID: 308405398}
   m_Layer: 0
-  m_Name: Wave4
+  m_Name: Wave9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,7 +703,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 91908475}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &308405398
 MonoBehaviour:
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f9ce4f5e6dd6b4e8e422f411697d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 3
+  Index: 8
   Spawner: {fileID: 618062795}
   Monsters:
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
@@ -1394,7 +1394,7 @@ GameObject:
   - component: {fileID: 466671515}
   - component: {fileID: 466671514}
   m_Layer: 0
-  m_Name: Wave9
+  m_Name: Wave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1412,7 +1412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 91908475}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &466671514
 MonoBehaviour:
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f9ce4f5e6dd6b4e8e422f411697d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 8
+  Index: 3
   Spawner: {fileID: 618062795}
   Monsters:
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
