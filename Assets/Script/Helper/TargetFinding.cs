@@ -117,7 +117,7 @@ public class TargetFinding
     {
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
         Vector3 position = (Vector3)pos;
-        characterInRangeList = monsters.Where(x => ((Vector3)pos - x.transform.position).magnitude < range).ToList().OrderBy(a => (a.transform.position - position).magnitude).ToList();
+        characterInRangeList = monsters.Where(x => ((Vector3)pos - x.transform.position).sqrMagnitude < range * range).ToList().OrderBy(a => (a.transform.position - position).magnitude).ToList();
     }
 
     private void updateVisibleList(Vector2 pos, int range)
