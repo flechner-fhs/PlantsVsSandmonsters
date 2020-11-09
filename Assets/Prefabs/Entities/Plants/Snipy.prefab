@@ -241,15 +241,17 @@ MonoBehaviour:
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  Renderer: {fileID: 0}
   IsDead: 0
   FacingLeft: 0
   ShootCooldown: 3.5
   WaterCost: 10
   ProjectileCost: 5
+  MaxWaterReservoir: 30
   WaterReservoir: 30
   Target: 3
   ProjectileSpeed: 40
-  AttRange: 25
+  AttRange: 20
   Sprite: {fileID: 2125229475114858618, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
   ThisPlantProjectile: {fileID: 7320990121218258122, guid: 8b0603e5298e07d4cb79ad9a0cd6f7cc,
     type: 3}

@@ -235,17 +235,19 @@ MonoBehaviour:
   UnitName: Entity
   MaxHealth: 20
   Health: 20
-  Damage: 3
+  Damage: 4
   Knockback: 500
   Team: 0
   MovementSpeed: 1
   collider: {fileID: 0}
   rigidbody: {fileID: 0}
+  Renderer: {fileID: 0}
   IsDead: 0
   FacingLeft: 0
-  ShootCooldown: 0.5
+  ShootCooldown: 0.4
   WaterCost: 10
   ProjectileCost: 0.4
+  MaxWaterReservoir: 30
   WaterReservoir: 30
   Target: 1
   ProjectileSpeed: 10
