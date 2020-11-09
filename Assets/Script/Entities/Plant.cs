@@ -13,7 +13,6 @@ public class Plant : Entity
     [Range(0, 1)]
     public float SweatThreshhold = .5f;
 
-    #region Stats
 
     [HideInInspector]
     public float WaterCost;
@@ -32,7 +31,6 @@ public class Plant : Entity
     private float ProjectileSpeed;
     private bool isShoot;
 
-    #endregion
 
 
     float cd = 0;

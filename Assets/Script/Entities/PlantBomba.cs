@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class PlantBomba : Plant
 {
+
     private List<GameObject> characterInRangeList = new List<GameObject>();
 
     public override void Die()
