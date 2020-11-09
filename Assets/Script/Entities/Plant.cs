@@ -7,11 +7,9 @@ using UnityEngine;
 public class Plant : Entity
 {
     public PlantAssetMenu stats;
-
-    public GameObject SweatDropPrefab;
-
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
+    public GameObject SweatDropPrefab;
     [Range(0, 1)]
     public float SweatThreshhold = .5f;
 
@@ -22,8 +20,8 @@ public class Plant : Entity
     [HideInInspector]
     public float AttRange;
     [HideInInspector]
-    private SweatDrop SweatDrop;
     public Vector3 MenuOffset;
+    private SweatDrop SweatDrop;
     private Vector3 SpawnOffset;
     private float ShootCooldown;
     private float ProjectileCost;

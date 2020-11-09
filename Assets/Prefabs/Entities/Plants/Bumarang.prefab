@@ -246,14 +246,12 @@ MonoBehaviour:
   IsDead: 0
   FacingLeft: 0
   stats: {fileID: 11400000, guid: c080df8ef51c8f949afa9697bae44ce5, type: 2}
-
+  Sprite: {fileID: 8097923988342937728, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
+  ThisPlantProjectile: {fileID: 8692773448721005103, guid: 59e80686f4c63a44f931eadebcd4b1ba,
+    type: 3}
   SweatDropPrefab: {fileID: 6298314541659030589, guid: fda80bd246e153f48a2e54ad320afe1e,
     type: 3}
   SweatThreshhold: 0.5
-
-  Sprite: {fileID: -1624672663843960911, guid: 399d6d1cf76ee45459433a5c8b9aadde, type: 3}
-  ThisPlantProjectile: {fileID: 8692773448721005103, guid: 59e80686f4c63a44f931eadebcd4b1ba,
-    type: 3}
-  WaterCost: 10
-  AttRange: 5
-  MenuOffset: {x: 0.014, y: 0.745, z: 0}
+  WaterCost: 0
+  AttRange: 0
+  MenuOffset: {x: 0, y: 0, z: 0}
