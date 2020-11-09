@@ -1356,11 +1356,11 @@ RectTransform:
   m_Father: {fileID: 2014161080}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 306.2, y: -215.8}
-  m_SizeDelta: {x: -788.17004, y: -506.58847}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -20, y: 20}
+  m_SizeDelta: {x: 124.829956, y: 26.41153}
+  m_Pivot: {x: 1, y: 0}
 --- !u!95 &1107867755
 Animator:
   serializedVersion: 3
