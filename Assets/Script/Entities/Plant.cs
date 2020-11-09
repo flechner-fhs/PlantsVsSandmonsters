@@ -109,8 +109,8 @@ public class Plant : Entity
             thisProjectile.GetComponent<PlantProjectile>().MovementSpeed = ProjectileSpeed;
             thisProjectile.GetComponent<PlantProjectile>().AttRange = AttRange;
             thisProjectile.GetComponent<PlantProjectile>().target = obj;
-            thisProjectile.GetComponent<PlantProjectile>().oldDirection = transform.position + (Vector3)(direction.normalized * 1.1f);
-            thisProjectile.transform.position = transform.position + (Vector3)(direction.normalized * 1.1f);
+            thisProjectile.GetComponent<PlantProjectile>().oldDirection = (Vector3)(direction.normalized * 1.1f);
+            thisProjectile.GetComponent<PlantProjectile>().transform.position = transform.position;
             ChangeWaterSupply(-ProjectileCost);
         }
     }
