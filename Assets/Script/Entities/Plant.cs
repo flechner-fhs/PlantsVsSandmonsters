@@ -9,21 +9,20 @@ public class Plant : Entity
     public PlantAssetMenu stats;
 
     public GameObject SweatDropPrefab;
-    private SweatDrop SweatDrop;
-    [Range(0,1)]
-    public float SweatThreshhold = .5f;
 
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
-    
+    [Range(0, 1)]
+    public float SweatThreshhold = .5f;
+
+    #region Stats
 
     [HideInInspector]
     public float WaterCost;
     [HideInInspector]
     public float AttRange;
     [HideInInspector]
-
-    #region
+    private SweatDrop SweatDrop;
     public Vector3 MenuOffset;
     private Vector3 SpawnOffset;
     private float ShootCooldown;
@@ -34,6 +33,7 @@ public class Plant : Entity
     private int Target;
     private float ProjectileSpeed;
     private bool isShoot;
+
     #endregion
 
 
