@@ -48,7 +48,7 @@ public class Player : Entity
         if (IsShooting())
             movement *= ShootSlow;
 
-        rigidbody.MovePosition(transform.position + movement * Time.fixedDeltaTime * MovementSpeed);
+        Rigidbody.MovePosition(transform.position + movement * Time.fixedDeltaTime * MovementSpeed);
     }
 
     public override void Die()

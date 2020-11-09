@@ -40,7 +40,7 @@ public abstract class Enemy : Entity
     {
         other.TakeDamage(Damage);
 
-        other.rigidbody.AddForce((other.transform.position - transform.position).normalized * Knockback);
+        other.Rigidbody.AddForce((other.transform.position - transform.position).normalized * Knockback);
     }
 
     public void OnCollisionStay2D(Collision2D collision)

@@ -20,10 +20,10 @@ public class TargetFinding
      * (3 is strongest(visible idc))
      */
 
-    public bool findATarget(out Vector2 direction, out GameObject obj, Vector2 pos, int enemyPrio = 0, int range = 10, string tag = "Enemy")
+    public bool FindATarget(out Vector2 direction, out GameObject obj, Vector2 pos, int enemyPrio = 0, int range = 10, string tag = "Enemy")
     {
         bool isTarget = false;
-        updateCharacterList(pos, range);
+        UpdateCharacterList(pos, range, tag);
         if (characterInRangeList.Count > 0)
         {
             switch (enemyPrio)
@@ -37,7 +37,7 @@ public class TargetFinding
                     break;
 
                 case 1:
-                    updateVisibleList(pos, range);
+                    UpdateVisibleList(pos, range);
                     if (visibleCharacterList.Count > 0)
                     {
                         if (showRayCasts)
@@ -55,10 +55,10 @@ public class TargetFinding
                     break;
 
                 case 2:
-                    updateVisibleList(pos, range);
+                    UpdateVisibleList(pos, range);
                     if (visibleCharacterList.Count > 0)
                     {
-                        sortAfterStrongest(true);
+                        SortAfterStrongest(true);
                         if (showRayCasts)
                             Debug.DrawRay(pos, ((Vector2)visibleCharacterList[0].transform.position - pos), Color.red, 0.5f);
                         direction = (Vector2)visibleCharacterList[0].transform.position - pos;
@@ -74,7 +74,7 @@ public class TargetFinding
                     break;
 
                 case 3:
-                    sortAfterStrongest(false);
+                    SortAfterStrongest(false);
                     if (showRayCasts)
                         Debug.DrawRay(pos, ((Vector2)characterInRangeList[0].transform.position - pos), Color.red, 0.5f);
                     direction = (Vector2)characterInRangeList[0].transform.position - pos;
@@ -98,29 +98,29 @@ public class TargetFinding
         return isTarget;
 
     }
-    public bool findSpecialTarget(ref Vector2 direction, GameObject target, Vector2 pos)
+    public bool FindSpecialTarget(ref Vector2 direction, GameObject target, Vector2 pos)
     {
-        bool available = false;
+        bool available;
         try
         {
             direction = (Vector2)target.transform.position - pos;
             available = true;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             available = false;
         }
         return available;
     }
 
-    private void updateCharacterList(Vector2 pos, int range)
+    private void UpdateCharacterList(Vector2 pos, int range, string tag)
     {
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag(tag);
         Vector3 position = (Vector3)pos;
         characterInRangeList = monsters.Where(x => ((Vector3)pos - x.transform.position).sqrMagnitude < range * range).ToList().OrderBy(a => (a.transform.position - position).magnitude).ToList();
     }
 
-    private void updateVisibleList(Vector2 pos, int range)
+    private void UpdateVisibleList(Vector2 pos, int range)
     {
         foreach (GameObject character in characterInRangeList)
         {
@@ -134,19 +134,19 @@ public class TargetFinding
         }
     }
 
-    private void sortAfterStrongest(bool visible)
+    private void SortAfterStrongest(bool visible)
     {
         if (visible)
         {
-            visibleCharacterList.OrderBy(x => (getPrio(x)));
+            visibleCharacterList.OrderBy(x => (GetPrio(x)));
         }
         else
         {
-            characterInRangeList.OrderBy(x => (getPrio(x)));
+            characterInRangeList.OrderBy(x => (GetPrio(x)));
         }
     }
 
-    private int getPrio(GameObject obj)
+    private int GetPrio(GameObject obj)
     {
         float strength = 0;
 

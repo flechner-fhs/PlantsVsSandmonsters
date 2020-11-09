@@ -35,7 +35,7 @@ public class PlantProjectile : Projectile
             {
                 TargetFinding tf = new TargetFinding();
                 Vector2 direction = oldDirection;
-                if (tf.findSpecialTarget(ref direction, target, transform.position))
+                if (tf.FindSpecialTarget(ref direction, target, transform.position))
                 {
 
                     direction = direction.normalized * MovementSpeed * Time.fixedDeltaTime;
