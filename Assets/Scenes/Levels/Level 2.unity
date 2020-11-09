@@ -380,17 +380,17 @@ PrefabInstance:
     - target: {fileID: 3256928039600251531, guid: ae9f2136a22a1094590b83f51a76a1eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3256928039600251531, guid: ae9f2136a22a1094590b83f51a76a1eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.34
+      value: -6.28
       objectReference: {fileID: 0}
     - target: {fileID: 3256928039600251531, guid: ae9f2136a22a1094590b83f51a76a1eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.953125
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3256928039600251531, guid: ae9f2136a22a1094590b83f51a76a1eb,
         type: 3}
@@ -947,10 +947,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 949594320, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 10551
-      objectReference: {fileID: 0}
     - target: {fileID: 7057394062995393751, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
       propertyPath: m_Name
@@ -959,17 +955,17 @@ PrefabInstance:
     - target: {fileID: 7057394062995393753, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 7057394062995393753, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.34
+      value: -6.28
       objectReference: {fileID: 0}
     - target: {fileID: 7057394062995393753, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.953125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7057394062995393753, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
@@ -1026,12 +1022,6 @@ PrefabInstance:
       propertyPath: FlowerEarth
       value: 
       objectReference: {fileID: 168684532}
-    - target: {fileID: 7057394062995393754, guid: a2e1ec43bc17b674e99166440b51bde9,
-        type: 3}
-      propertyPath: DeathSprite
-      value: 
-      objectReference: {fileID: -895234939453663210, guid: fee13bf6935d8a94ab424d578f2a3f64,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
 --- !u!114 &272999148 stripped
@@ -45446,17 +45436,17 @@ PrefabInstance:
     - target: {fileID: 2147480826373939817, guid: 1929e2a466847fc43a26cdb95c47537c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2147480826373939817, guid: 1929e2a466847fc43a26cdb95c47537c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.34
+      value: -6.28
       objectReference: {fileID: 0}
     - target: {fileID: 2147480826373939817, guid: 1929e2a466847fc43a26cdb95c47537c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.953125
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2147480826373939817, guid: 1929e2a466847fc43a26cdb95c47537c,
         type: 3}

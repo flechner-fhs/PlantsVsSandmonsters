@@ -68,7 +68,7 @@ public class Player : Entity
 
     private void Update()
     {
-        if (BuildMenu.gameObject.activeSelf)
+        if (BuildMenu.IsOpened)
             GunMenuLock = true;
         //Shoot Water
         if (!IsDead && Input.GetMouseButton(0) && (UnlimitedWater || WaterSupply > 0) && !GunMenuLock)
