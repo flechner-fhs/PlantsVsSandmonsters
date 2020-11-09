@@ -239,22 +239,16 @@ MonoBehaviour:
   Knockback: 3
   Team: 0
   MovementSpeed: 1
-  collider: {fileID: 0}
-  rigidbody: {fileID: 0}
+  Collider: {fileID: 0}
+  Rigidbody: {fileID: 0}
   Renderer: {fileID: 0}
+  BaseColor: {r: 0, g: 0, b: 0, a: 0}
   IsDead: 0
   FacingLeft: 0
-  ShootCooldown: 3.5
-  WaterCost: 10
-  ProjectileCost: 5
-  MaxWaterReservoir: 30
-  WaterReservoir: 30
-  Target: 3
-  ProjectileSpeed: 40
-  AttRange: 20
+  stats: {fileID: 11400000, guid: 5b2fdb97dff9bce4eb5cbd08be2188d3, type: 2}
   Sprite: {fileID: 2125229475114858618, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
   ThisPlantProjectile: {fileID: 7320990121218258122, guid: 8b0603e5298e07d4cb79ad9a0cd6f7cc,
     type: 3}
-  isShoot: 1
-  SpawnOffset: {x: -0.046, y: 0.441, z: 0}
+  WaterCost: 10
+  AttRange: 20
   MenuOffset: {x: 0.097, y: 0.892, z: 0}

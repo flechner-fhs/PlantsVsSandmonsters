@@ -6,24 +6,38 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Plant : Entity
 {
-    public float ShootCooldown;
-    public float WaterCost = 10;
-    public float ProjectileCost;
-    public float MaxWaterReservoir = 30;
-    [HideInInspector]
-    public float WaterReservoir;
-    //whats priority
-    public int Target = 1;
-    public float ProjectileSpeed;
-    public int AttRange;
+    public PlantAssetMenu stats;
     public Sprite Sprite;
     public GameObject ThisPlantProjectile;
-    public bool isShoot = true;
+
+    [HideInInspector]
+    public float WaterCost;
+    [HideInInspector]
+    public float AttRange;
+    [HideInInspector]
+
+    #region
+    public Vector3 MenuOffset;
+    private Vector3 SpawnOffset;
+    private float ShootCooldown;
+    private float ProjectileCost;
+    private float MaxWaterReservoir;
+    private float WaterReservoir;
+    //whats priority
+    private int Target;
+    private float ProjectileSpeed;
+    private bool isShoot;
+    #endregion
+
+
     float cd = 0;
     float dmgPlantCd = 0;
 
-    public Vector3 SpawnOffset;
-    public Vector3 MenuOffset;
+    public new void Awake()
+    {
+        base.Awake();
+        ReadStats();
+    }
 
     public new void Start()
     {
@@ -31,6 +45,7 @@ public class Plant : Entity
         transform.position += SpawnOffset;
         DrawRange((float)AttRange);
         WaterReservoir = MaxWaterReservoir;
+        Knockback *= 1000;
     }
 
     public override void Move()
@@ -57,6 +72,27 @@ public class Plant : Entity
                 TakeDamage(ProjectileCost);
             }
             cd = 0;
+        }
+    }
+
+    private void ReadStats()
+    {
+        UnitName = stats.Name;
+        Health = stats.Health;
+        Damage = stats.Damage;
+        Knockback = stats.Knockback;
+        WaterCost = stats.WaterCost;
+        AttRange = stats.AttackRange;
+        SpawnOffset = (Vector3)stats.SpawnOffset;
+        MenuOffset = (Vector3)stats.MenuOffset;
+        isShoot = stats.Shooter;
+        if (isShoot)
+        {
+            ShootCooldown = stats.ShootCooldown;
+            ProjectileCost = stats.ProjectileCost;
+            MaxWaterReservoir = stats.MaxWaterReservoir;
+            ProjectileSpeed = stats.ProjectileSpeed;
+            Target = stats.TargetSelection;
         }
     }
 
