@@ -113,6 +113,7 @@
     <Compile Include="Assets\Script\World\SmartMonsterWave.cs" />
     <Compile Include="Assets\Script\World\WalkingPath.cs" />
     <Compile Include="Assets\Script\World\Waypoint.cs" />
+    <Compile Include="Assets\SweatDrop.cs" />
     <None Include="Assets\Pixelate\Pixelate.shader" />
     <None Include="Assets\Fonts\README.txt" />
     <None Include="Assets\Fonts\OFL.txt" />

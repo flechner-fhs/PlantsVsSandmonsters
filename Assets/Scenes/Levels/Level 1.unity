@@ -14134,10 +14134,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 949594320, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 10551
-      objectReference: {fileID: 0}
     - target: {fileID: 7057394062995393751, guid: a2e1ec43bc17b674e99166440b51bde9,
         type: 3}
       propertyPath: m_Name
@@ -14213,12 +14209,6 @@ PrefabInstance:
       propertyPath: FlowerEarth
       value: 
       objectReference: {fileID: 2091307615}
-    - target: {fileID: 7057394062995393754, guid: a2e1ec43bc17b674e99166440b51bde9,
-        type: 3}
-      propertyPath: DeathSprite
-      value: 
-      objectReference: {fileID: -895234939453663210, guid: fee13bf6935d8a94ab424d578f2a3f64,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e1ec43bc17b674e99166440b51bde9, type: 3}
 --- !u!1001 &7775306649018228268

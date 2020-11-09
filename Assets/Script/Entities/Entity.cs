@@ -47,7 +47,7 @@ public abstract class Entity : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Health -= damage;
-        StartCoroutine(Flash(new Color(1, .5f, .5f)));
+        StartCoroutine(Flash(new Color(0, .5f, .5f)));
 
         if (Health <= 0 && !IsDead)
         {
@@ -62,10 +62,9 @@ public abstract class Entity : MonoBehaviour
         if (stillFlashing)
             yield break;
         stillFlashing = true;
-        Color prevCol = Renderer.color;
-        Renderer.color = tint;
+        Renderer.color = new Color(Renderer.color.r - tint.r, Renderer.color.g - tint.g, Renderer.color.b - tint.b);
         yield return new WaitForSeconds(duration);
-        Renderer.color = prevCol;
+        Renderer.color = new Color(Renderer.color.r + tint.r, Renderer.color.g + tint.g, Renderer.color.b + tint.b);
         stillFlashing = false;
     }
 

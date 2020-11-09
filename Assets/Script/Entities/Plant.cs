@@ -10,8 +10,12 @@ public class Plant : Entity
     public float WaterCost = 10;
     public float ProjectileCost;
     public float MaxWaterReservoir = 30;
-    [HideInInspector]
+    //[HideInInspector]
     public float WaterReservoir;
+    public GameObject SweatDropPrefab;
+    private SweatDrop SweatDrop;
+    [Range(0,1)]
+    public float SweatThreshhold = .5f;
     //whats priority
     public int Target = 1;
     public float ProjectileSpeed;
@@ -29,7 +33,7 @@ public class Plant : Entity
     {
         base.Start();
         transform.position += SpawnOffset;
-        DrawRange((float)AttRange);
+        DrawRange(AttRange);
         WaterReservoir = MaxWaterReservoir;
     }
 
@@ -76,11 +80,14 @@ public class Plant : Entity
         }
     }
 
-
-
     public void ChangeWaterSupply(float value)
     {
         WaterReservoir = Mathf.Clamp(WaterReservoir + value, 0, MaxWaterReservoir);
+
+        if (!SweatDrop && SweatThreshhold > WaterReservoir / MaxWaterReservoir)
+            SweatDrop = Instantiate(SweatDropPrefab, transform).GetComponent<SweatDrop>();
+        else if (SweatDrop && SweatThreshhold < WaterReservoir / MaxWaterReservoir)
+            Destroy(SweatDrop.gameObject);
     }
 
     public override void Die()
