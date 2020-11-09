@@ -106,6 +106,7 @@ public class LevelManager : MonoBehaviour
                     vcam.m_Lens.OrthographicSize = Mathf.Lerp(4, 2, i/100f);
                     yield return new WaitForSeconds(.01f);
                 }
+                GameManager.Instance.StageCleared();
                 SceneManager.LoadScene("VictoryScene");
             }
         }

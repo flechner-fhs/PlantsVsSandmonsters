@@ -82,11 +82,16 @@
     <Compile Include="Assets\Script\Entities\PlantBomba.cs" />
     <Compile Include="Assets\Script\Entities\Player.cs" />
     <Compile Include="Assets\Script\Entities\WalkingEnemy.cs" />
-    <Compile Include="Assets\Script\ExplosionEffect.cs" />
-    <Compile Include="Assets\Script\Fader.cs" />
+    <Compile Include="Assets\Script\Eyecandy\ExplosionEffect.cs" />
+    <Compile Include="Assets\Script\Eyecandy\Fader.cs" />
+    <Compile Include="Assets\Script\Eyecandy\SpriteAnimaton.cs" />
+    <Compile Include="Assets\Script\Eyecandy\SpriteFlipper.cs" />
+    <Compile Include="Assets\Script\Eyecandy\SweatDrop.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\Helper\AnimationController.cs" />
     <Compile Include="Assets\Script\Helper\KeyboardInputDetector.cs" />
     <Compile Include="Assets\Script\Helper\PathFinder.cs" />
+    <Compile Include="Assets\Script\Helper\SaveManager.cs" />
     <Compile Include="Assets\Script\Helper\TargetFinding.cs" />
     <Compile Include="Assets\Script\Projectiles\MrClusterProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\MrClusterSmallProjectile.cs" />
@@ -95,8 +100,6 @@
     <Compile Include="Assets\Script\Projectiles\SnipyProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\WaterProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\Watergun.cs" />
-    <Compile Include="Assets\Script\SpriteAnimaton.cs" />
-    <Compile Include="Assets\Script\SpriteFlipper.cs" />
     <Compile Include="Assets\Script\UI\CoreHealthbar.cs" />
     <Compile Include="Assets\Script\UI\DeathScreen.cs" />
     <Compile Include="Assets\Script\UI\DirtCounter.cs" />
@@ -113,7 +116,6 @@
     <Compile Include="Assets\Script\World\SmartMonsterWave.cs" />
     <Compile Include="Assets\Script\World\WalkingPath.cs" />
     <Compile Include="Assets\Script\World\Waypoint.cs" />
-    <Compile Include="Assets\SweatDrop.cs" />
     <None Include="Assets\Pixelate\Pixelate.shader" />
     <None Include="Assets\Fonts\README.txt" />
     <None Include="Assets\Fonts\OFL.txt" />
