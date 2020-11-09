@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -96,7 +97,17 @@ public class LevelManager : MonoBehaviour
         if(Waves.Count == 0)
         {
             if(!FindObjectOfType<Core>().IsDead && !Player.IsDead)
+            {
+                Player.IsDead = true;
+                Player.AnimationController.SetPlayState(AnimationController.PlayState.idleDown);
+                CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
+                for(int i = 0; i < 100; i++)
+                {
+                    vcam.m_Lens.OrthographicSize = Mathf.Lerp(4, 2, i/100f);
+                    yield return new WaitForSeconds(.01f);
+                }
                 SceneManager.LoadScene("VictoryScene");
+            }
         }
         else
             NextStage();

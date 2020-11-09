@@ -125,7 +125,8 @@ public class TargetFinding
         foreach (GameObject character in characterInRangeList)
         {
             //Debug.DrawRay(pos, ((Vector2)character.transform.position - pos), Color.red, 0.5f);
-            if (Physics2D.Raycast(pos, ((Vector2)character.transform.position - pos), range, 65535 ^ 0b111001000100110).collider.GetComponent<Enemy>())
+            RaycastHit2D hit = Physics2D.Raycast(pos, ((Vector2)character.transform.position - pos), range, 65535 ^ 0b111001000100110);
+            if (hit && hit.collider.GetComponent<Enemy>())
             {
                 //Debug.DrawRay(pos, ((Vector2)character.transform.position - pos), Color.green);
                 visibleCharacterList.Add(character);

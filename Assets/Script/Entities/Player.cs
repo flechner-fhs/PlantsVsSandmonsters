@@ -68,13 +68,10 @@ public class Player : Entity
 
     private void Update()
     {
-        if (IsDead)
-            return;
-
         if (BuildMenu.gameObject.activeSelf)
             GunMenuLock = true;
         //Shoot Water
-        if (Input.GetMouseButton(0) && (UnlimitedWater || WaterSupply > 0) && !GunMenuLock)
+        if (!IsDead && Input.GetMouseButton(0) && (UnlimitedWater || WaterSupply > 0) && !GunMenuLock)
         {
             //Shoot
             Vector3 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -92,13 +89,13 @@ public class Player : Entity
                 WaterSupply -= ShootCostPerSecond * Time.deltaTime;
         }
         //Stop Water
-        if (Input.GetMouseButtonUp(0) || WaterSupply <= 0)
+        if (Input.GetMouseButtonUp(0) || WaterSupply <= 0 || IsDead)
         {
             Watergun.Deactivate();
             GunMenuLock = false;
         }
         //Place Earth
-        if (Input.GetMouseButtonDown(1) && Earth > 0)
+        if (Input.GetMouseButtonDown(1) && Earth > 0 && !IsDead)
         {
             Vector3Int pos = Obstacles.WorldToCell(transform.position);
             if (Obstacles.GetTile(pos) == null && FlowerEarth.GetTile(pos) == null)
@@ -109,7 +106,7 @@ public class Player : Entity
             }
         }
         //Open Build Menu
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !IsDead)
         {
             Vector3Int pos = FlowerEarth.WorldToCell(transform.position);
             if (Obstacles.GetTile(pos) == null && FlowerEarth.GetTile(pos) != null)
