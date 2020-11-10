@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,11 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    [Header("Audio Settings")]
+    public float Volume;
+    public AudioMixer AudioMixer;
 
+    [Header("Player Data")]
     public int PlayerSave = 0;
     public int UnlockedLevels = 0;
     public string Playername = "";
@@ -34,7 +39,9 @@ public class GameManager : MonoBehaviour
     {
         if (!MakeSingleton())
             return;
+
         SaveManager = GetComponent<SaveManager>();
+        InitSoundVolume();
     }
 
     public List<string> GetSaveNames()
@@ -72,5 +79,18 @@ public class GameManager : MonoBehaviour
         if (UnlockedLevels == CurrentLevel)
             UnlockedLevels++;
         StoreToSave(PlayerSave);
+    }
+
+    private void InitSoundVolume()
+    {
+        SetSoundVolume(PlayerPrefs.GetFloat("MusicVolume", 0.75f));
+    }
+
+    public void SetSoundVolume(float ratio)
+    {
+        Volume = ratio;
+        float db = Mathf.Lerp(-40, 12, ratio);
+        AudioMixer.SetFloat("BackgroundMusicVolume", db < -35 ? -80 : db);
+        PlayerPrefs.SetFloat("MusicVolume", ratio);
     }
 }
