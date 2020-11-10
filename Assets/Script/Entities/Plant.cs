@@ -48,7 +48,6 @@ public class Plant : Entity
         transform.position += SpawnOffset;
         DrawRange(AttRange);
         WaterReservoir = MaxWaterReservoir;
-        Knockback *= 1000;
     }
 
     public override void Move()
@@ -83,7 +82,7 @@ public class Plant : Entity
         UnitName = stats.Name;
         Health = stats.Health;
         Damage = stats.Damage;
-        Knockback = stats.Knockback;
+        Knockback = stats.Knockback * 1000;
         WaterCost = stats.WaterCost;
         AttRange = stats.AttackRange;
         SpawnOffset = (Vector3)stats.SpawnOffset;
@@ -108,6 +107,7 @@ public class Plant : Entity
             thisProjectile.GetComponent<PlantProjectile>().Damage = Damage;
             thisProjectile.GetComponent<PlantProjectile>().MovementSpeed = ProjectileSpeed;
             thisProjectile.GetComponent<PlantProjectile>().AttRange = AttRange;
+            thisProjectile.GetComponent<PlantProjectile>().Knockback = Knockback;
             thisProjectile.GetComponent<PlantProjectile>().target = obj;
             thisProjectile.GetComponent<PlantProjectile>().oldDirection = (Vector3)(direction.normalized * 1.1f);
             thisProjectile.GetComponent<PlantProjectile>().transform.position = transform.position;

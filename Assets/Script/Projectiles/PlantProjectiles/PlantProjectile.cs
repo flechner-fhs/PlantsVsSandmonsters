@@ -8,16 +8,20 @@ public class PlantProjectile : Projectile
 {
     [HideInInspector]
     public float AttRange;
-    protected float lifeTime;
-    float cd = 10f;
+    [HideInInspector]
+    public float Knockback;
     [HideInInspector]
     public GameObject target = null;
     [HideInInspector]
     public Vector2 oldDirection = Vector2.zero;
 
+    protected float lifeTime;
+    float targetCooldown = 0.5f;
+    float cd = 10f;
     void Start()
     {
         lifeTime = AttRange / MovementSpeed * 5;
+        targetCooldown = 1 / MovementSpeed;
     }
 
     void Update()
@@ -29,7 +33,7 @@ public class PlantProjectile : Projectile
     {
         if (lifeTime > 0)
         {
-            if (cd >= 0.5)
+            if (cd >= targetCooldown)
             {
                 TargetFinding tf = new TargetFinding();
                 Vector2 direction = oldDirection;
@@ -70,6 +74,7 @@ public class PlantProjectile : Projectile
         if (obj.tag == "Enemy")
         {
             obj.GetComponent<Enemy>().TakeDamage(Damage);
+            obj.GetComponent<Enemy>().Rigidbody.AddForce((obj.GetComponent<Enemy>().transform.position - transform.position).normalized * Knockback);
         }
 
         if (!obj.GetComponent<Plant>() && !obj.GetComponent<Projectile>() && !obj.GetComponent<Player>())

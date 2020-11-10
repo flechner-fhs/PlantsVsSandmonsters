@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Attacus
   Health: 20
   Damage: 5
-  Knockback: 1
+  Knockback: 2
   WaterCost: 10
   AttackRange: 6
   SpawnOffset: {x: 0, y: 0.13}
