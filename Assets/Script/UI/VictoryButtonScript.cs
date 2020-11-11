@@ -10,11 +10,11 @@ public class VictoryButtonScript : MonoBehaviour
 
     public void QuitButton()
     {
-        SceneManager.LoadScene("TitleScene");
+        GameManager.Instance.TransitionController.ChangeScene("TitleScene");
     }
 
     public void playAgainButton()
     {
-        SceneManager.LoadScene("Level 1");
+        GameManager.Instance.TransitionController.ChangeScene("Level " + GameManager.Instance.CurrentLevel);
     }
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System;
 
 public static class FadeOutMain
 {
-
+    [Obsolete("StartCoroutine(FadeOutMain.StartFade(...)) is deprecated, please use GameManager.Instance.TransitionController.ChangeScene(...) instead.")]
     public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume, int level, List<string> Scenes)
     {
         float currentTime = 0;

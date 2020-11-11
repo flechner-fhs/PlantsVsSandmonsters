@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Pixelate\Pixelate.cs" />
-    <Compile Include="Assets\Script\Audio\BackgroundMusicScript.cs" />
+    <Compile Include="Assets\Script\Audio\BackgroundMusicController.cs" />
     <Compile Include="Assets\Script\Audio\FadeInAudio.cs" />
     <Compile Include="Assets\Script\Audio\FadeOutMain.cs" />
     <Compile Include="Assets\Script\Audio\SetBackgroundVolume.cs" />
@@ -102,6 +102,7 @@
     <Compile Include="Assets\Script\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Script\Projectiles\WaterProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\Watergun.cs" />
+    <Compile Include="Assets\Script\TransitionController.cs" />
     <Compile Include="Assets\Script\UI\CoreHealthbar.cs" />
     <Compile Include="Assets\Script\UI\DeathScreen.cs" />
     <Compile Include="Assets\Script\UI\DirtCounter.cs" />

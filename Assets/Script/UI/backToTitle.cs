@@ -8,6 +8,6 @@ public class backToTitle : MonoBehaviour
     public void ChangeToTitle()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("TitleScene");
+        GameManager.Instance.TransitionController.ChangeScene("TitleScene");
     }
 }

@@ -29,7 +29,7 @@ public class SetBackgroundVolume : MonoBehaviour
             PlayerPrefs.SetFloat("MusicVolume", sliderValue);
         }
         else
-            GameManager.Instance.SetSoundVolume(sliderValue);
+            GameManager.Instance.MusicController.SetSoundVolume(sliderValue);
     }
 
     private void SetSoundVolume(float ratio)

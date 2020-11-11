@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
+using System;
 
 public static class FadeInAudio
 {
 
+    [Obsolete("StartCoroutine(FadeInAudio.StartFade(...)) is deprecated, please use GameManager.Instance.TransitionController.ChangeScene(...) instead.")]
     public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
     {
         float currentTime = 0;

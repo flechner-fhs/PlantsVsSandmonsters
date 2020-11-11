@@ -10,7 +10,7 @@ public class LevelSelector : MonoBehaviour
 {
 
     public GameObject CurrentScreen;
-    public GameObject MainMenuScene;
+    public GameObject MainMenuScreen;
 
     public AudioMixer AudioMixer;
     public string ExposedParameter;
@@ -72,10 +72,24 @@ public class LevelSelector : MonoBehaviour
         CurrentScreen = newScreen;
     }
 
+    public void OpenSavesWhenLogedOut(GameObject newScreen)
+    {
+        if (GameManager.Instance.PlayerSave == 0)
+            ChangeScreen(newScreen);
+        else
+            ChangeScreen(MainMenuScreen);
+    }
+    public void LogOut(GameObject newScreen)
+    {
+        GameManager.Instance.StoreToSave();
+        GameManager.Instance.PlayerSave = 0;
+        ChangeScreen(newScreen);
+    }
+
     public void LoadSave(int slot)
     {
         GameManager.Instance.LoadSave(slot);
-        ChangeScreen(MainMenuScene);
+        ChangeScreen(MainMenuScreen);
         MainMenuTitle.text = "Welcome " + GameManager.Instance.Playername;
         UpdateSlotButtons();
         UpdateLevelButtons();
@@ -90,13 +104,14 @@ public class LevelSelector : MonoBehaviour
     public void ChooseButton(int levelNumber)
     {
         int level = Mathf.Clamp(levelNumber - 1, 0, Scenes.Count - 1);
-        StartCoroutine(FadeOutMain.StartFade(AudioMixer, ExposedParameter, 0.5f, 0.01f, level, Scenes));
+        GameManager.Instance.TransitionController.ChangeScene(Scenes[level]);
+        //StartCoroutine(FadeOutMain.StartFade(AudioMixer, ExposedParameter, 0.5f, 0.01f, level, Scenes));
 
         GameManager.Instance.CurrentLevel = levelNumber;
     }
 
     public void StartButton()
     {
-        ChooseButton(1);
+        ChooseButton(GameManager.Instance.UnlockedLevels);
     }
 }

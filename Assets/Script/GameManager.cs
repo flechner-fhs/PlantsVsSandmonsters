@@ -22,10 +22,6 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    [Header("Audio Settings")]
-    public float Volume;
-    public AudioMixer AudioMixer;
-
     [Header("Player Data")]
     public int PlayerSave = 0;
     public int UnlockedLevels = 0;
@@ -33,6 +29,10 @@ public class GameManager : MonoBehaviour
 
     public int CurrentLevel = 0;
 
+    [HideInInspector]
+    public BackgroundMusicController MusicController;
+    [HideInInspector]
+    public TransitionController TransitionController;
     private SaveManager SaveManager;
 
     private void Awake()
@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
             return;
 
         SaveManager = GetComponent<SaveManager>();
-        InitSoundVolume();
+        MusicController = GetComponent<BackgroundMusicController>();
+        TransitionController = GetComponent<TransitionController>();
     }
 
     public List<string> GetSaveNames()
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
             StoreToSave(slot);
     }
 
+    public void StoreToSave() => StoreToSave(PlayerSave);
     public void StoreToSave(int slot)
     {
         SaveManager.SaveIntToSave(slot, SaveManager.SaveDataKeys.UnlockedLevel, UnlockedLevels);
@@ -79,18 +81,5 @@ public class GameManager : MonoBehaviour
         if (UnlockedLevels == CurrentLevel)
             UnlockedLevels++;
         StoreToSave(PlayerSave);
-    }
-
-    private void InitSoundVolume()
-    {
-        SetSoundVolume(PlayerPrefs.GetFloat("MusicVolume", 0.75f));
-    }
-
-    public void SetSoundVolume(float ratio)
-    {
-        Volume = ratio;
-        float db = Mathf.Lerp(-40, 12, ratio);
-        AudioMixer.SetFloat("BackgroundMusicVolume", db < -35 ? -80 : db);
-        PlayerPrefs.SetFloat("MusicVolume", ratio);
     }
 }

@@ -107,7 +107,7 @@ public class LevelManager : MonoBehaviour
                     yield return new WaitForSeconds(.01f);
                 }
                 GameManager.Instance.StageCleared();
-                SceneManager.LoadScene("VictoryScene");
+                GameManager.Instance.TransitionController.ChangeScene("VictoryScene");
             }
         }
         else
