@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ba65f8cc20e404db752adc6bc2aa13, type: 3}
+  m_Name: Bumarang
+  m_EditorClassIdentifier: 
+  Name: Bumarang
+  Sprite: {fileID: 5770233674384272384, guid: 72f975584f4d7164a81ac2d5273baeac, type: 3}
+  SpriteOffset: {x: -2.58, y: 0.2}
+  Cost: 1
+  Description: I'll be honest here. I've played this game ever since it was created
+    and still haven't figured out what this plant actually does.
+  WaterSupplyMax: 0
+  UnlocksNewPlant: 1
+  plantPrefab: {fileID: 3433418733136233912, guid: d3553a94c92e004489ea709cc78f9737,
+    type: 3}

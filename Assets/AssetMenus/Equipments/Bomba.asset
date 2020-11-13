@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ba65f8cc20e404db752adc6bc2aa13, type: 3}
+  m_Name: Bomba
+  m_EditorClassIdentifier: 
+  Name: Bomba
+  Sprite: {fileID: -9187842572746844544, guid: 72f975584f4d7164a81ac2d5273baeac, type: 3}
+  SpriteOffset: {x: -5.7, y: 1.91}
+  Cost: 1
+  Description: Bomba is great for guarding choke points. He doesn't shoot, but blocks
+    the way for the attackers and takes them all with him when he dies.
+  WaterSupplyMax: 0
+  UnlocksNewPlant: 1
+  plantPrefab: {fileID: 9108640058339567271, guid: 80d3650a9836fa34fbe605cce07ef1e6,
+    type: 3}

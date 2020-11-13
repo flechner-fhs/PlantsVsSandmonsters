@@ -1,32 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using System.Linq;
 
 public class LevelSelector : MonoBehaviour
 {
-
+    [Header("Screen References")]
     public GameObject CurrentScreen;
     public GameObject MainMenuScreen;
 
+    [Header("Audio Mixer References")]
     public AudioMixer AudioMixer;
     public string ExposedParameter;
 
-    public Text MainMenuTitle;
-
+    [Header("Save State Display")]
     public List<Button> SaveSlotButtons;
 
+    [Header("Main Menu Screen")]
+    public Text MainMenuTitle;
+
+    [Header("Equipment Display")]
+    public GameObject EquipmentDisplay;
+    public GameObject EquipmentIconPrefab;
+
+    [Header("Level Selection Screen")]
     public List<Button> LevelButtons;
 
-    public List<string> Scenes;
+    [Header("Level References")]
+    public List<string> LevelScenes;
 
     private void Start()
     {
+        GameManager.Instance.LevelSelector = this;
         UpdateSlotButtons();
         UpdateLevelButtons();
+        UpdateEquipmentDisplay();
+    }
+
+    public void UpdateEquipmentDisplay()
+    {
+        EquipmentDisplay.GetComponentsInChildren<EquipmentSelectIcon>().ToList().ForEach(x => Destroy(x.gameObject));
+        GameManager.Instance.EquipmentManager.ActiveEquipments.ForEach(x => Instantiate(EquipmentIconPrefab, EquipmentDisplay.transform).GetComponent<EquipmentSelectIcon>().Init(x, true));
     }
 
     public void UpdateSlotButtons()
@@ -43,12 +58,12 @@ public class LevelSelector : MonoBehaviour
                 if (DeleteButton)
                     DeleteButton.gameObject.SetActive(true);
             }
-            else 
-            { 
+            else
+            {
                 SaveSlotButtons[i].GetComponentInChildren<Text>().text = "Empty";
 
                 Button DeleteButton = SaveSlotButtons[i].transform.parent.GetComponentsInChildren<Button>(true).Where(x => x != SaveSlotButtons[i]).FirstOrDefault();
-                if(DeleteButton)
+                if (DeleteButton)
                     DeleteButton.gameObject.SetActive(false);
             }
         }
@@ -56,7 +71,7 @@ public class LevelSelector : MonoBehaviour
 
     public void UpdateLevelButtons()
     {
-        for(int i = 0; i < LevelButtons.Count; i++)
+        for (int i = 0; i < LevelButtons.Count; i++)
         {
             if (i < GameManager.Instance.UnlockedLevels)
                 LevelButtons[i].interactable = true;
@@ -103,8 +118,8 @@ public class LevelSelector : MonoBehaviour
 
     public void ChooseButton(int levelNumber)
     {
-        int level = Mathf.Clamp(levelNumber - 1, 0, Scenes.Count - 1);
-        GameManager.Instance.TransitionController.ChangeScene(Scenes[level]);
+        int level = Mathf.Clamp(levelNumber - 1, 0, LevelScenes.Count - 1);
+        GameManager.Instance.TransitionController.ChangeScene(LevelScenes[level]);
         //StartCoroutine(FadeOutMain.StartFade(AudioMixer, ExposedParameter, 0.5f, 0.01f, level, Scenes));
 
         GameManager.Instance.CurrentLevel = levelNumber;

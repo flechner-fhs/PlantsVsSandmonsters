@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 public class Player : Entity
 {
@@ -33,6 +31,14 @@ public class Player : Entity
     public bool UnlimitedWater = false;
     private bool GunMenuLock = false;
 
+    public new void Awake()
+    {
+        base.Awake();
+
+        if (GameManager.Instance)
+            WaterSupplyMax += GameManager.Instance.EquipmentManager.ActiveEquipments.Select(x => x.WaterSupplyMax).Sum();
+        WaterSupply = WaterSupplyMax;
+    }
 
     public override void Move()
     {
@@ -85,7 +91,7 @@ public class Player : Entity
             if (!Watergun.IsActive())
                 Watergun.Activate();
 
-            if(!UnlimitedWater)
+            if (!UnlimitedWater)
                 WaterSupply -= ShootCostPerSecond * Time.deltaTime;
         }
         //Stop Water

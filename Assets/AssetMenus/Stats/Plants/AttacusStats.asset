@@ -19,7 +19,7 @@ MonoBehaviour:
   WaterCost: 10
   AttackRange: 6
   SpawnOffset: {x: 0, y: 0.13}
-  MenuOffset: {x: 0.04, y: 0.82}
+  MenuOffset: {x: 0.04, y: 0.01}
   Shooter: 1
   ShootCooldown: 0.8
   ProjectileCost: 3

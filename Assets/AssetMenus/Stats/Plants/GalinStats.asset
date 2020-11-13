@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34e1370e61996254f95717f121f0ee9b, type: 3}
-  m_Name: BumarangStats
+  m_Name: GalinStats
   m_EditorClassIdentifier: 
-  Name: Bumarang
+  Name: Galin
   Health: 20
-  Damage: 4
-  Knockback: 0
+  Damage: 1
+  Knockback: 0.5
   WaterCost: 10
-  AttackRange: 5
-  SpawnOffset: {x: -0.04, y: 0.393}
-  MenuOffset: {x: 0.014, y: 0.745}
+  AttackRange: 3
+  SpawnOffset: {x: -0.022, y: 0.387}
+  MenuOffset: {x: 0.01, y: 0.08}
   Shooter: 1
-  ShootCooldown: 0.4
-  ProjectileCost: 0.4
+  ShootCooldown: 0.1
+  ProjectileCost: 0.15
   MaxWaterReservoir: 30
   ProjectileSpeed: 10
   TargetSelection: 1

@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Audio;
 
+[RequireComponent(typeof(SaveManager), typeof(BackgroundMusicController), typeof(TransitionController))]
+[RequireComponent(typeof(EquipmentManager))]
 public class GameManager : MonoBehaviour
 {
     //Singleton Setup
@@ -27,12 +27,18 @@ public class GameManager : MonoBehaviour
     public int UnlockedLevels = 0;
     public string Playername = "";
 
+    [Header("Current Game Data")]
     public int CurrentLevel = 0;
+    public List<Equipment> Equipment;
 
     [HideInInspector]
     public BackgroundMusicController MusicController;
     [HideInInspector]
     public TransitionController TransitionController;
+    [HideInInspector]
+    public EquipmentManager EquipmentManager;
+    [HideInInspector]
+    public LevelSelector LevelSelector;
     private SaveManager SaveManager;
 
     private void Awake()
@@ -43,6 +49,7 @@ public class GameManager : MonoBehaviour
         SaveManager = GetComponent<SaveManager>();
         MusicController = GetComponent<BackgroundMusicController>();
         TransitionController = GetComponent<TransitionController>();
+        EquipmentManager = GetComponent<EquipmentManager>();
     }
 
     public List<string> GetSaveNames()

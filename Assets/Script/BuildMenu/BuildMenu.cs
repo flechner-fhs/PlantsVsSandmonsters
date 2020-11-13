@@ -23,6 +23,9 @@ public class BuildMenu : MonoBehaviour
 
     private void Awake()
     {
+        if (GameManager.Instance)
+            unlockedPlants = GameManager.Instance.EquipmentManager.ActiveEquipments.Where(x => x.UnlocksNewPlant).Select(x => x.PlantPrefab).ToList();
+
         for (int i = 0; i < unlockedPlants.Count; i++)
         {
             if (!unlockedPlants[i].GetComponent<Plant>())
@@ -31,9 +34,9 @@ public class BuildMenu : MonoBehaviour
             GameObject BuildOptionObj = Instantiate(BuildOptionPrefab, OptionContainer.transform);
             BuildOption BuildOption = BuildOptionObj.GetComponent<BuildOption>();
             BuildOption.Plant = unlockedPlants[i];
+            BuildOption.Setup();
             BuildOption.SetRotation(-i * Mathf.Min(360 / unlockedPlants.Count, 60));
             BuildOption.GetComponentInChildren<BuildSelector>().OnClick = OnSelected;
-            BuildOption.Setup();
         }
 
         OptionContainer.transform.localScale = Vector3.zero;
