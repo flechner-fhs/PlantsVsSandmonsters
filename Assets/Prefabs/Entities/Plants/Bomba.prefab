@@ -254,3 +254,9 @@ MonoBehaviour:
   WaterCost: 10
   AttRange: 0
   MenuOffset: {x: 0, y: 0, z: 0}
+  DeathAnimation:
+  - {fileID: 7628397474048336458, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: 605458161016173397, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: -5273053311616390135, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: 4710859284414663586, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: -9117117479554951709, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}

@@ -63,12 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EquipUIColider.cs" />
-    <Compile Include="Assets\EquipmentManager.cs" />
-    <Compile Include="Assets\EquipmentScreenManager.cs" />
-    <Compile Include="Assets\EquipmentSelectIcon.cs" />
-    <Compile Include="Assets\EquipmentSlot.cs" />
     <Compile Include="Assets\Pixelate\Pixelate.cs" />
+    <Compile Include="Assets\Script\AssetMenus\PlantAssetMenu.cs" />
     <Compile Include="Assets\Script\Audio\BackgroundMusicController.cs" />
     <Compile Include="Assets\Script\Audio\FadeInAudio.cs" />
     <Compile Include="Assets\Script\Audio\FadeOutMain.cs" />
@@ -87,7 +83,6 @@
     <Compile Include="Assets\Script\Entities\PlantBomba.cs" />
     <Compile Include="Assets\Script\Entities\Player.cs" />
     <Compile Include="Assets\Script\Entities\WalkingEnemy.cs" />
-    <Compile Include="Assets\Script\Equipment.cs" />
     <Compile Include="Assets\Script\Eyecandy\ExplosionEffect.cs" />
     <Compile Include="Assets\Script\Eyecandy\Fader.cs" />
     <Compile Include="Assets\Script\Eyecandy\SpriteAnimaton.cs" />
@@ -100,7 +95,6 @@
     <Compile Include="Assets\Script\Helper\SaveManager.cs" />
     <Compile Include="Assets\Script\Helper\TargetFinding.cs" />
     <Compile Include="Assets\Script\Helper\TransitionController.cs" />
-    <Compile Include="Assets\Script\MenuAssets\PlantAssetMenu.cs" />
     <Compile Include="Assets\Script\Projectiles\PlantProjectiles\FollowProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\PlantProjectiles\MrClusterProjectile.cs" />
     <Compile Include="Assets\Script\Projectiles\PlantProjectiles\MrClusterSmallProjectile.cs" />
@@ -112,6 +106,12 @@
     <Compile Include="Assets\Script\UI\CoreHealthbar.cs" />
     <Compile Include="Assets\Script\UI\DeathScreen.cs" />
     <Compile Include="Assets\Script\UI\DirtCounter.cs" />
+    <Compile Include="Assets\Script\UI\EquipUIColider.cs" />
+    <Compile Include="Assets\Script\UI\Equipment.cs" />
+    <Compile Include="Assets\Script\UI\EquipmentManager.cs" />
+    <Compile Include="Assets\Script\UI\EquipmentScreenManager.cs" />
+    <Compile Include="Assets\Script\UI\EquipmentSelectIcon.cs" />
+    <Compile Include="Assets\Script\UI\EquipmentSlot.cs" />
     <Compile Include="Assets\Script\UI\Healthbar.cs" />
     <Compile Include="Assets\Script\UI\LevelSelector.cs" />
     <Compile Include="Assets\Script\UI\ToggleOptions.cs" />

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net.Cache;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -44,7 +42,7 @@ public class PathFinder : MonoBehaviour
         List<Node> checkedNodes = new List<Node>();
 
         //Set Start Position
-        if(Obstacles.GetTile(myPos) != null)
+        if (Obstacles.GetTile(myPos) != null)
         {
             Vector3 myPosActual = me.transform.position;
             Vector3 tilePosActual = Obstacles.CellToWorld(myPos) + new Vector3(.5f, .5f, 0);
@@ -69,8 +67,8 @@ public class PathFinder : MonoBehaviour
         }
 
         int i = 0;
-        int max = 1000;
-        while(newNodes.Count > 0)
+        int max = 200;
+        while (newNodes.Count > 0)
         {
             if (i++ > max) return new Path();
 
@@ -99,11 +97,12 @@ public class PathFinder : MonoBehaviour
 
             newNodes.Remove(node);
             checkedNodes.Add(node);
-            newNodes.Sort((a, b) => {
+            newNodes.Sort((a, b) =>
+            {
                 float distanceA = a.Distance + (a.Position - targetPos).magnitude;
                 float distanceB = b.Distance + (b.Position - targetPos).magnitude;
-                return distanceA > distanceB ? 1 : distanceA == distanceB ? 0 : - 1;
-                });
+                return distanceA > distanceB ? 1 : distanceA == distanceB ? 0 : -1;
+            });
         }
 
         return new Path();
@@ -150,14 +149,14 @@ public class PathFinder : MonoBehaviour
         while (list.Count > 0)
         {
             //New Direction
-            if(!checking)
+            if (!checking)
             {
                 //Where is the new Direction
                 isX = startNode.x == list[0].x;
                 checking = true;
 
                 //If there is at least one more node that is in the same direction follow
-                if(list.Count >= 2 && ((startNode.x == list[1].x && isX) || (startNode.y == list[1].y && !isX)))
+                if (list.Count >= 2 && ((startNode.x == list[1].x && isX) || (startNode.y == list[1].y && !isX)))
                 {
                     lastNode = list[0];
                     list.RemoveAt(0);
