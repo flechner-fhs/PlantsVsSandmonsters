@@ -12823,7 +12823,8 @@ MonoBehaviour:
   Spawner: {fileID: 415295141}
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  MonsterAmounts: 0a000000
+  - {fileID: 4434622517392635476, guid: 6ec3ead1ee365124a9678aa0e62a28db, type: 3}
+  MonsterAmounts: 0a00000001000000
 --- !u!1001 &2057405133
 PrefabInstance:
   m_ObjectHideFlags: 0

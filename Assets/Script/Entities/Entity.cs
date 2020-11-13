@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
@@ -13,7 +12,8 @@ public abstract class Entity : MonoBehaviour
     public float Damage = 1;
     public float Knockback = 500;
 
-    public int Team = 0;
+    public enum TeamName { Player, Enemy }
+    public TeamName Team = 0;
 
     public float MovementSpeed = 10;
 

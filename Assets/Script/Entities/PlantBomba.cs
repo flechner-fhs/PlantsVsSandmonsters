@@ -10,12 +10,6 @@ public class PlantBomba : Plant
 
     public List<Sprite> DeathAnimation;
 
-    private new void Awake()
-    {
-        base.Awake();
-        Renderer = GetComponentInChildren<SpriteRenderer>();
-    }
-
     public override void Die()
     {
         StartCoroutine(DeathAnimator());

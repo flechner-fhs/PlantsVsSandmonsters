@@ -41477,7 +41477,8 @@ MonoBehaviour:
   Spawner: {fileID: 4156185740558535679}
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  MonsterAmounts: 14000000
+  - {fileID: 4434622517392635476, guid: 6ec3ead1ee365124a9678aa0e62a28db, type: 3}
+  MonsterAmounts: 1400000003000000
 --- !u!1001 &669985104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47741,7 +47742,8 @@ MonoBehaviour:
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  MonsterAmounts: 0800000001000000
+  - {fileID: 4434622517392635476, guid: 6ec3ead1ee365124a9678aa0e62a28db, type: 3}
+  MonsterAmounts: 080000000100000002000000
 --- !u!114 &2102045445
 MonoBehaviour:
   m_ObjectHideFlags: 0

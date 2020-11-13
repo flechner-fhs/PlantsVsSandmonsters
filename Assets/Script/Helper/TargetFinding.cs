@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class TargetFinding
 {
@@ -159,7 +156,7 @@ public class TargetFinding
         strength += obj.GetComponent<Enemy>().Damage;
         strength += obj.GetComponent<Enemy>().Health;
         strength += 2 / obj.GetComponent<Enemy>().AttackSleep;
-        Debug.Log("PRIO STRENGTH: " + strength);
+        //Debug.Log("PRIO STRENGTH: " + strength);
         return (int)strength;
     }
 
