@@ -24,15 +24,15 @@ public class DeathScreen : MonoBehaviour
         float _multiplier;
         if (Time.timeScale > 0.25)
         {
-            _multiplier = (float) ((1 - Time.timeScale) * 0.04) * AnimationSpeed;
+            _multiplier = (float) ((1 - Time.timeScale) * 0.03) * AnimationSpeed;
             animation.transform.localScale += new Vector3(_multiplier, _multiplier, 0);
             //transform.Translate(new Vector3(0, -0.2f, 0));
         }
 
         for(int i = 0; i < AnimationSpeed; i++)
-            Time.timeScale *= 0.9965f;
+            Time.timeScale *= 0.9975f;
 
-        if (Time.timeScale <= 0.35)
+        if (Time.timeScale <= 0.25)
         {
             Time.timeScale = 0;
         }
@@ -42,22 +42,29 @@ public class DeathScreen : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-            animation.transform.localScale += new Vector3(-0.01f, -0.01f, 0) * AnimationSpeed;
+            animation.transform.localScale += new Vector3(-0.005f, -0.005f, 0) * AnimationSpeed;
 
             if (animation.transform.localScale.x < 0.1f)
             {
                 animation.SetActive(false);
-                restartButton.SetActive(true);
 
                 if (!didButtonExpand)
                 {
                     didButtonExpand = true;
-                    for (int i = 0; i < 10; i++)
-                    {
-                        restartButton.transform.localScale += new Vector3(+0.1f, +0.1f, 0);
-                    }
+                    StartCoroutine("MoveRetryButton");
                 }
             }
+        }
+    }
+
+    IEnumerator MoveRetryButton()
+    {
+        while (restartButton.transform.localPosition.y < 60)
+
+        {
+            restartButton.transform.localScale += new Vector3(+0.01f, +0.01f, 0);
+            restartButton.transform.Translate(new Vector3(0, 3, 0));
+            yield return null;
         }
     }
 }
