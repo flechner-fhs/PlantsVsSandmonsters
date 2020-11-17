@@ -32,7 +32,8 @@ public class VictoryAnimationScript : MonoBehaviour
         playerSpriteRenderer = victoryAnim.GetComponent<SpriteRenderer>();
         monsterSpriteRenderer = monsterAnim.GetComponent<SpriteRenderer>();
         isChasing = false;
-        victoryText.color = new Color(victoryText.color.r, victoryText.color.g, victoryText.color.b, 0);
+        
+
     }
 
     // Update is called once per frame
@@ -93,10 +94,7 @@ public class VictoryAnimationScript : MonoBehaviour
         while (victoryText.color.a < 1)
         {
             victoryText.color = new Color(victoryText.color.r, victoryText.color.g, victoryText.color.b, victoryText.color.a + 0.001f);
-            Debug.Log("a");
             yield return null;
-        }
-        
+        }  
     }
-
 }
