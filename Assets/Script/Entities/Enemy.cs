@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Enemy : Entity
@@ -20,6 +19,8 @@ public abstract class Enemy : Entity
     public Drop Drop;
     public float DropChance = 0.1f;
 
+    private float EscapeTimer = 3;
+
     public bool DoesSleep { get => Sleep > 0; }
 
     public new void Awake()
@@ -33,7 +34,7 @@ public abstract class Enemy : Entity
     {
         base.Start();
         Player = FindObjectOfType<Player>();
-        Core = FindObjectOfType <Core> ();
+        Core = FindObjectOfType<Core>();
     }
 
     public void Attack(Entity other)
@@ -53,6 +54,25 @@ public abstract class Enemy : Entity
                 Attack(other);
                 Sleep = AttackSleep;
             }
+        }
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            EscapeTimer -= Time.deltaTime;
+
+            if (EscapeTimer <= 0)
+            {
+                TakeDamage(1);
+                EscapeTimer += .5f; ;
+            }
+
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle" && EscapeTimer < 2)
+        {
+            EscapeTimer = 3;
         }
     }
 

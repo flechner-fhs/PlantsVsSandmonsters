@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 1602465575657287845, guid: 5d0f6b5753b3d09458365cc655b1e63e,
+        type: 3}
+      propertyPath: pixelateCamera
+      value: 
+      objectReference: {fileID: 90607682}
     - target: {fileID: 1602465575663750349, guid: 5d0f6b5753b3d09458365cc655b1e63e,
         type: 3}
       propertyPath: Core
@@ -290,12 +295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &30845891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1602465575362516735, guid: 5d0f6b5753b3d09458365cc655b1e63e,
-    type: 3}
-  m_PrefabInstance: {fileID: 30845887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &73785960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41478,7 +41477,8 @@ MonoBehaviour:
   Spawner: {fileID: 4156185740558535679}
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
-  MonsterAmounts: 14000000
+  - {fileID: 4434622517392635476, guid: 6ec3ead1ee365124a9678aa0e62a28db, type: 3}
+  MonsterAmounts: 1400000003000000
 --- !u!1001 &669985104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47692,85 +47692,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6ffb3a4989672c499d8b660087e211b, type: 3}
---- !u!1001 &2021115737
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3712022269054892674, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_Name
-      value: PauseContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892675, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712022269054892700, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: pixelateCamera
-      value: 
-      objectReference: {fileID: 90607682}
-    - target: {fileID: 3712022269054892700, guid: c77e6b19a77ae434aae3d51c524dc918,
-        type: 3}
-      propertyPath: lifebars
-      value: 
-      objectReference: {fileID: 30845891}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c77e6b19a77ae434aae3d51c524dc918, type: 3}
 --- !u!1 &2102045442
 GameObject:
   m_ObjectHideFlags: 0
@@ -47821,7 +47742,8 @@ MonoBehaviour:
   Monsters:
   - {fileID: 7611472369936798052, guid: 3f18356305a6d154a8cd39e1a511e3db, type: 3}
   - {fileID: 3127543568331788480, guid: 83713ef6e09dd364c85e87126c90ed49, type: 3}
-  MonsterAmounts: 0800000001000000
+  - {fileID: 4434622517392635476, guid: 6ec3ead1ee365124a9678aa0e62a28db, type: 3}
+  MonsterAmounts: 080000000100000002000000
 --- !u!114 &2102045445
 MonoBehaviour:
   m_ObjectHideFlags: 0

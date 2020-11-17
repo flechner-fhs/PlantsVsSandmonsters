@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WaterScale : MonoBehaviour
 {
     public Player Player;
 
     public RectTransform Scale;
+    public RectTransform BackgroundScale;
 
     private float InitSize;
 
@@ -16,12 +15,13 @@ public class WaterScale : MonoBehaviour
         if (!Player)
             Player = FindObjectOfType<Player>();
 
-        InitSize = Scale.offsetMax.y;
+        InitSize = Scale.offsetMax.y * Player.WaterSupplyMax / 100;
+        BackgroundScale.offsetMax = new Vector3(0, InitSize);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Scale.offsetMax = new Vector3(0, InitSize * Player.WaterSupply / 100);
+        Scale.offsetMax = new Vector3(0, InitSize * Player.WaterSupply / Player.WaterSupplyMax);
     }
 }

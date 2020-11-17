@@ -28,7 +28,7 @@ public class Core : Entity
         yield return new WaitForSeconds(.5f);
         GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("GameOverScene");
+        GameManager.Instance.TransitionController.ChangeScene("GameOverScene");
 
     }
 

@@ -23,7 +23,10 @@ public class BuildMenu : MonoBehaviour
 
     private void Awake()
     {
-        for(int i = 0; i < unlockedPlants.Count; i++)
+        if (GameManager.Instance)
+            unlockedPlants = GameManager.Instance.EquipmentManager.ActiveEquipments.Where(x => x.UnlocksNewPlant).Select(x => x.PlantPrefab).ToList();
+
+        for (int i = 0; i < unlockedPlants.Count; i++)
         {
             if (!unlockedPlants[i].GetComponent<Plant>())
                 continue;
@@ -31,9 +34,9 @@ public class BuildMenu : MonoBehaviour
             GameObject BuildOptionObj = Instantiate(BuildOptionPrefab, OptionContainer.transform);
             BuildOption BuildOption = BuildOptionObj.GetComponent<BuildOption>();
             BuildOption.Plant = unlockedPlants[i];
+            BuildOption.Setup();
             BuildOption.SetRotation(-i * Mathf.Min(360 / unlockedPlants.Count, 60));
             BuildOption.GetComponentInChildren<BuildSelector>().OnClick = OnSelected;
-            BuildOption.Setup();
         }
 
         OptionContainer.transform.localScale = Vector3.zero;
@@ -44,7 +47,7 @@ public class BuildMenu : MonoBehaviour
     public void Activate()
     {
         Vector3Int playerPos = FlowerEarth.WorldToCell(Player.transform.position);
-        if(FlowerEarth.GetTile(playerPos) != null && Obstacles.GetTile(playerPos) == null)
+        if (FlowerEarth.GetTile(playerPos) != null && Obstacles.GetTile(playerPos) == null)
         {
             Vector3 targetPos = FlowerEarth.CellToWorld(playerPos) + new Vector3(.5f, .5f);
             if (FindObjectsOfType<Plant>().Where(x => (x.transform.position - targetPos).sqrMagnitude < BuildRestriction).Count() == 0)

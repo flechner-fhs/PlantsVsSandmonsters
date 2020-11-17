@@ -18,8 +18,9 @@ public class ToggleOptions : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(FadeInAudio.StartFade(audioMixer, exposedParameter, 2f, 0.75f));
+        //StartCoroutine(FadeInAudio.StartFade(audioMixer, exposedParameter, 2f, 0.75f));
     }
+
     void Update()
     {
         if (Input.GetKeyDown("escape") && (pauseObject.activeSelf == false) && (settingsObject.activeSelf == false))
@@ -62,6 +63,7 @@ public class ToggleOptions : MonoBehaviour
     public void goToMainscreen()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
+        GameManager.Instance.TransitionController.ChangeScene("TitleScene");
     }
 }

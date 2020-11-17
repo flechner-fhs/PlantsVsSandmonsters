@@ -12,8 +12,8 @@ public class DeathScreen : MonoBehaviour
     public GameObject restartButton;
     public bool didButtonExpand;
 
-    private float _multiplier;
-
+    public float AnimationSpeed = 3;
+    
     void Start()
     {
         didButtonExpand = false;
@@ -21,14 +21,16 @@ public class DeathScreen : MonoBehaviour
 
     void FixedUpdate()
     {
+        float _multiplier;
         if (Time.timeScale > 0.25)
         {
-            _multiplier = (float) ((1 - Time.timeScale) * 0.04);
+            _multiplier = (float) ((1 - Time.timeScale) * 0.04) * AnimationSpeed;
             animation.transform.localScale += new Vector3(_multiplier, _multiplier, 0);
             //transform.Translate(new Vector3(0, -0.2f, 0));
         }
 
-        Time.timeScale *= 0.9965f;
+        for(int i = 0; i < AnimationSpeed; i++)
+            Time.timeScale *= 0.9965f;
 
         if (Time.timeScale <= 0.35)
         {
@@ -40,7 +42,7 @@ public class DeathScreen : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-            animation.transform.localScale += new Vector3(-0.01f, -0.01f, 0);
+            animation.transform.localScale += new Vector3(-0.01f, -0.01f, 0) * AnimationSpeed;
 
             if (animation.transform.localScale.x < 0.1f)
             {

@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
 using UnityEngine;
-using System.Linq;
 
 public class Charger : WalkingEnemy
 {
+    [Header("Charger Specific")]
     public GameObject ExplosionEffect;
 
     // Update is called once per frame

@@ -64,9 +64,9 @@ public class LevelManager : MonoBehaviour
         List<Plant> plants = FindObjectsOfType<Plant>().ToList();
         for (int i = 0; i < 10; i++)
         {
-            Player.AddWaterToSupply(10);
+            Player.AddWaterToSupply(Player.WaterSupplyMax / 10);
             plants.ForEach(x => x.ChangeWaterSupply(10));
-            yield return new WaitForSeconds(RainDuration/10f);
+            yield return new WaitForSeconds(RainDuration / 10f);
         }
         RainOverlay.GetComponent<Fader>().FadeOut(1);
         NextStage();
@@ -74,9 +74,9 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator StartPreparation()
     {
-        for(int i = 0; i < PrepareDuration; i++)
+        for (int i = 0; i < PrepareDuration; i++)
         {
-            Infobox.text = $"Preparation {(int)PrepareDuration-i}s";
+            Infobox.text = $"Preparation {(int)PrepareDuration - i}s";
             yield return new WaitForSeconds(1);
         }
         NextStage();
@@ -94,26 +94,27 @@ public class LevelManager : MonoBehaviour
         Waves.RemoveAll(x => waves.Contains(x));
         Wave++;
 
-        if(Waves.Count == 0)
+        if (Waves.Count == 0)
         {
-            if(!FindObjectOfType<Core>().IsDead && !Player.IsDead)
+            if (!FindObjectOfType<Core>().IsDead && !Player.IsDead)
             {
                 Player.IsDead = true;
                 Player.AnimationController.SetPlayState(AnimationController.PlayState.idleDown);
                 CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
-                for(int i = 0; i < 100; i++)
+                for (int i = 0; i < 100; i++)
                 {
-                    vcam.m_Lens.OrthographicSize = Mathf.Lerp(4, 2, i/100f);
+                    vcam.m_Lens.OrthographicSize = Mathf.Lerp(4, 2, i / 100f);
                     yield return new WaitForSeconds(.01f);
                 }
-                SceneManager.LoadScene("VictoryScene");
+                GameManager.Instance.StageCleared();
+                GameManager.Instance.TransitionController.ChangeScene("VictoryScene");
             }
         }
         else
             NextStage();
     }
 
-    public void UpdateLevelInfo() => LevelInfo.text = SceneManager.GetActiveScene().name + "\nWave " + (Wave + 1); 
+    public void UpdateLevelInfo() => LevelInfo.text = SceneManager.GetActiveScene().name + "\nWave " + (Wave + 1);
 
     public IEnumerator UpdateMonsterCounter()
     {

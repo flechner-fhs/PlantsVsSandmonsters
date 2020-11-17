@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class ChasingEnemy : WalkingEnemy
 {
@@ -16,18 +15,20 @@ public class ChasingEnemy : WalkingEnemy
     public bool ShowMarkers = false;
 
     private bool InChase = false;
+    private float IgnoreTimer = 0;
 
     public override void Move()
     {
+        IgnoreTimer -= Time.fixedDeltaTime;
         if (Target == null)
             Target = Player;
 
-        if((Target.transform.position - transform.position).sqrMagnitude > MaxChaseRange * MaxChaseRange)
+        if (IgnoreTimer > 0 || (Target.transform.position - transform.position).sqrMagnitude > MaxChaseRange * MaxChaseRange)
         {
             if (InChase)
             {
                 List<Waypoint> points = new List<Waypoint>(Path.waypoints);
-                points.Sort((a, b) => (int)(((a.transform.position - transform.position).sqrMagnitude - (b.transform.position - transform.position).sqrMagnitude)*100));
+                points.Sort((a, b) => (int)(((a.transform.position - transform.position).sqrMagnitude - (b.transform.position - transform.position).sqrMagnitude) * 100));
 
                 Progress = Path.waypoints.IndexOf(points.First());
                 InChase = false;
@@ -94,9 +95,16 @@ public class ChasingEnemy : WalkingEnemy
             ChasePath = new PathFinder.Path();
             UpdateMarkers();
         }
-        else if (InChase && collision.gameObject.tag == "Obstacle" && Physics2D.Raycast(transform.position, Target.transform.position - transform.position, Mathf.Infinity, 512 + 1).collider.gameObject.tag != "Player")
+        else if (InChase && IgnoreTimer <= 0 && collision.gameObject.tag == "Obstacle" && Physics2D.Raycast(transform.position, Target.transform.position - transform.position, Mathf.Infinity, 512 + 1).collider.gameObject.tag != "Player")
         {
             ChasePath = PathFinder.Instance.GetPathTo(gameObject, Target.gameObject);
+
+            if (ChasePath.Directions == null)
+            {
+                IgnoreTimer = 3;
+                InChase = false;
+            }
+
             UpdateMarkers();
         }
     }

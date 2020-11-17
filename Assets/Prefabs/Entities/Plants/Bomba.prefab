@@ -239,25 +239,24 @@ MonoBehaviour:
   Knockback: 8000
   Team: 0
   MovementSpeed: 10
-  collider: {fileID: 0}
-  rigidbody: {fileID: 0}
+  Collider: {fileID: 0}
+  Rigidbody: {fileID: 0}
   Renderer: {fileID: 0}
   BaseColor: {r: 0, g: 0, b: 0, a: 0}
   IsDead: 0
   FacingLeft: 0
-  ShootCooldown: 0
-  WaterCost: 10
-  ProjectileCost: 0
-  MaxWaterReservoir: 30
-  WaterReservoir: 0
+  stats: {fileID: 11400000, guid: 6a712bed4f982ba43a999e4f42fdbe85, type: 2}
+  Sprite: {fileID: -8552545627438110159, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
+  ThisPlantProjectile: {fileID: 0}
   SweatDropPrefab: {fileID: 6298314541659030589, guid: fda80bd246e153f48a2e54ad320afe1e,
     type: 3}
   SweatThreshhold: 0.5
-  Target: 1
-  ProjectileSpeed: 0
-  AttRange: 1
-  Sprite: {fileID: -8552545627438110159, guid: a9cdac78de40c5245b56616867f9ab4a, type: 3}
-  ThisPlantProjectile: {fileID: 0}
-  isShoot: 0
-  SpawnOffset: {x: -0.07, y: 0.18, z: 0}
-  MenuOffset: {x: -0.018, y: 0.755, z: 0}
+  WaterCost: 10
+  AttRange: 0
+  MenuOffset: {x: 0, y: 0, z: 0}
+  DeathAnimation:
+  - {fileID: 7628397474048336458, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: 605458161016173397, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: -5273053311616390135, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: 4710859284414663586, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}
+  - {fileID: -9117117479554951709, guid: d2c43385c58ac234bb6da995718ac10d, type: 3}

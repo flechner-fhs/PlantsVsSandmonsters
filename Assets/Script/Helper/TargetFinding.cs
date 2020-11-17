@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class TargetFinding
 {
-    private List<GameObject> characterInRangeList = new List<GameObject>();
-    private List<GameObject> visibleCharacterList = new List<GameObject>();
-    bool showRayCasts = false;
+    private List<GameObject> characterInRangeList;
+    private List<GameObject> visibleCharacterList;
+    private bool showRayCasts;
 
     /**
      * prio -- what target 
@@ -19,8 +16,14 @@ public class TargetFinding
      * (2 is strongest visible)
      * (3 is strongest(visible idc))
      */
+    public TargetFinding()
+    {
+        characterInRangeList = new List<GameObject>();
+        visibleCharacterList = new List<GameObject>();
+        showRayCasts = false;
+    }
 
-    public bool FindATarget(out Vector2 direction, out GameObject obj, Vector2 pos, int enemyPrio = 0, int range = 10, string tag = "Enemy")
+    public bool FindATarget(out Vector2 direction, out GameObject obj, Vector2 pos, int enemyPrio = 1, float range = 10, string tag = "Enemy")
     {
         bool isTarget = false;
         UpdateCharacterList(pos, range, tag);
@@ -113,14 +116,14 @@ public class TargetFinding
         return available;
     }
 
-    private void UpdateCharacterList(Vector2 pos, int range, string tag)
+    private void UpdateCharacterList(Vector2 pos, float range, string tag)
     {
         GameObject[] monsters = GameObject.FindGameObjectsWithTag(tag);
         Vector3 position = (Vector3)pos;
         characterInRangeList = monsters.Where(x => ((Vector3)pos - x.transform.position).sqrMagnitude < range * range).ToList().OrderBy(a => (a.transform.position - position).magnitude).ToList();
     }
 
-    private void UpdateVisibleList(Vector2 pos, int range)
+    private void UpdateVisibleList(Vector2 pos, float range)
     {
         foreach (GameObject character in characterInRangeList)
         {
@@ -153,7 +156,7 @@ public class TargetFinding
         strength += obj.GetComponent<Enemy>().Damage;
         strength += obj.GetComponent<Enemy>().Health;
         strength += 2 / obj.GetComponent<Enemy>().AttackSleep;
-        Debug.Log("PRIO STRENGTH: " + strength);
+        //Debug.Log("PRIO STRENGTH: " + strength);
         return (int)strength;
     }
 

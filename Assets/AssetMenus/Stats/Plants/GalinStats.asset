@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e1370e61996254f95717f121f0ee9b, type: 3}
+  m_Name: GalinStats
+  m_EditorClassIdentifier: 
+  Name: Galin
+  Health: 20
+  Damage: 1
+  Knockback: 0.5
+  WaterCost: 10
+  AttackRange: 3
+  SpawnOffset: {x: -0.022, y: 0.387}
+  MenuOffset: {x: 0.01, y: 0.08}
+  Shooter: 1
+  ShootCooldown: 0.1
+  ProjectileCost: 0.15
+  MaxWaterReservoir: 30
+  ProjectileSpeed: 10
+  TargetSelection: 1

@@ -27,7 +27,7 @@ public class MonsterSpawner : MonoBehaviour
             float draw = Random.Range(0, chanceTotal);
             float val = 0;
 
-            for(int j = 0; j < EnemyPrefabs.Count; j++)
+            for (int j = 0; j < EnemyPrefabs.Count; j++)
             {
                 if (draw >= val && draw <= val + EnemyProbability[j])
                 {
@@ -63,19 +63,19 @@ public class MonsterSpawner : MonoBehaviour
 
     private void Start()
     {
-        if(TestMode)
-            SpawnWave(10);
+        if (TestMode)
+            StartCoroutine(AddWaveIn(5));
     }
 
     private void Update()
     {
         Timer += Time.deltaTime;
 
-        if(Timer > Interval && SpawnQueue.Count > 0)
+        if (Timer > Interval && SpawnQueue.Count > 0)
         {
             GameObject enemy = Instantiate(SpawnQueue[0].Item1, SpawnQueue[0].Item2.GetStartPosition(), Quaternion.identity);
             WalkingEnemy wEnemy = enemy.GetComponent<WalkingEnemy>();
-            if(wEnemy)
+            if (wEnemy)
                 wEnemy.Path = SpawnQueue[0].Item2;
             SpawnQueue.RemoveAt(0);
             Timer = 0;
