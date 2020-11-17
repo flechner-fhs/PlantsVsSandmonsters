@@ -13,6 +13,7 @@ public class VictoryAnimationScript : MonoBehaviour
     public AudioSource smackAudio;
     public AudioSource vicoryAudio;
     public AudioSource pianoAudio;
+    public Text victoryText;
 
 
 
@@ -31,6 +32,7 @@ public class VictoryAnimationScript : MonoBehaviour
         playerSpriteRenderer = victoryAnim.GetComponent<SpriteRenderer>();
         monsterSpriteRenderer = monsterAnim.GetComponent<SpriteRenderer>();
         isChasing = false;
+        victoryText.color = new Color(victoryText.color.r, victoryText.color.g, victoryText.color.b, 0);
     }
 
     // Update is called once per frame
@@ -81,8 +83,20 @@ public class VictoryAnimationScript : MonoBehaviour
                 victoryAnim.SetActive(false);
                 victorySprite.SetActive(true);
                 victoryCanvas.SetActive(true);
+                StartCoroutine("FadeInText");
             }
         }
 
     }
+    IEnumerator FadeInText()
+    {
+        while (victoryText.color.a < 1)
+        {
+            victoryText.color = new Color(victoryText.color.r, victoryText.color.g, victoryText.color.b, victoryText.color.a + 0.001f);
+            Debug.Log("a");
+            yield return null;
+        }
+        
+    }
+
 }

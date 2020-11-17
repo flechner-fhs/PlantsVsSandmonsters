@@ -176,6 +176,7 @@ MonoBehaviour:
   smackAudio: {fileID: 1065832898}
   vicoryAudio: {fileID: 1905314999}
   pianoAudio: {fileID: 1820188493}
+  victoryText: {fileID: 1877809837}
 --- !u!114 &16003372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,7 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13254347, g: 0.3301887, b: 0, a: 1}
+  m_Color: {r: 0.13254347, g: 0.3301887, b: 0, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 0
   m_OnCullStateChanged:
